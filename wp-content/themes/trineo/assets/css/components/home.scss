@@ -1,0 +1,310 @@
+ #hero {
+  //max-height: 645px;
+   height: calc(100vh - 90px);
+
+}
+
+.home #hero {
+  margin-top: 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $theme-grey;
+  display: none;
+
+
+  @include media-breakpoint-up(md) {
+    //padding-top: 0px;
+    //max-height: 550px;
+    //min-height: 550px;
+    //padding-bottom:150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+  }
+
+
+
+
+  .row {
+    text-align: left;
+    height: auto;
+    min-height: 230px;
+
+
+    @include media-breakpoint-up(md) {
+      //height: calc(100vh - 200px);
+      //min-height: 550px;
+    }
+
+
+
+  }
+
+  .h1 {
+    color: white;
+    font-family: 'Montserrat-ExtraBold', sans-serif;
+
+    font-weight: normal;
+    max-width: 850px;
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(md) {
+      //font-size: 24px;
+      //line-height: 32px;
+    }
+
+
+  }
+
+  .h5{
+    color: white;
+    max-width: 600px;
+  }
+
+
+
+  .home-header-mob {
+
+    margin-top: -132px;
+  }
+}
+
+@media only screen and (min-width: 1550px){
+
+  .home #hero {
+    background-size: cover;
+  }
+}
+
+.home #hero-mob {
+
+  background-color: #fff;
+
+
+  @include media-breakpoint-up(md) {
+    display:none;
+
+  }
+
+  img{
+    //margin-top: 90px;
+  }
+
+  .row {
+    text-align: left;
+    height: auto;
+    min-height: 230px;
+
+
+
+
+
+
+  }
+
+  .home-header-text {
+    color: $theme-primary-color;
+    font-family: 'Montserrat', sans-serif;
+    @include font-size(50px);
+    @include line-height(60px);
+    max-width: 500px;
+    letter-spacing: 0px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+
+
+}
+@media (min-width: 1400px){
+  .home #hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    //background-color: $theme-pink;
+  }
+
+  .home #hero .row{
+    height: 100% !important;
+    //min-height: 200px;
+  }
+}
+#hero-nav {
+  background-color: $theme-black;
+  text-align: center;
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    float: none;
+    margin: 0px;
+    display: block;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+
+
+    li {
+      display: inline-block;
+      padding: 15px 20px;
+
+      a {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        @include font-size(20px);
+        font-weight: bold;
+        @include line-height(24px);
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        background: $theme-grey;
+      }
+    }
+  }
+}
+
+.single-client{
+  .image-background{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 65px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+
+  }
+
+}
+
+
+.single-testimonial{
+  position: relative;
+  margin: 0;
+  padding: .5rem;
+
+  &:before,
+  &:after{
+  position: absolute;
+  color: $theme-primary-color;
+  font-size: 8rem;
+  width: 4rem;
+  height: 4rem;
+    display:block;
+}
+  &:before {
+    content: '“';
+    left: -5rem;
+    top: 3rem;
+  }
+
+  &:after {
+    content: '”';
+    right: -5rem;
+    bottom: 1rem;
+  }
+
+  .quote{
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    @include font-size(25px);
+    @include line-height(28px);
+    font-weight: normal;
+    color: $theme-secondary-color;
+
+    @include media-breakpoint-up(md) {
+      @include font-size(30px);
+      @include line-height(40px);
+    }
+  }
+
+  .name{
+    font-weight: bold;
+  }
+
+  .job-title{
+
+      font-family: 'Montserrat-Thin', sans-serif;
+      @include font-size(20px);
+      @include line-height(22px);
+    font-style: italic;
+
+      @include media-breakpoint-up(md) {
+        @include font-size(20px);
+        @include line-height(22px);
+      }
+
+  }
+}
+
+.hero-text{
+  font-family: 'Poppins-Semibold', sans-serif;
+  color: $theme-primary-color;
+  text-align:center;
+  max-width:850px;
+  margin: auto;
+
+
+  @include media-breakpoint-up(md) {
+    @include font-size(30px);
+    @include line-height(40px);
+  }
+}
+
+.section-2{
+  color: white;
+
+  .h2{
+    color: white;
+
+    &:after{
+      border-bottom: 1px solid white;
+    }
+  }
+
+  .solutions-text{
+    font-family: 'Poppins', sans-serif;
+    color: $theme-pink;
+    @include font-size(27px);
+    @include line-height(35px);
+  }
+
+  .solutions-heading{
+    font-family: 'Byrd', sans-serif;
+    @include font-size(45px);
+    @include line-height(45px);
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+.service-links{
+  ul {
+    margin-left:-20px;
+
+    li {
+      width: 33.33%;
+      float: left;
+
+      a {
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        @include font-size(20px);
+        @include line-height(50px);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.purple-background{
+  background: $theme-primary-color;
+}
+
+

@@ -1,0 +1,488 @@
+$button-padding: 10px;
+$arrow-width: 42px;
+
+.button {
+  position: relative;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  background: rgb(53,158,215);
+  background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+  letter-spacing: 0px;
+  text-decoration: none;
+  @include font-size(15px);
+  @include line-height(18px);
+  padding: $button-padding 40px;
+  margin-top: 20px;
+  display: inline-flex;
+  font-family: 'Poppins-Semibold';
+  text-transform: uppercase;
+
+  span {
+    position: relative;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &:hover {
+    background: rgb(53,158,215);
+    background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+
+
+
+  &:hover {
+
+  }
+
+  &--white{
+    background: white;
+    color: $theme-green1 !important;
+    border-radius: 40px;
+    border: 2px solid $theme-green1;
+
+
+    &:hover {
+      color: white !important;
+      background: $theme-green1;
+
+
+    }
+  }
+
+  &--inverted {
+    background: #ffffff;
+    color: $theme-secondary-color;
+
+    &:hover {
+      background: #ffffff;
+      color: $theme-secondary-color;
+    }
+
+    &:after {
+      background-image: url('../trineo/assets/images/arrow-right-blue.svg');
+    }
+
+    &:visited{
+      color: $theme-secondary-color;
+    }
+  }
+
+
+
+  &--transparent {
+    background: transparent;
+    color: $theme-green2;
+    padding: $button-padding 50px $button-padding 0;
+    letter-spacing: 0;
+    margin-top:5px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-flex;
+
+
+    &:after {
+      content: '';
+      width: 30px;
+      height: 16px;
+      opacity: 1;
+      top: 13px;
+      right: 13px;
+      position: absolute;
+      transition: all ease-in-out 0.3s;
+      background-image: url(../trineo/assets/images/arrow-right-green1.svg);
+      background-repeat: no-repeat;
+      background-position: 0px 0;
+      background-size: contain;
+    }
+
+    &:focus{
+      background-color: transparent !important;
+    }
+
+    &:hover {
+      color: $theme-green3;
+      background: transparent;
+
+
+      &:after {
+        background-image: url('../trineo/assets/images/arrow-right-green2.svg');
+        top: 15px;
+        right: 8px;
+      }
+    }
+
+    &:visited{
+      color: $theme-green2 ;
+    }
+
+
+
+    &--prev {
+      padding: $button-padding 0 $button-padding 35px;
+      //filter: grayscale(1);
+      font-weight:normal !important;
+      font-size: 13px;
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        content: '';
+        background-image: url('../trineo/assets/images/arrow-right-green1.svg');
+        transform: rotate(180deg);
+        background-position: 24px 0;
+        opacity: 1;
+        left: 5px;
+        width: 44px;
+        top: 9px;
+        //filter: grayscale(1);
+      }
+
+      &:hover{
+        color: $theme-green2;
+
+        &:before {
+          background-image: url('../trineo/assets/images/arrow-right-green2.svg');
+          transform: rotate(180deg);
+          //filter: grayscale(1);
+          left: 0px;
+        }
+      }
+    }
+
+    &-white-arrow {
+
+      color: white !important;
+      padding-bottom:10px;
+
+      &:after {
+        background-image: url('../trineo/assets/images/arrow-right.svg');
+
+      }
+
+
+      &:hover {
+        color: white;
+
+        &:after {
+          background-image: url('../trineo/assets/images/arrow-right.svg');
+
+        }
+      }
+
+
+    }
+
+    &-white{
+      color: white;
+
+      &:after{
+        background-image: url('../trineo/assets/images/arrow-right.svg');
+      }
+
+      &:hover {
+        color: white;
+
+        &:after{
+          background-image: url('../trineo/assets/images/arrow-right.svg');
+        }
+      }
+
+      &:visited{
+        color: $theme-secondary-color ;
+      }
+    }
+
+
+  }
+
+  &--tags{
+    position: relative;
+    border-radius: 40px;
+    cursor: pointer;
+    letter-spacing: 0px;
+    text-decoration: none;
+    @include font-size(16px);
+    @include line-height(18px);
+    margin-top: 20px;
+    display: inline-flex;
+    font-family: 'Montserrat';
+    font-weight: normal;
+    background: transparent;
+    color: $theme-green1;
+    letter-spacing: 0;
+    margin-top:5px;
+    text-align: center;
+      border: 1px solid $theme-green1;
+      padding:14px 20px 14px 20px;
+
+    &:after{
+      background-image: none;
+    }
+
+    &:hover, &:focus{
+      background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+      color: white;
+
+      &:after{
+        background-image: none;
+      }
+
+    }
+
+  }
+
+  &--transparent2 {
+    background: transparent;
+    color: $theme-green1;
+    padding: $button-padding 50px $button-padding 0;
+    letter-spacing: 0;
+    margin-top: 5px;
+
+
+    &:after {
+      background-image: url('../trineo/assets/images/chevron-right-blue.svg');
+    }
+
+    &:focus {
+      background-color: transparent !important;
+    }
+
+    &:hover {
+      color: $theme-green2 !important;
+      background: transparent;
+
+      &:after {
+        background-image: url('../trineo/assets/images/arrow-right-green2.svg');
+      }
+    }
+
+    &:visited {
+      color: $theme-green1;
+    }
+  }
+
+
+  &--call-to-action {
+    background: transparent;
+    color: $theme-primary-color;
+    padding: $button-padding 0;
+    letter-spacing: 0;
+    @include font-size(25px);
+    position: relative;
+
+    span {
+      z-index: 1;
+    }
+
+
+    &:before {
+      content: "";
+      position: absolute;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      top: 50%;
+      right: -5px;
+      width: 0;
+      background-color: $theme-primary-color;
+      height: 21px;
+      transition-property: width;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-out;
+      z-index: 0;
+    }
+
+    &:after {
+      background-image: url('../trineo/assets/images/arrow-right-blue-lg.svg');
+
+      opacity: 0;
+      right: 0;
+      width: 0;
+      top: 16px;
+
+      @include media-breakpoint-up(sm) {
+        background-position: -100px 0;
+      }
+    }
+
+    &--active {
+      &:after {
+        background-image: url('../trineo/assets/images/arrow-right-blue-lg.svg');
+        background-position: -100px 0;
+        opacity: 1;
+        right: -240px;
+        width: 221px;
+        top: 16px;
+      }
+    }
+
+
+    &:hover {
+      color: $theme-primary-color;
+
+      &:after {
+        background-image: url('../trineo/assets/images/arrow-right-blue-lg.svg');
+        opacity: 1;
+        top: 16px;
+        background-position: -100px 0;
+
+        @include media-breakpoint-up(sm) {
+          background-position: 0 0;
+        }
+      }
+
+      &:before {
+        left: -5px;
+        right: auto;
+        width: calc(100% + 10px);
+      }
+
+      span {
+        transform: translateX(0);
+      }
+    }
+  }
+
+
+  &--basic {
+    width: 45px;
+  }
+
+  &--no-arrow {
+    text-indent: 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--transparent--external {
+    background: transparent;
+    color: $theme-primary-color;
+    padding: $button-padding 50px $button-padding 0;
+    letter-spacing: 0;
+    margin-top: 5px;
+
+    &:visited{
+      color: $theme-primary-color ;
+    }
+
+
+    &:after {
+      background-image: url('../trineo/assets/images/external-link.svg');
+      height: 17px;
+      top: 15px;
+    }
+
+    &:hover {
+      color: $theme-primary-color;
+      background: transparent;
+
+      &:after {
+        background-image: url('../trineo/assets/images/external-link2.svg');
+        height: 19px;
+        top: 13px;
+      }
+
+    }
+
+  }
+
+
+}
+
+input[type="submit"]{
+  position: relative;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  background: rgb(53,158,215);
+  background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+  letter-spacing: 0px;
+  text-decoration: none;
+  @include font-size(16px);
+  @include line-height(18px);
+  padding: 20px 30px 20px 30px;
+  margin-top: 20px;
+  display: inline-flex;
+  font-family: 'Montserrat';
+
+
+  &:hover {
+    background: rgb(53,158,215);
+    background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    &:after {
+      background-image: url('../trineo/assets/images/search.svg');
+      background-position: 3px 0;
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    background-image: url('../trineo/assets/images/search.svg');
+    background-repeat: no-repeat;
+    background-position: 2px 0;
+    background-size: contain;
+    content: '';
+    width: $arrow-width;
+    height: 16px;
+    opacity: 1;
+    top: 15px;
+    right: 0px;
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+  }
+
+
+}
+
+.button-arrow{
+  background: $theme-green2;
+  border-radius: 50%;
+  padding:10px 20px;
+  position: relative;
+  border: 1px solid $theme-green2;
+
+  &:after {
+    background-image: url('../trineo/assets/images/arrow-right-white.svg');
+    background-repeat: no-repeat;
+    background-position: -3px 0;
+    background-size: contain;
+    content: '';
+    width: 23px;
+    height: 16px;
+    opacity: 1;
+    top: 15px;
+    right: 7px;
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &:hover{
+    background: white;
+    &:after {
+      background-image: url('../trineo/assets/images/arrow-right-green1.svg');
+      opacity: 1;
+      top:16px;
+    }
+  }
+}
+
+
+
+
+

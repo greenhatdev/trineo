@@ -1,0 +1,19 @@
+@import "../../../../../node_modules/bootstrap/scss/bootstrap";
+
+@import 'variables/theme';
+
+@import 'utils/functions';
+@import 'utils/mixins';
+
+@import 'components/global';
+@import 'components/nav';
+@import 'components/layout';
+@import 'components/fonts';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/home';
+@import 'components/buttons';
+//@import 'components/grid';
+//@import 'components/blog';
+//@import 'components/accordion';
+//@import 'components/forms';

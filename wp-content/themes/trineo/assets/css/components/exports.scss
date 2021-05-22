@@ -1,0 +1,64 @@
+.export-features{
+  width:100%;
+}
+
+  .export-features th,.export-features td{
+    white-space: normal;
+    padding: 20px;
+    word-break: keep-all;
+    border-top: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+    border-left: 0px solid #767676;
+    border-right: 0px solid #767676;
+    font-family: 'Montserrat', sans-serif;
+    @include font-size(27px);
+    @include line-height(33px);
+    font-weight: 300;
+  }
+
+  .export-features th:first-of-type{
+    width:30%;
+    padding:0px 30px;
+  }
+.export-features th:first-of-type img{
+  height:80px;
+}
+
+.export-features td:nth-of-type(2){
+ text-align: right;
+}
+
+.export-features th:last-of-type,.export-features td:last-of-type{
+  width:30%;
+  border-left: 1px solid #767676;
+}
+
+
+.export-features img{
+  width:auto;
+  height:25px;
+}
+
+.export-legend{
+  width: auto;
+  display: inline-block;
+}
+
+.export-legend td{
+  border:0px;
+  white-space: normal;
+  padding: 20px;
+  word-break: keep-all;
+  font-family: 'Montserrat', sans-serif;
+  @include font-size(27px);
+  @include line-height(33px);
+  font-weight: 300;
+}
+
+.export-legend img{
+  width:auto;
+  height:18px;
+}
+.accordion__subcontent h2{
+  padding:20px;
+}

@@ -1,0 +1,100 @@
+.accordion {
+
+}
+
+.accordion__side-heading {
+  margin-top: 23px;
+}
+
+.accordion__subcontent {
+  display: none;
+  padding: 20px;
+  position: relative;
+  //top: -25px;
+}
+
+.accordion-trigger {
+  position: relative;
+  padding: 0 45px 0 0px;
+  margin: 0;
+  cursor: pointer;
+  width:100%;
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 25px 0 0px;
+  }
+
+
+  &:after {
+    content: '';
+    background-image: url('./assets/images/chevron-right-blue.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 22px;
+    top: 58%;
+    display: block;
+    position: absolute;
+
+    transform: translateY(-50%) rotate(90deg);
+    right: 0;
+    transition: all ease-in-out 0.3s;
+
+    @include media-breakpoint-up(md) {
+      width: 12px;
+      height: 22px;
+      top: 58%;
+    }
+  }
+}
+
+
+.accordion__item {
+  //border-bottom: 1px solid $theme-grey;
+
+  &.is-expanded {
+    .accordion-trigger {
+
+      &:after {
+        transform: rotate(-90deg);
+        top: 0%;
+      }
+    }
+  }
+}
+
+.accordion__link {
+  text-align: right;
+  margin: 0;
+
+  .button {
+    left: -48px;
+  }
+}
+
+.accordion__sub-heading {
+  @include font-size(18px);
+  font-style: italic;
+}
+
+.accordion__heading{
+  background-color: $theme-background-color;
+  padding: 20px;
+  font-family: 'Montserrat-Medium';
+  font-weight: bold;
+}
+
+.accordion__item:first-of-type{
+   .accordion__heading {
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+   }
+ }
+
+.accordion__item:last-of-type{
+  .accordion__heading {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
