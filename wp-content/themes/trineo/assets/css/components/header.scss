@@ -524,8 +524,7 @@ header .col-xs-9 {
 
 #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item:last-of-type>a.mega-menu-link{
 
-  background: rgb(53,158,215);
-  background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+  background: $theme-secondary-color;
   color: white !important;
   padding: 20px 21px;
   height: auto !important;
@@ -537,63 +536,41 @@ header .col-xs-9 {
   cursor: pointer;
   letter-spacing: 0px;
   text-decoration: none;
-  @include font-size(16px);
+  @include font-size(15px);
   @include line-height(18px);
-  padding: $button-padding 40px $button-padding 25px;
+  padding: $button-padding 25px $button-padding 25px;
   //margin-top: 20px;
   display: inline-flex;
-  font-family: 'Montserrat';
+  font-family: 'Poppins-Semibold';
+  border: 1px solid $theme-secondary-color !important;
 
-  &:after {
-    background-image: url('../ghcardlink/assets/images/chevron-right.svg') !important;
-    background-repeat: no-repeat;
-    background-position: 2px 0;
-    background-size: contain;
-    content: '';
-    width: $arrow-width;
-    height: 16px;
-    opacity: 1;
-    top: 15px;
-    right: 12px;
-    position: absolute;
-    transition: all ease-in-out 0.3s;
-    content: "";
-    display: inline-block !important;
-    cursor: pointer;
-  }
+
 
   &:hover {
-    background: rgb(97,47,121) !important;
-    background: linear-gradient(90deg, rgba(97,47,121,1) 0%, rgba(29,9,96,1) 100%) !important;
+    background: white !important;
     text-decoration: none;
-    color: #fff;
+    color: $theme-secondary-color !important;
     cursor: pointer;
-    border-bottom: 5px  solid white !important;
+    //border-bottom: 5px  solid white !important;
   }
 
   &:hover {
     &:after {
-      background-image: url('../ghcardlink/assets/images/arrow-right.svg') !important;
-      background-position: 0px 0;
-      opacity: 1;
+      //background-image: url('../ghcardlink/assets/images/arrow-right.svg') !important;
+      //background-position: 0px 0;
+      //opacity: 1;
     }
 
   }
 }
 
 #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item.mega-current_page_item:last-of-type>a.mega-menu-link{
-  background: rgb(97,47,121) !important;
-  background: linear-gradient(90deg, rgba(97,47,121,1) 0%, rgba(29,9,96,1) 100%) !important;
+  background: $theme-secondary-color !important;
   text-decoration: none;
   color: #fff;
   cursor: pointer;
   border-bottom: 5px  solid white !important;
 
-  &:after {
-    background-image: url('../ghcardlink/assets/images/arrow-right.svg') !important;
-    background-position: 0px 0;
-    opacity: 1;
-  }
 }
 
 .sticky {

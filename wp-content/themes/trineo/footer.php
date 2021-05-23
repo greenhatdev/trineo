@@ -3,7 +3,7 @@
         <div class="container container-lg">
 
             <div class="row align-left">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="nav-folderized">
                         <div class="nav">
                             <?php if (is_active_sidebar('footer_sidebar-1')) : ?>

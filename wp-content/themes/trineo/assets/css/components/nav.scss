@@ -21,9 +21,9 @@ div#mega-menu-wrap-main-menu {
 }
 
 #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item > a.mega-menu-link{
-  color: $theme-black !important;
-  font-size: 16px !important;
-  font-family:'Montserrat-Medium' !important;
+  color: $theme-primary-color !important;
+  font-size: 15px !important;
+  font-family:'Poppins-Semibold' !important;
   padding:0px;
   height: 100%;
   line-height: 61px;
@@ -39,7 +39,7 @@ div#mega-menu-wrap-main-menu {
 #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link{
   background: transparent !important;
   //color: $theme-light-blue !important;
-  //border-bottom: 5px solid $theme-light-blue !important;
+  border-bottom: 5px solid rgba(144,99,205,.3) !important;
 
 }
 
