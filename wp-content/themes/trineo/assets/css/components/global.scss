@@ -58,7 +58,7 @@ h2, .h2 {
     content: '';
     display:block;
     height:10px;
-    width:110%;
+    width:101%;
     border-bottom: 2px solid $theme-primary-color2;
   }
 }
@@ -881,10 +881,10 @@ Image Grid
 .col-icon-text{
   .image-background{
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: center center;
     background-size: contain;
     height: 65px;
-    //margin-left: 10px;
+   max-width: 150px;
     margin-bottom: 15px;
 
   }
@@ -924,6 +924,7 @@ Image Grid
   margin-left: 20px;
   -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+  height: calc(100% - 20px);
 
   .single-case-study-image{
     height: 300px;
@@ -942,7 +943,7 @@ Image Grid
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
-      //margin-bottom: 15px;
+      margin-bottom: 15px;
       height: 40px;
     }
 
@@ -1031,6 +1032,7 @@ Image Grid
   border-top-right-radius: 20px;
   background:$theme-background-color;
   padding:0px !important;
+  height: 100%;
 
   .single-insight-image{
     height: 270px;
@@ -1405,5 +1407,16 @@ ul {
 .inline-50{
  display:inline-block;
   width: 49%;
+}
+
+.equal,
+.owl-carousel.owl-drag .owl-item{
+  flex: 1 !important;
+}
+
+.owl-carousel .owl-stage{
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
 }
 

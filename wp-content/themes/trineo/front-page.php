@@ -94,9 +94,9 @@ $section3_heading = $section_3['section3_heading'];
                 </div>
             </div>
             <div class="col-md-8 padding-lg-bottom">
-                <div class="row vertically-middle wow fadeIn new-effect">
+                <div class="row vertically-middle wow fadeIn new-effect align-center">
                     <?php
-                    $args = array('post_type' => 'clients', 'posts_per_page' => -1, 'order' => "desc");
+                    $args = array('post_type' => 'clients', 'posts_per_page' => -1, 'order' => "asc");
                     $loop = new WP_Query($args);
                     $clientIndex = 0;
                     while ($loop->have_posts()) : $loop->the_post();
@@ -190,7 +190,7 @@ $section6_heading = $section_6['section_6_heading'];
                 <div><span  class="h2 primary-color"><?php echo $section6_heading; ?></span> <a href="/insights" class="button button--transparent margin-md-left">View all</a></div>
             </div>
         </div>
-        <div class="row  wow fadeIn new-effect margin-md-top">
+        <div class="row  wow fadeIn new-effect margin-md-top ">
                     <?php
                     $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "asc",);
                     $loop = new WP_Query($args);
@@ -198,7 +198,7 @@ $section6_heading = $section_6['section_6_heading'];
                         $title = get_the_title();
                         $permalink = get_the_permalink();
                         ?>
-                        <div class="col-md-4">
+                        <div class="col-md-4 equal">
                             <?php
                             get_template_part('partials/single-insight', get_post_format());
                             ?>

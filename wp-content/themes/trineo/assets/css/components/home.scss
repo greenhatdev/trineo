@@ -177,9 +177,9 @@
     background-position: center center;
     background-size: contain;
     height: 65px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-
+    margin: auto;
+    margin-bottom: 15px !important;
+    max-width: 120px;
   }
 
 }
@@ -281,6 +281,7 @@
     @include line-height(45px);
     color: white;
     text-transform: uppercase;
+    font-weight: bold;
   }
 }
 

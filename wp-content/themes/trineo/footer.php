@@ -18,9 +18,9 @@
                     <div class="nav-folderized">
                         <div class="nav">
                             <?php if (is_active_sidebar('footer_sidebar-2')) : ?>
-
+                            <ul id="footer2">
                                 <?php dynamic_sidebar('footer_sidebar-2'); ?>
-
+                            </ul>
                             <?php endif; ?>
                         </div>
                     </div>

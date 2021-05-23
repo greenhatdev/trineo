@@ -10,7 +10,7 @@
         ?>
         <div class="single-insight-image background-image-cover" style="background-image: url('<?php echo $image; ?>')">
         </div>
-        <div class="single-insight-content margin-lg-bottom">
+        <div class="single-insight-content ">
             <div class="category"><?php echo $cats[0]->name; ?></div>
             <div class="title"><?php echo $pageHeading; ?></div>
             <div class="button-arrow-div inline-50">
