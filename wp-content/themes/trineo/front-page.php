@@ -125,12 +125,11 @@ $section4_video = $section_4['section4_video'];
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
             <div class="col-md-6 padding-lg-bottom">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="
-                    <?php echo $section4_video; ?>" allowfullscreen></iframe>
+                <div class="videoWrapper">
+                    <iframe width="560" height="349" src="<?php echo $section4_video; ?>?rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 padding-left-100">
                 <div class="h4 "><?php echo $section_4_heading; ?></div>
                 <p><?php echo $section_4['section4_text']; ?></p>
                 <div>
