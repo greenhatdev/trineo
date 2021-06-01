@@ -5,7 +5,7 @@ add_action('wp_enqueue_scripts', 'enqueue_parent_styles');
 function enqueue_parent_styles()
 {
     wp_enqueue_style('parent-style', '/wp-content/themes/twentynineteen/style.css');
-    wp_enqueue_style('', '/wp-content/themes/trineo/styles.css?v2');
+    wp_enqueue_style('', '/wp-content/themes/trineo/styles.css');
     wp_enqueue_style('owl-carousel', get_stylesheet_directory_uri() . '/assets/css/vendor/owl.carousel.min.css');
     wp_enqueue_style('owl-carousel-theme', get_stylesheet_directory_uri() . '/assets/css/vendor/owl.theme.default.min.css');
 //    wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/assets/css/vendor/animate.css');
@@ -89,6 +89,32 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
+
+if (function_exists('acf_add_options_page')) {
+
+    acf_add_options_page(array(
+        'page_title' => 'Theme General Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Header Settings',
+        'menu_title' => 'Header',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Footer Settings',
+        'menu_title' => 'Footer',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
+}
+
+
 function create_clients() {
     register_post_type('clients', array(
             'labels' => array(
@@ -159,24 +185,24 @@ function create_case_study_cat_taxonomy() {
     );
 }
 
-//function create_products() {
-//    register_post_type('product', array(
-//            'labels' => array(
-//                'name' => __('Products'),
-//                'singular_name' => __('Product'),
-//                'menu_name' => __('Products')
-//            ),
-//            'show_in_nav_menus' => 'true',
-//            'menu_icon' => 'dashicons-exerpt-view',
-//            'public' => true,
-//            'has_archive' => true,
-//            'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
-//            'rewrite' => array('slug' => 'product', 'with_front' => false),
-//        )
-//    );
-//}
-//
-//add_action('init', 'create_products');
+function create_solutions() {
+    register_post_type('solutions', array(
+            'labels' => array(
+                'name' => __('Solutions'),
+                'singular_name' => __('Solution'),
+                'menu_name' => __('Solutions')
+            ),
+            'show_in_nav_menus' => 'true',
+            'menu_icon' => 'dashicons-exerpt-view',
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
+            'rewrite' => array('slug' => 'solution', 'with_front' => false),
+        )
+    );
+}
+
+add_action('init', 'create_solutions');
 //
 //add_action( 'init', 'create_product_type_taxonomy' );
 //

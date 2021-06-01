@@ -1,7 +1,28 @@
+<?php
+$footer_cta_block = get_field('footer_cta_block','option');
+$cta_text = $footer_cta_block['cta_text'];
+$cta_link = $footer_cta_block['cta_link'];
+if(!is_front_page() && !is_page_template('insights.php') && !is_single('post') && !is_page_template('page-contact-us.php')){
+    ?>
+    <section class="section cta_block padding-md-top padding-md-bottom">
+        <div class="container">
+            <div class="row vertically-middle wow fadeIn new-effect">
+                <div class="col-md-12 align-center">
+                    <div class="h3  margin-sm-bottom primary-color "><?php echo $footer_cta_block['heading']; ?></div>
+                    <?php if ($cta_text) { ?>
+                        <div>
+                            <a href="/<?php echo $cta_link; ?>"
+                               class="button"><?php echo $cta_text; ?></a>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+    </section>
+<?php  } ?>
+
 <section class="section footer-main">
     <footer class="footer-section">
         <div class="container container-lg">
-
             <div class="row align-left">
                 <div class="col-md-3">
                     <div class="nav-folderized">

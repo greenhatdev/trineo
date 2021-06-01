@@ -7,17 +7,17 @@ $arrow-width: 42px;
   border-radius: 40px;
   color: #fff;
   cursor: pointer;
-  background: rgb(53,158,215);
-  background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+  background: $theme-secondary-color;
+  padding: 15px 40px;
+  height: auto !important;
   letter-spacing: 0px;
   text-decoration: none;
   @include font-size(15px);
   @include line-height(18px);
-  padding: $button-padding 40px;
   margin-top: 20px;
   display: inline-flex;
   font-family: 'Poppins-Semibold';
-  text-transform: uppercase;
+  border: 1px solid $theme-secondary-color !important;
 
   span {
     position: relative;
@@ -25,10 +25,9 @@ $arrow-width: 42px;
   }
 
   &:hover {
-    background: rgb(53,158,215);
-    background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
+    background: white;
     text-decoration: none;
-    color: #fff;
+    color: $theme-secondary-color;
     cursor: pointer;
   }
 
@@ -83,7 +82,7 @@ $arrow-width: 42px;
     text-transform: uppercase;
     position: relative;
     display: inline-flex;
-
+    border: 0px solid white !important;
 
     &:after {
       content: '';
@@ -107,6 +106,7 @@ $arrow-width: 42px;
     &:hover {
       color: $theme-green3;
       background: transparent;
+      border: 0px solid white;
 
 
       &:after {

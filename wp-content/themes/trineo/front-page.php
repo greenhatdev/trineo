@@ -147,6 +147,7 @@ $section5_heading = $section_5['section5_heading'];
 $repeater = $section_5['columns'];
 
 ?>
+<div class="bg1">
 <section class="section section-5 padding-xl-top padding-md-bottom purple-background">
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
@@ -182,7 +183,7 @@ $repeater = $section_5['columns'];
 $section_6 = get_field('section_6');
 $section6_heading = $section_6['section_6_heading'];
 ?>
-<section class="section section-8 padding-xl-top padding-xl-bottom ">
+<section class="section section-8 padding-xl-top ">
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
             <div class="col-md-12 padding-lg-bottom">
@@ -210,14 +211,16 @@ $section6_heading = $section_6['section_6_heading'];
     </div>
     </div>
 </section>
+</div>
+<div class="bg2">
 <?php
 $section_7 = get_field('section_7');
 $section7_heading = $section_7['section7_heading'];
 $section7_text = $section_7['section7_text'];
 ?>
-<section class="section section-7 padding-md-top ">
+<section class="section section-7 padding-xl-top ">
     <div class="container">
-        <div class="row vertically-middle wow fadeIn new-effect ">
+        <div class="row vertically-middle wow fadeIn new-effect padding-lg-top  ">
             <div class="col-md-4 padding-lg-bottom">
                 <div class="h2 primary-color"><?php echo $section7_heading; ?></div>
                 <p><?php echo $section7_text; ?></p>
@@ -250,5 +253,5 @@ $section7_text = $section_7['section7_text'];
         </div>
     </div>
 </section>
-
+</div>
 <?php get_footer(); ?>
