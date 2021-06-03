@@ -51,10 +51,13 @@
 
         if( get_row_layout() == 'navigation_menu' )
             get_template_part('partials/navigation_menu', 'navigation_menu');
-//
-//        if( get_row_layout() == 'full_width_text_cta' )
-//            get_template_part('partials/full_width_text_cta', 'full_width_text_cta');
-//
+
+        if( get_row_layout() == 'partner_logos' )
+            get_template_part('partials/partner_logos', 'partner_logos');
+
+        if( get_row_layout() == 'insights_section' )
+            get_template_part('partials/insights_section', 'insights_section');
+
 //        if( get_row_layout() == 'testimonial' )
 //            get_template_part('partials/testimonial', 'testimonial');
 //

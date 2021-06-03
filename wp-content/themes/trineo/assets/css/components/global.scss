@@ -1570,3 +1570,19 @@ background-color: rgba(247,246,250,0.9);
   }
 
 }
+
+
+.partner-logos-heading{
+  font-family: 'Poppins-Bold', sans-serif;
+  @include font-size(25px);
+  @include line-height(30px);
+  color: $theme-primary-color;
+}
+
+.partner-logo{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-bottom: 15px;
+  height: 40px;
+}

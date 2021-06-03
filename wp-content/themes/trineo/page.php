@@ -23,6 +23,9 @@ if (have_rows('post_page_builder')):
     wp_reset_postdata();
 endif;
 ?>
+<?php  if($light_purple_background){ ?>
+    <div class="bg1">
+<?php } ?>
 <section class="page-header <?php if($light_purple_background){echo 'light-purple-background';}else { echo 'purple-background';} ?>">
     <div class="basic-heading vertically-middle header-menu-padding">
 
@@ -47,6 +50,9 @@ endif;
         </div>
     </div>
 </section>
+        <?php  if($light_purple_background){ ?>
+    </div>
+<?php } ?>
 <?php get_template_part('templates/post-page-builder', 'post-page-builder'); ?>
 
 <?php
