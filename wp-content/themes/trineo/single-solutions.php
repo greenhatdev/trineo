@@ -11,7 +11,7 @@ $icon = get_the_post_thumbnail_url(get_the_ID(), 'full');
     <div class="basic-heading vertically-middle header-menu-padding container">
         <div class="row vertically-middle ">
             <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect" data-wow-delay="0.0s">
-                <div class="padding-left-col-1 padding-right-col-1 max-width-750px">
+                <div class=" padding-right-col-1 max-width-750px">
                     <div class="h5 green-text">OUR SOLUTIONS</div>
                     <div class="row vertically-middle">
                         <div class="col-md-2">

@@ -28,7 +28,7 @@ endif;
 
         <div class="row vertically-middle ">
             <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
-                <div class="padding-left-col-1 padding-right-col-1 max-width-750px">
+                <div class=" padding-right-col-1 max-width-750px">
                     <?php if ($subheading) { ?>
                         <div class="h5 green-text uppercase"><?php echo $subheading; ?></div>
                     <?php } ?>

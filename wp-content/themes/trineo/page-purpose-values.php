@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Our humans
+ * Template Name: Purpose and values
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -68,72 +68,106 @@ endif;
     </div>
 </section>
 <?php
-$text = get_field('leadership_text');
-$image = get_field('leadership_image');
+$text = get_field('vision_text');
+$image = get_field('vision_image');
 ?>
+</div>
+    <div class="bg2">
 <section class="padding-xl-top">
     <div class="container ">
         <div class="row margin-md-top vertically-middle">
             <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
-                <div class="h5 primary-color uppercase">Our Leadership</div>
+                <div class="h5 primary-color uppercase">Our Vision</div>
                 <div class="h3 left-border primary-color"><?php echo $text; ?></div>
             </div>
-
             <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
                 <img class="rounded-edges" src="<?php echo $image; ?>"/>
             </div>
         </div>
     </div>
 </section>
-</div>
-</div>
-<section class="section meet-the-team padding-xl-top  padding-lg-bottom">
+        <?php
+        $values = get_field('values');
+        $repeater = $values['value'];
+        ?>
+<section class="section padding-xl-top  padding-lg-bottom">
     <div class="container">
-        <div class="team-members">
-            <div class="row">
-                <?php
-                $postarg1 = array('post_type' => 'team-members', 'post_status' => 'publish', 'order' => "asc");
-                $team = new WP_Query($postarg1);
-                $index = 0.5;
-                if ($team->have_posts()) :
-                    while ($team->have_posts()) : $team->the_post();
-                        $index = $index + 0.2;
-                        ?>
-                        <div class="col-lg-3 team-member margin-md-bottom wow fadeInUp"
-                             data-wow-delay="<?php echo $index; ?>s">
-                            <div class="team-member-image">
-                                <?php the_post_thumbnail('large'); ?>
-                            </div>
-                            <div class="content">
-                                <div class="team-name h4 primary-color"><?php the_title(); ?></div>
-                                <div class="team-position "><?php echo get_field("position"); ?></div>
-                                <p><?php echo get_field("bio"); ?></p>
-                                <div class="linkedin"><a href="<?php echo get_field("linkedin_profile_link"); ?>"><img
-                                                src="<?php echo get_site_url(); ?>/wp-content/themes/trineo/assets/images/linkedin.svg"/></a>
+        <div class="row vertically-middle wow fadeIn new-effect">
+            <div class="col-md-12 padding-sm-bottom">
+                <div class="h3 primary-color">Our Values</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="scene">
+                    <div id="left-zone">
+                        <ul class="list">
+                            <?php
+                            $index = 0;
+                            foreach ($repeater as $row) {
+                                $index++;
+                            ?>
+                            <li class="item">
+                                <input type="radio" id="radio_The garden <?php echo $row['title']; ?> <?php echo $row['text']; ?>" name="basic_carousel" value="" checked="checked"/>
+                                <label class="label_value<?php echo $index; ?> green-text" for="radio_The garden <?php echo $row['title']; ?> <?php echo $row['text']; ?>"><?php echo $row['title']; ?></label>
+                                <div class="content content_value<?php echo $index; ?>">
+                                    <div class="row vertically-middle">
+                                        <div class="col-md-6">
+                                            <div class="h4"><?php echo $row['title']; ?></div>
+                                            <p><?php echo $row['text']; ?></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img class="rounded-edges" src="<?php echo $row['image']; ?>"/>
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
-                        </div>
-                    <?php
-                    endwhile;
-                    wp_reset_postdata();
-                endif;
-                ?>
+                            </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <div id="middle-border"></div>
+                    <div id="right-zone"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    </div>
+<?php
+$impact = get_field('impact');
+?>
+<section class="padding-xl-top">
+    <div class="container ">
+        <div class="row margin-md-top vertically-middle">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+                <div class="h5 green-text uppercase">Our Impact</div>
+                <div class="h3 primary-color margin-md-bottom"><?php echo $impact['heading']; ?></div>
+                <p><?php echo $impact['text']; ?></p>
+                <div>
+                    <a href="/<?php echo $join_the_team['cta_link']; ?>"
+                       class="button button--secondary"><?php echo $impact['cta_text']; ?></a>
+                </div>
+            </div>
+
+            <div class="col-md-6 margin-lg-bottom">
+                <img class="rounded-edges" src="<?php echo $impact['image']; ?>"/>
             </div>
         </div>
     </div>
 </section>
 
-<?php
-$blog_heading = get_field('blog_heading');
-?>
 <section class="section padding-lg-top ">
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
             <div class="col-md-12 padding-sm-bottom">
-                <div class="h3 primary-color"><?php echo $blog_heading; ?> <a href="/insights" class="button button--transparent margin-md-left">View all</a></div>
+                <div class="h3 primary-color">You may also like <a href="/insights" class="button button--transparent margin-md-left">View all</a></div>
             </div>
         </div>
-        <div class="row  wow fadeIn new-effect margin-md-top ">
+        <div class="row  wow fadeIn new-effect margin-md-top padding-lg-bottom border-bottom">
             <?php
             $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "asc",);
             $loop = new WP_Query($args);
@@ -141,7 +175,7 @@ $blog_heading = get_field('blog_heading');
                 $title = get_the_title();
                 $permalink = get_the_permalink();
                 ?>
-                <div class="col-md-4 equal">
+                <div class="col-md-4 equal padding-md-bottom">
                     <?php
                     get_template_part('partials/single-insight', get_post_format());
                     ?>
@@ -153,27 +187,7 @@ $blog_heading = get_field('blog_heading');
         </div>
     </div>
 </section>
-<?php
-$join_the_team = get_field('join_the_team');
-?>
-<section class="padding-xl-top">
-    <div class="container ">
-        <div class="row margin-md-top vertically-middle border-bottom">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
-                <div class="h3 primary-color margin-md-bottom"><?php echo $join_the_team['heading']; ?></div>
-                <p><?php echo $join_the_team['text']; ?></p>
-                <div>
-                    <a href="/<?php echo $join_the_team['cta_link']; ?>"
-                       class="button button--secondary"><?php echo $join_the_team['cta_text']; ?></a>
-                </div>
-            </div>
 
-            <div class="col-md-6 margin-lg-bottom">
-                <img class="rounded-edges" src="<?php echo $join_the_team['image']; ?>"/>
-            </div>
-        </div>
-    </div>
-</section>
 <?php
 get_footer();
 ?>
