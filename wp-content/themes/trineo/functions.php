@@ -310,6 +310,24 @@ add_action('init', 'create_solutions');
 //}
 //
 
+function create_team() {
+    register_post_type('team-members', array(
+            'labels' => array(
+                'name' => __('Team Members'),
+                'singular_name' => __('Team Member'),
+                'menu_name' => __('Team Members')
+            ),
+            'show_in_nav_menus' => 'true',
+            'menu_icon' => 'dashicons-id-alt',
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
+            'rewrite' => array('slug' => 'team-members', 'with_front' => false),
+        )
+    );
+}
+
+add_action('init', 'create_team');
 
 function wpdocs_custom_excerpt_length( $length ) {
     return 12;

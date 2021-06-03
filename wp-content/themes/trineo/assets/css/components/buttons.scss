@@ -71,7 +71,22 @@ $arrow-width: 42px;
     }
   }
 
+  &--secondary{
+    border: 1px solid $theme-green2 !important;
+    background-color: white;
+    color: $theme-green2;
 
+    &:hover {
+      background: $theme-green2;
+      color: #fff;
+    }
+
+
+    &:visited{
+      color: $theme-green2;
+    }
+
+  }
 
   &--transparent {
     background: transparent;
@@ -198,6 +213,8 @@ $arrow-width: 42px;
         color: $theme-secondary-color ;
       }
     }
+
+
 
 
   }

@@ -304,7 +304,13 @@ width:100%;
 .white-text{
   color: white !important;
 }
+.green-text{
+  color: $theme-green2 !important;
+}
 
+.uppercase{
+  text-transform: uppercase;
+}
 .section-subheading {
   font-family: 'Byrd-SemiBold', sans-serif;
   @include font-size(25px);
@@ -1091,11 +1097,15 @@ Image Grid
  }
 
 .rounded-edge-bottom-left{
-  border-bottom-left-radius: 70px;
+  border-bottom-left-radius: 20px;
 }
 
 .rounded-edge-top-left{
-  border-top-left-radius: 70px;
+  border-top-left-radius: 20px;
+}
+
+.rounded-edge-top-right{
+  border-top-right-radius: 20px;
 }
 
 .rounded-edges-left{
@@ -1531,4 +1541,32 @@ background-color: rgba(247,246,250,0.9);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom left;
+}
+
+
+.team-member{
+
+  .team-member-image{
+    img{
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .team-position{
+    font-family: 'Poppins-Medium', sans-serif;
+    @include font-size(20px);
+    @include line-height(40px);
+    color: $theme-primary-color;
+  }
+
+  .h4{
+    margin-bottom:0px;
+  }
+
+  .linkedin{
+    width: 30px;
+    height: auto;
+  }
+
 }
