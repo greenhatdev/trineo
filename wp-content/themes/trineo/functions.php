@@ -133,26 +133,26 @@ function create_clients() {
 }
 
 add_action('init', 'create_clients');
-//
-//function create_testimonials() {
-//    register_post_type('testimonials', array(
-//            'labels' => array(
-//                'name' => __('Testimonials'),
-//                'singular_name' => __('Testimonial'),
-//                'menu_name' => __('Testimonials')
-//            ),
-//            'show_in_nav_menus' => 'true',
-//            'menu_icon' => 'dashicons-exerpt-view',
-//            'public' => true,
-//            'has_archive' => false,
-//            'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
-//            'rewrite' => array('slug' => 'testimonial', 'with_front' => false),
-//        )
-//    );
-//}
-//
-//add_action('init', 'create_testimonials');
-//
+
+function create_testimonials() {
+    register_post_type('testimonials', array(
+            'labels' => array(
+                'name' => __('Testimonials'),
+                'singular_name' => __('Testimonial'),
+                'menu_name' => __('Testimonials')
+            ),
+            'show_in_nav_menus' => 'true',
+            'menu_icon' => 'dashicons-exerpt-view',
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
+            'rewrite' => array('slug' => 'testimonial', 'with_front' => false),
+        )
+    );
+}
+
+add_action('init', 'create_testimonials');
+
 function create_case_studies() {
     register_post_type('case-studies', array(
             'labels' => array(

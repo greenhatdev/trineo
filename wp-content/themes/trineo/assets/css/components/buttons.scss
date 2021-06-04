@@ -138,10 +138,11 @@ $arrow-width: 42px;
 
 
     &--prev {
-      padding: $button-padding 0 $button-padding 35px;
+      padding: $button-padding 0 $button-padding 8px;
       //filter: grayscale(1);
       font-weight:normal !important;
       font-size: 13px;
+      text-transform: none;
 
       &:after {
         display: none;
@@ -149,13 +150,14 @@ $arrow-width: 42px;
 
       &:before {
         content: '';
-        background-image: url('../trineo/assets/images/arrow-right-green1.svg');
-        transform: rotate(180deg);
-        background-position: 24px 0;
+        background-repeat: no-repeat;
+        background-image: url('../trineo/assets/images/chevron-left-green.svg');
+
+        background-position: 1px 4px;
         opacity: 1;
         left: 5px;
-        width: 44px;
-        top: 9px;
+        width: 10px;
+        top: 16px;
         //filter: grayscale(1);
       }
 
@@ -163,7 +165,7 @@ $arrow-width: 42px;
         color: $theme-green2;
 
         &:before {
-          background-image: url('../trineo/assets/images/arrow-right-green2.svg');
+          background-image: url('../trineo/assets/images/chevron-left-green.svg');
           transform: rotate(180deg);
           //filter: grayscale(1);
           left: 0px;
@@ -227,25 +229,27 @@ $arrow-width: 42px;
     text-decoration: none;
     @include font-size(16px);
     @include line-height(18px);
+    border: 0px solid white !important;
     margin-top: 20px;
     display: inline-flex;
-    font-family: 'Montserrat';
+    font-family: 'Poppins-Semibold';
     font-weight: normal;
     background: transparent;
-    color: $theme-green1;
+    color: $theme-green2;
     letter-spacing: 0;
     margin-top:5px;
     text-align: center;
-      border: 1px solid $theme-green1;
-      padding:14px 20px 14px 20px;
+      padding:14px 10px;
 
     &:after{
       background-image: none;
+
     }
 
     &:hover, &:focus{
-      background: linear-gradient(90deg, rgba(53,158,215,1) 0%, rgba(13,54,145,1) 100%);
-      color: white;
+     text-decoration: underline;
+      color: $theme-green2;
+      background: white !important;
 
       &:after{
         background-image: none;

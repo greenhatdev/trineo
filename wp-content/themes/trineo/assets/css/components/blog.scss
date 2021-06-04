@@ -150,17 +150,42 @@ $blog-spacing: $theme-lg-padding;
     text-transform: uppercase;
     margin-bottom: 1rem;
   }
+
+
 }
 
 .blog-header__title {
   padding-bottom: 15px;
+  color: $theme-primary-color;
+  text-transform: none;
+  font-family: 'Byrd', sans-serif;
+  @include font-size(45px);
+  @include line-height(50px);
+  font-weight: bold;
 
   @include media-breakpoint-up(lg) {
     //padding: 0 90px 0 90px;
-    @include font-size(40px);
-    @include line-height(45px);
+    @include font-size(60px);
+    @include line-height(69px);
+
     //max-width:950px;
   }
+
+  p{
+    color: $theme-black;
+    font-family: 'Poppins', sans-serif;
+    @include font-size(16px);
+    @include line-height(23px);
+    font-weight: normal;
+  }
+}
+
+.category{
+  @include font-size(14px);
+  @include line-height(23px);
+  font-family: 'Poppins-Semibold';
+  text-transform: uppercase;
+  margin-bottom:15px;
 }
 
 .blog-header__image {
@@ -210,11 +235,15 @@ $blog-spacing: $theme-lg-padding;
   }
   
   .share-text{
-    font-size: 14px;
-    line-height: 30px;
     position: relative;
     margin-left: 0px;
-    top: 7px;
+    top: 3px;
+    font-family: 'Poppins', sans-serif;
+    @include font-size(16px);
+    @include line-height(23px);
+    color: $theme-black;
+    font-weight: normal;
+
     @include media-breakpoint-up(sm) {
       //margin-left: 7px;
     }
@@ -292,7 +321,7 @@ $blog-spacing: $theme-lg-padding;
   }
 
    h2, h3, h1{
-    font-family: 'Museo-Sans-700', sans-serif;
+    //font-family: 'Museo-Sans-700', sans-serif;
     @include font-size(20px);
     @include line-height(28px);
     margin-bottom:$theme-sm-margin;
@@ -312,15 +341,15 @@ $blog-spacing: $theme-lg-padding;
 }
 
 .blog-main__back {
-  display: flex;
-  justify-content: center;
-  font-weight: 600;
-  margin: 30px 0 $blog-spacing 0;
-
-
-  @include media-breakpoint-up(lg) {
-    position: absolute;
-  }
+  //display: flex;
+  //justify-content: center;
+  //font-weight: 600;
+  //margin: 30px 0 $blog-spacing 0;
+  //
+  //
+  //@include media-breakpoint-up(lg) {
+  //  position: absolute;
+  //}
 }
 
 .blog-navigation {
@@ -435,7 +464,7 @@ $blog-spacing: $theme-lg-padding;
     }
 
     a:hover {
-      color: $theme-charcoal;
+      //color: $theme-charcoal;
     }
   }
 
