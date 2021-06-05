@@ -167,7 +167,7 @@ $logo = get_field("logo");
             <div class="container">
                 <div class="row vertically-middle wow fadeIn new-effect padding-lg-top  ">
                     <div class="col-md-4 padding-lg-bottom">
-                        <div class="h2 primary-color">Related case studies</div>
+                        <div class="h2 primary-color">Explore our case studies</div>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
                         <div>
                             <a href="/case-studies" class="button button--transparent">View all</a></div>

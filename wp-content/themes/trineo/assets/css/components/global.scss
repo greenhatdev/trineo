@@ -1613,3 +1613,33 @@ background-color: rgba(247,246,250,0.9);
 .single-case-studies{
   background: $theme-background-color;
 }
+
+.pff-filters-label{
+  color: $theme-primary-color;
+  @include font-size(16px);
+  @include line-height(23px);
+  font-family: 'Poppins-Semibold', sans-serif;
+
+  div{
+    margin-top:8px;
+  }
+}
+
+.clearFilters{
+  font-family: 'Poppins',sans-serif;
+  font-size: 13px !important;
+  padding: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.active-filter-item {
+  font-family: 'Poppins',sans-serif;
+  font-size: 13px !important;
+  background: #fff;
+  padding: 5px 10px 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
