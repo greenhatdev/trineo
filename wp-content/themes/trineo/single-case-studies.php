@@ -63,15 +63,15 @@ $logo = get_field("logo");
         <section class="section blog-main">
             <div class="container no-padding">
                 <div class="row no-gutters">
-                    <div class="col-md-2">
+                    <div class="col-md-3 padding-md-top">
                         <div class="logo">
                             <div class="image-background" style="background-image: url(<?php echo $logo; ?>)"></div>
                         </div>
                         <div class="h6 primary-color"><?php echo get_field('company_details'); ?></div>
                     </div>
-                    <div class="col-md-8 padding-xl-top">
-                        <div class="blog-main__content padding-xl-top padding-lg-bottom  ">
-                            <div class="h5"><strong><?php the_content(); ?></strong></div>
+                    <div class="col-md-6">
+                        <div class="blog-main__content padding-lg-bottom  ">
+                            <div class=""><?php the_content(); ?></div>
                         </div>
                         <div class="blog-main__content  padding-md-bottom">
                             <div class="case-study-section-title">The challenge</div>
@@ -109,6 +109,8 @@ $logo = get_field("logo");
 
                     </div>
                 </div>
+                    <div class="col-md-3">
+                    </div>
             </div>
         </section>
 

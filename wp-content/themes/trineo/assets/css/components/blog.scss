@@ -303,7 +303,7 @@ $blog-spacing: $theme-lg-padding;
 .blog-main__content {
   p {
     margin-bottom: $theme-md-margin;
-    @include line-height(34px);
+    @include line-height(23px);
   }
 
   blockquote {
