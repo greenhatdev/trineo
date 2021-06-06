@@ -61,7 +61,55 @@ jQuery(document).ready(function() {
         }
     })
 
+    jQuery('.testimonials-owl-carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        dots: true,
+        margin: 20,
+        navText: [
+            '<i class="owl-carousel-prev" aria-hidden="true"></i>',
+            '<i class="owl-carousel-next" aria-hidden="true"></i>'
+        ],
+        navContainer: '.testimonials-carousel .custom-nav2',
+        responsive: {
+            0: {
+                items: 1,
+                dots: true,
+            },
+            769: {
+                items: 1,
 
+            },
+            1000: {
+                items: 1,
+            }
+        }
+    })
+
+    jQuery('.image-owl-carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        dots: true,
+        margin: 20,
+        navText: [
+            '<i class="owl-carousel-prev" aria-hidden="true"></i>',
+            '<i class="owl-carousel-next" aria-hidden="true"></i>'
+        ],
+        navContainer: '.image-carousel .custom-nav3',
+        responsive: {
+            0: {
+                items: 1,
+                dots: true,
+            },
+            769: {
+                items: 3,
+
+            },
+            1000: {
+                items: 4,
+            }
+        }
+    })
 
         var focused = jQuery('input:first'); //this is just to have a starting point
         jQuery('button').on('click', function () {

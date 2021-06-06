@@ -6,7 +6,7 @@ $textAlignLeftCol = get_sub_field('text_alignment_left');
 $textAlignRightCol = get_sub_field('text_alignment_right');
 $layoutColumns = get_sub_field('layout');
 
-if($layoutColumns) {
+if ($layoutColumns) {
     switch ($layoutColumns) {
         case '75-25':
             $layoutColumn1 = "col-md-9";
@@ -38,23 +38,24 @@ $custom_class = get_sub_field('custom_class');
 
 ?>
 
-<section class="post margin-lg-bottom" <?php if($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor;?>"<?php } ?>>
-    <div class="container <?php if($hasTopMargin) { ?>padding-lg-top<?php } ?>">
-        <div class="row">
-            <div class="col-md-12">
-        <div class="<?php echo $custom_class; ?>">
-
-            <div class="row margin-md-top">
-            <div class="<?php echo $layoutColumn1 ?> has-margin-bottom-lg margin-md-bottom" style="text-align: <?php echo $textAlignLeftCol ?>">
-                <?php echo get_sub_field( 'content_left' ); ?>
+<section class="post margin-lg-bottom"
+         <?php if ($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor; ?>"<?php } ?>>
+    <div class="container <?php if ($hasTopMargin) { ?>padding-lg-top<?php } ?>">
+        <!--        <div class="row">-->
+        <!--            <div class="col-md-12">-->
+        <!--        <div class="--><?php //echo $custom_class; ?><!--">-->
+        <div class="row margin-md-top">
+            <div class="<?php echo $layoutColumn1 ?> has-margin-bottom-lg margin-md-bottom"
+                 style="text-align: <?php echo $textAlignLeftCol ?>">
+                <?php echo get_sub_field('content_left'); ?>
             </div>
-
-            <div class="<?php echo $layoutColumn2 ?> has-margin-bottom-lg margin-md-bottom" style="text-align: <?php echo $textAlignRightCol ?>">
-                <?php echo get_sub_field( 'content_right' ); ?>
-            </div>
+            <div class="<?php echo $layoutColumn2 ?> has-margin-bottom-lg margin-md-bottom"
+                 style="text-align: <?php echo $textAlignRightCol ?>">
+                <?php echo get_sub_field('content_right'); ?>
             </div>
         </div>
-        </div>
-        </div>
+        <!--        </div>-->
+        <!--        </div>-->
+        <!--        </div>-->
     </div>
 </section>

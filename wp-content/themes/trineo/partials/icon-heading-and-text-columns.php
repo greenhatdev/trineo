@@ -2,6 +2,8 @@
 $section2_heading = get_sub_field('heading');
 $repeater = get_sub_field('columns');
 $limit_to_3_columns = get_sub_field('limit_to_3_columns');
+
+$remove_left_border = get_sub_field('remove_left_border');
 $light_purple_background = get_sub_field('light_purple_background');
 ?>
 <section class="section  padding-xl-top padding-lg-bottom <?php if ($light_purple_background) {
@@ -17,7 +19,7 @@ $light_purple_background = get_sub_field('light_purple_background');
             <?php
             foreach ($repeater as $row) {
                 ?>
-                <div class="<?php if($limit_to_3_columns) { echo 'col-md-4'; } else { echo 'col-md-3'; } ?> col-icon-text  margin-md-bottom left-border left-border-chevron">
+                <div class="<?php if($limit_to_3_columns) { echo 'col-md-4'; } else { echo 'col-md-3'; } ?> col-icon-text  margin-md-bottom <?php if(!$remove_left_border){ ?>left-border left-border-chevron<?php } ?> ">
                     <div class="image-background"
                          style="background-image:url('<?php echo $row['icon']; ?>')"></div>
                     <div class="col-content">

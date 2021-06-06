@@ -18,7 +18,7 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 
 select,.select2-container--default .select2-selection--single {
   word-wrap: normal;
-  width: 100%;
+  width: 100% !important;
   border-top: 0px solid white !important;
   border-left: 0px solid white !important;
   border-right: 0px solid white !important;
@@ -28,4 +28,7 @@ select,.select2-container--default .select2-selection--single {
   font-family: 'Poppins-Semibold', sans-serif;
   border-radius: 0px !important;
   border-bottom: 2px solid $theme-primary-color !important;
+}
+.select2-container{
+  width: 100% !important;
 }

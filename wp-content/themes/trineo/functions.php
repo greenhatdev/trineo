@@ -359,3 +359,4 @@ function create_media_type_taxonomy() {
         )
     );
 }
+

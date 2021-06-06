@@ -128,26 +128,6 @@
     </div>
 </section>
 
-<?php
-
-$section_10 = get_field('section_10');
-$section10_heading = 'Need simplified fleet management? Give us a call. ';
-$section10_text = 'Our team of experts can find a solution to match your fleet’s unique needs. If you aren’t sure which card is right for your fleet, get in touch for a quick chat about your options. ';
-$section10_cta_text = 'Get in touch';
-$section10_cta_link = '#';
-?>
-<section class="section section-10  padding-md-top padding-xl-bottom ">
-    <div class="container">
-        <div class="row vertically-middle wow fadeIn new-effect gradient1 rounded-edges">
-            <div class="col-md-12 padding-xl-top padding-xl-bottom align-center">
-                <div class="h2 max-width-50 margin-sm-bottom white-text  align-center"><?php echo $section10_heading; ?></div>
-                <div class="h6  max-width-50 margin-sm-bottom white-text  align-center"><?php echo $section10_text; ?></div>
-                <a href="/<?php echo $section10_cta_link; ?>"
-                   class="button"><?php echo $section10_cta_text; ?></a>
-            </div>
-
-        </div>
-</section>
 
 <script>
 

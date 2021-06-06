@@ -7,7 +7,7 @@ $logo = get_field("logo");
 <div class="blog">
 
     <?php while (have_posts()) : the_post(); ?>
-        <section class=" page-header grey-background">
+        <section class=" page-header">
             <div class="basic-heading vertically-middle header-menu-padding container">
                 <div class="row vertically-middle  padding-lg-top padding-lg-bottom">
                     <div class="col-sm-6  padding-xl-bottom wow fadeInUp new-effect "

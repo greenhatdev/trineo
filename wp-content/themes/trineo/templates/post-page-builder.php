@@ -58,11 +58,23 @@
         if( get_row_layout() == 'insights_section' )
             get_template_part('partials/insights_section', 'insights_section');
 
-//        if( get_row_layout() == 'testimonial' )
-//            get_template_part('partials/testimonial', 'testimonial');
-//
-//        if( get_row_layout() == 'masonry_grid' )
-//            get_template_part('partials/post-masonry-grid', 'masonry_grid');
+        if( get_row_layout() == 'single_testimonial' )
+            get_template_part('partials/single_testimonial', 'single_testimonial');
+
+        if( get_row_layout() == 'our_values' )
+            get_template_part('partials/our_values', 'our_values');
+
+        if( get_row_layout() == 'testimonial_slider' )
+            get_template_part('partials/testimonial_slider', 'testimonial_slider');
+
+        if( get_row_layout() == 'image_slider' )
+            get_template_part('partials/images_slider', 'image_slider');
+
+        if( get_row_layout() == 'job_openings' )
+            get_template_part('partials/job_openings', 'job_openings');
+
+        if( get_row_layout() == 'layout-25-25-25-25' )
+            get_template_part('partials/post-layout-4-columns', 'layout-25-25-25-25');
 //
 //        if( get_row_layout() == 'form_embed' )
 //            get_template_part('partials/post-form', 'form_embed');
