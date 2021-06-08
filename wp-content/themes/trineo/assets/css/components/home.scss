@@ -275,12 +275,14 @@
     color: $theme-pink;
     @include font-size(27px);
     @include line-height(35px);
+    margin-bottom:10px;
   }
 
   .solutions-heading{
     font-family: 'Byrd', sans-serif;
     @include font-size(45px);
     @include line-height(45px);
+    margin-bottom: 5px !important;
     color: white;
     text-transform: uppercase;
     font-weight: bold;

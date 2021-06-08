@@ -28,7 +28,7 @@ $banner_text = $hero_section['banner_text'];
         </div>
     </div>
 </section>
-
+<div class="bg3">
 <?php
 $section_2 = get_field('section_2');
 $section2_heading = $section_2['section2_heading'];
@@ -84,16 +84,16 @@ $repeater = $section_2['section2_columns'];
 $section_3 = get_field('section_3');
 $section3_heading = $section_3['section3_heading'];
 ?>
-<section class="section section-3 padding-xl-top padding-md-bottom">
+<section class="section section-3 padding-xl-top padding-sm-bottom">
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
-            <div class="col-md-4 padding-lg-bottom">
+            <div class="col-md-4 padding-lg-bottom padding-lg-right">
                 <div class="h3"><?php echo $section3_heading; ?></div>
                 <div>
                     <a class="button button--white" href="/partners">Explore More</a>
                 </div>
             </div>
-            <div class="col-md-8 padding-lg-bottom">
+            <div class="col-md-8 padding-md-bottom">
                 <div class="row vertically-middle wow fadeIn new-effect align-center">
                     <?php
                     $args = array('post_type' => 'clients', 'posts_per_page' => -1, 'order' => "asc");
@@ -102,7 +102,7 @@ $section3_heading = $section_3['section3_heading'];
                     while ($loop->have_posts()) : $loop->the_post();
                         $image = get_the_post_thumbnail_url();
                         ?>
-                        <div class="col-md-4 align-center single-client wow fadeIn new-effect"
+                        <div class="col-md-4 align-center padding-md-bottom padding-md-top single-client wow fadeIn new-effect"
                              data-wow-delay="0.<?php echo $clientIndex; ?>s">
                             <div class="image-background" style="background-image: url(<?php echo $image; ?>)"></div>
                         </div>
@@ -116,12 +116,13 @@ $section3_heading = $section_3['section3_heading'];
 
     </div>
 </section>
+
 <?php
 $section_4 = get_field('section_4');
 $section_4_heading = $section_4['section4_heading'];
 $section4_video = $section_4['section4_video'];
 ?>
-<section class="section section-4 padding-md-top padding-xl-bottom">
+<section class="section section-4 padding-md-top padding-xl-bottom" style="display:none">
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
             <div class="col-md-6 padding-lg-bottom">
@@ -140,6 +141,7 @@ $section4_video = $section_4['section4_video'];
 
     </div>
 </section>
+</div>
 <?php
 $section_5 = get_field('section_5');
 $section5_subheading = $section_5['section5_subheading'];
@@ -162,15 +164,16 @@ $repeater = $section_5['columns'];
                 <?php
                 foreach ($repeater as $row) {
                     ?>
-                    <div class="col-md-4 col-icon-text padding-md-bottom white-text">
+                    <div class="col-md-3 col-icon-text padding-md-bottom  white-text">
                         <div class="image-background"
-                             style="background-image:url('<?php echo $row['logo']; ?>')"></div>
+                             style="background-image:url('<?php echo $row['logo']; ?>'); height: 100px"></div>
                         <div class="margin-sm-top">
                             <p class="white-text">
                                 <?php echo $row['text']; ?>
                             </p>
                         </div>
                     </div>
+                    <div class="col-md-1"></div>
                     <?php
                 }
                 ?>

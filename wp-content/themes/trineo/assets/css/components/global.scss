@@ -156,7 +156,7 @@ a {
 }
 
 a:hover {
-  //color: $theme-primary-color;
+  color: $theme-primary-color;
   //text-decoration: none;
 }
 
@@ -1574,6 +1574,16 @@ background-color: rgba(247,246,250,0.9);
   background-position: bottom left;
 }
 
+
+.bg3{
+  background-color: white;
+  background-image: url('./assets/images/bg3.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  position: relative;
+  content: "";
+}
 
 .team-member{
 

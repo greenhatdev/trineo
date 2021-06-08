@@ -8,6 +8,7 @@ $arrow-width: 42px;
   color: #fff;
   cursor: pointer;
   background: $theme-secondary-color;
+  overflow:hidden;
   padding: 15px 40px;
   height: auto !important;
   letter-spacing: 0px;
@@ -16,19 +17,42 @@ $arrow-width: 42px;
   @include line-height(18px);
   margin-top: 20px;
   display: inline-flex;
+  text-transform: uppercase;
   font-family: 'Poppins-Semibold';
   border: 1px solid $theme-secondary-color !important;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
 
   span {
     position: relative;
     transition: all ease-in-out 0.3s;
   }
 
+  &:before{
+    content: "";
+    position: absolute;
+    border-radius: 40px;
+    background: $theme-secondary-color;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.1s ease-in;
+  }
+
   &:hover {
-    background: white;
+    background: transparent;
     text-decoration: none;
     color: $theme-secondary-color;
     cursor: pointer;
+
+    &:before{
+      top: 0;
+    }
   }
 
 
@@ -42,13 +66,18 @@ $arrow-width: 42px;
     background: white;
     color: $theme-green1 !important;
     border-radius: 40px;
-    border: 2px solid $theme-green1;
+    border: 2px solid $theme-green1 !important;
 
-
+    &:before{
+      background: $theme-green1;
+    }
     &:hover {
       color: white !important;
-      background: $theme-green1;
+      background: transparent;
 
+      &:before{
+        background: $theme-green1;
+      }
 
     }
   }
@@ -120,7 +149,7 @@ $arrow-width: 42px;
 
     &:hover {
       color: $theme-green3;
-      background: transparent;
+      background: transparent !important;
       border: 0px solid white;
 
 
@@ -128,6 +157,10 @@ $arrow-width: 42px;
         background-image: url('../trineo/assets/images/arrow-right-green2.svg');
         top: 15px;
         right: 8px;
+      }
+
+      &:before{
+        background: transparent !important;
       }
     }
 

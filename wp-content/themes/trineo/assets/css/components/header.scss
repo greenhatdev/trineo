@@ -543,15 +543,36 @@ header .col-xs-9 {
   display: inline-flex;
   font-family: 'Poppins-Semibold';
   border: 1px solid $theme-secondary-color !important;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
 
 
+  &:before{
+    content: "";
+    position: absolute;
+    border-radius: 40px;
+    background: $theme-secondary-color;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.1s ease-in;
+  }
 
   &:hover {
-    background: white !important;
+    background: transparent !important;
     text-decoration: none;
     color: $theme-secondary-color !important;
     cursor: pointer;
     //border-bottom: 5px  solid white !important;
+    &:before{
+      top: 0;
+      background: white;
+    }
   }
 
   &:hover {
@@ -569,7 +590,7 @@ header .col-xs-9 {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
-  border-bottom: 5px  solid white !important;
+  //border-bottom: 5px  solid white !important;
 
 }
 

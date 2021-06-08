@@ -6,7 +6,7 @@ $light_purple_background = get_sub_field('light_purple_background');
 $remove_bottom_margin = get_sub_field('remove_bottom_margin');
 ?>
 <section
-        class="section  padding-xl-top <?php if (!$remove_bottom_margin) { ?>margin-lg-bottom<?php } ?> <?php if ($light_purple_background) {
+        class="section  padding-xl-top <?php if (!$remove_bottom_margin) { ?>margin-md-bottom<?php } ?> <?php if ($light_purple_background) {
             echo 'light-purple-background';
         } ?>">
     <div class="container">
