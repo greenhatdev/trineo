@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area ">
 		<main id="main" class="site-main">
             <section class="purple-background">
                 <div class="basic-heading vertically-middle header-menu-padding">
@@ -34,7 +34,7 @@ get_header();
 
             <section class="">
                 <div class="container">
-            <div class="row margin-xl-top  margin-xl-bottom">
+            <div class="row margin-xl-top  padding-xl-bottom border-bottom">
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) :
