@@ -36,30 +36,46 @@ jQuery('.js-accordion-trigger').click(function (e) {
 
 jQuery(document).ready(function() {
     // new WOW().init();
+    jQuery('.home-case-study-owl-carousel').on('initialized.owl.carousel', function(event) {
+
+        jQuery( "a[href='#"+jQuery(".owl-item.active.center").find('.single-case-study-image').attr("cat")+"'" ).addClass( "active" )
+    })
+
     jQuery('.home-case-study-owl-carousel').owlCarousel({
-        loop: false,
-        nav: true,
+        loop: true,
+        nav: false,
         dots: false,
         margin: 20,
+        URLhashListener:true,
+        autoplayHoverPause:true,
+        startPosition: 'URLHash',
+        center:true,
         navText: [
             '<i class="owl-carousel-prev" aria-hidden="true"></i>',
             '<i class="owl-carousel-next" aria-hidden="true"></i>'
         ],
         navContainer: '.case-studies-carousel .custom-nav',
+        autoWidth:true,
         responsive: {
             0: {
                 items: 1,
                 dots: true,
             },
             769: {
-                items: 2,
+                items: 1,
 
             },
             1000: {
-                items: 2,
+                items: 1,
             }
         }
+    });
+
+    jQuery('.home-case-study-owl-carousel').on('translated.owl.carousel', function(event) {
+        jQuery(".case-study-urls").removeClass("active");
+        jQuery( "a[href='#"+jQuery(".owl-item.active.center").find('.single-case-study-image').attr("cat")+"'" ).addClass( "active" )
     })
+
 
     jQuery('.testimonials-owl-carousel').owlCarousel({
         loop: true,

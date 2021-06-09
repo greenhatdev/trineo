@@ -522,7 +522,7 @@ header .col-xs-9 {
   }
 }
 
-#mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item:last-of-type>a.mega-menu-link{
+#mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item.header-cta>a.mega-menu-link{
 
   background: $theme-secondary-color;
   color: white !important;
@@ -599,4 +599,8 @@ header .col-xs-9 {
   top: 0 !important;
   width: 100%;
   z-index: 10;
+}
+
+.header-search .dashicons-search{
+  font-size: 20px !important;
 }

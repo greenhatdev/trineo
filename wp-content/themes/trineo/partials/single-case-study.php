@@ -1,19 +1,20 @@
 <?php
-
+$cats = get_the_terms(get_the_ID(),'case_study_category');
+$slug = $cats[0]->slug;
 ?>
 
-<div class="item single-case-study-item">
+<div class="item single-case-study-item" data-hash="<?php echo $slug; ?>" style="width:500px">
     <div class="item-overlay">
         <?php
         $pageHeading = get_the_title();
         $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
         $excerpt = get_the_excerpt();
-        $cats = get_the_terms(get_the_ID(),'case_study_category');
+
         $logo = get_field("logo");
 
         ?>
         <div class="single-case-study-image background-image-cover"
-             style="background-image: url('<?php echo $image; ?>')">
+             style="background-image: url('<?php echo $image; ?>')" cat="<?php echo $cats[0]->slug; ?>">
         </div>
         <div class="single-case-study-content margin-lg-bottom">
             <div class="row">

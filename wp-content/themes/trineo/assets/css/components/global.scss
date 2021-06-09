@@ -687,7 +687,7 @@ position: relative;
 }
 .owl-theme {
   .custom-nav {
-    position: absolute;
+    position: relative;
     top: 20%;
     left: 0;
     right: 0;
@@ -1044,6 +1044,36 @@ Image Grid
   background: rgb(97,47,121) !important;
   background: linear-gradient(90deg, rgba(97,47,121,1) 0%, rgba(29,9,96,1) 100%) !important;
   height: auto !important
+}
+
+.home-case-study-owl-carousel{
+
+  .owl-stage{
+    margin-left: -17%;
+  }
+  .owl-item{
+    opacity:0.5;
+  }
+
+  .owl-item.active.center{
+    opacity:1 !important;
+  }
+
+}
+
+.case-study-urls{
+  @include font-size(20px);
+  @include line-height(23px);
+  font-family: 'Poppins-Semibold';
+  color: $theme-green2 !important;
+  text-transform: uppercase;
+  margin-bottom:15px;
+  margin-right:20px;
+  text-decoration: none !important;
+
+  &.active{
+    text-decoration: underline !important;
+  }
 }
 .gradient-background-left{
   div{
@@ -1757,4 +1787,40 @@ table tr td{
   vertical-align: top;
   font-family: 'Poppins';
 
+}
+
+.search__item{
+  width: 100%;
+  padding: 0px 20px;
+  a{
+    text-decoration: none;
+    padding: 20px 20px 20px 0px;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid $theme-border-color;
+    font-style: normal;
+    position: relative;
+
+    &:after {
+      content: '';
+      background-image: url('./assets/images/arrow-right-green1.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 22px;
+      top: 50%;
+      display: block;
+      position: absolute;
+
+      transform: translateY(-50%) ;
+      right: 20px;
+      transition: all ease-in-out 0.3s;
+
+      @include media-breakpoint-up(md) {
+        //width: 12px;
+        //height: 22px;
+        //top: 58%;
+      }
+    }
+  }
 }
