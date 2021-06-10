@@ -18,12 +18,13 @@ if (have_rows('post_page_builder')):
             $cta_link_only = get_sub_field('cta_link_only');
             $light_purple_background = get_sub_field('light_purple_background');
             $header_image = get_sub_field('header_image');
+            $add_wings_background= get_sub_field('add_wings_background');
         }
     endwhile;
     wp_reset_postdata();
 endif;
 ?>
-<?php  if($light_purple_background){ ?>
+<?php  if($light_purple_background || $add_wings_background){ ?>
     <div class="bg1">
 <?php } ?>
 <section class="page-header <?php if($light_purple_background){echo 'light-purple-background';}else { echo 'purple-background';} ?>">

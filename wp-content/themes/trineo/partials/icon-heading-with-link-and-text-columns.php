@@ -4,6 +4,7 @@ $repeater = get_sub_field('columns');
 $limit_to_4_columns = get_sub_field('limit_to_4_columns');
 $light_purple_background = get_sub_field('light_purple_background');
 $remove_bottom_margin = get_sub_field('remove_bottom_margin');
+$add_wings_background= get_sub_field('add_wings_background');
 ?>
 <section
         class="section  padding-xl-top <?php if (!$remove_bottom_margin) { ?>margin-md-bottom<?php } ?> <?php if ($light_purple_background) {
@@ -28,7 +29,7 @@ $remove_bottom_margin = get_sub_field('remove_bottom_margin');
                 } ?> col-icon-text padding-md-bottom">
                     <div class="image-background"
                          style="background-image:url('<?php echo $row['icon']; ?>')"></div>
-                    <div class="col-content">
+                    <div class="col-content max-width-320">
                         <div class="col-heading">
                             <?php echo $row['heading']; ?>
                         </div>
@@ -47,3 +48,7 @@ $remove_bottom_margin = get_sub_field('remove_bottom_margin');
         </div>
     </div>
 </section>
+
+<?php  if($add_wings_background){ ?>
+    </div>
+<?php } ?>

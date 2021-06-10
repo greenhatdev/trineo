@@ -71,6 +71,7 @@ h2, .h2 {
 
 
 
+
 h1:not(.site-title):before, h2:before {
   background: transparent;
   content: "";
@@ -1591,7 +1592,7 @@ background-color: rgba(247,246,250,0.9);
 
 .bg1{
    background-image: url('./assets/images/bg1.svg');
-   background-size: contain;
+   background-size: 27%;
    background-repeat: no-repeat;
    background-position: right top;
  }
@@ -1822,5 +1823,18 @@ table tr td{
         //top: 58%;
       }
     }
+  }
+}
+
+a{
+  &.no-underline{
+    text-decoration: none;
+  }
+}
+
+.max-width-80{
+
+  @include media-breakpoint-up(md) {
+    max-width: 80%;
   }
 }

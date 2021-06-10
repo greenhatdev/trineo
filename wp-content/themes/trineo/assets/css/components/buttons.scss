@@ -128,6 +128,11 @@ $arrow-width: 42px;
     display: inline-flex;
     border: 0px solid white !important;
 
+    &:before{
+      background: transparent;
+      -webkit-transition: top 0s ease-in;
+    }
+
     &:after {
       content: '';
       width: 30px;

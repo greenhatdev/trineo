@@ -22,7 +22,7 @@ $light_purple_background = get_sub_field('light_purple_background');
                 <div class="<?php if($limit_to_3_columns) { echo 'col-md-4'; } else { echo 'col-md-3'; } ?> col-icon-text  margin-md-bottom <?php if(!$remove_left_border){ ?>left-border left-border-chevron<?php } ?> ">
                     <div class="image-background"
                          style="background-image:url('<?php echo $row['icon']; ?>')"></div>
-                    <div class="col-content">
+                    <div class="col-content max-width-320">
                         <div class="col-heading h4">
                             <?php echo $row['heading']; ?>
                         </div>

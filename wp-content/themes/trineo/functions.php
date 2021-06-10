@@ -205,6 +205,27 @@ function create_solutions() {
 add_action('init', 'create_solutions');
 
 
+function create_tech_talk() {
+    register_post_type('tech-talk', array(
+            'labels' => array(
+                'name' => __('Tech Talk'),
+                'singular_name' => __('Tech Talk'),
+                'menu_name' => __('Tech Talks')
+            ),
+            'show_in_nav_menus' => 'true',
+            'menu_icon' => 'dashicons-exerpt-view',
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
+            'rewrite' => array('slug' => 'tech-talk', 'with_front' => false),
+        )
+    );
+}
+
+add_action('init', 'create_tech_talk');
+
+
+
 
 //
 //add_action( 'init', 'create_product_type_taxonomy' );

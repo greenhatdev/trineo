@@ -12,7 +12,7 @@ $icon = get_the_post_thumbnail_url(get_the_ID(), 'full');
         <div class="row vertically-middle ">
             <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect" data-wow-delay="0.0s">
                 <div class=" padding-right-col-1 max-width-750px">
-                    <div class="h5 green-text">OUR SOLUTIONS</div>
+                    <a class="h5 green-text no-underline" href="/our-solutions">OUR SOLUTIONS</a>
                     <div class="row vertically-middle">
                         <div class="col-md-2">
                             <img src="<?php echo $icon; ?>" class="single-solution-icon"/>
@@ -39,11 +39,11 @@ $section_1_intro_text = $section_1['intro_text'];
 <section class="padding-xl-top">
     <div class="container ">
         <div class="row margin-md-top">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop">
                 <div class="h3 left-border primary-color"><?php echo $section_1_quote; ?></div>
             </div>
 
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop">
                 <?php echo $section_1_intro_text ?>
             </div>
         </div>
@@ -111,6 +111,22 @@ $limit_to_3_columns = true;
             </div>
             <div class="col-md-8 padding-lg-bottom">
                 <div class="case-studies-carousel wow fadeIn new-effect" data-wow-delay="0.3s">
+                    <div class="col-md-12" style="margin-left:20px">
+                        <?php
+
+                        $terms = get_terms( array(
+                            'taxonomy' => 'case_study_category',
+                            'hide_empty' => true,
+                        ) );
+
+                        foreach($terms as $term){
+                            ?>
+                            <a class="url case-study-urls" href="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
+                            <?php
+                        }
+                        ?>
+                        <br/><br/>
+                    </div>
                     <div class="vertically-top home-case-study-owl-carousel owl-carousel  owl-theme">
                         <?php
                         $args = array('post_type' => 'case-studies', 'posts_per_page' => -1, 'order' => "asc",);

@@ -40,6 +40,9 @@
         if( get_row_layout() == 'insights_hub' )
             get_template_part('partials/insights_hub', 'insights_hub');
 
+        if( get_row_layout() == 'tech_talk_hub' )
+            get_template_part('partials/tech_talk_hub', 'tech_talk_hub');
+
         if( get_row_layout() == 'case_studies_hub' )
             get_template_part('partials/case_studies_hub', 'case_studies_hub');
 
