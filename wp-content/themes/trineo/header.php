@@ -43,7 +43,7 @@
 
             <div class="align-left tags margin-xl-top">
                 <div class="white-text margin-md-bottom">SUGGESTED AND TRENDING</div>
-                <a href="#tag1" class="search-tags">Tag 1</a>
+                <a href="/?s=tag1" class="search-tags">Tag 1</a>
             </div>
         </form>
 

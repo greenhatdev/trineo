@@ -142,16 +142,16 @@ p {
   margin-bottom: 16px;
 
   @include media-breakpoint-up(md) {
-    @include font-size(16px);
-    @include line-height(23px);
+    @include font-size(18px);
+    @include line-height(24px);
   }
 }
 
 a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-decoration: underline;
   color: $theme-primary-color2;
-  @include font-size(18px);
+  @include font-size(20px);
   @include line-height(28px);
 }
 

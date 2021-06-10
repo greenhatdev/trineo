@@ -203,6 +203,9 @@ function create_solutions() {
 }
 
 add_action('init', 'create_solutions');
+
+
+
 //
 //add_action( 'init', 'create_product_type_taxonomy' );
 //
