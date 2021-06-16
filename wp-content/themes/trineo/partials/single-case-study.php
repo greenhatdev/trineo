@@ -1,10 +1,11 @@
 <?php
 $cats = get_the_terms(get_the_ID(),'case_study_category');
 $slug = $cats[0]->slug;
+$link =  get_the_permalink();
 ?>
 
 <div class="item single-case-study-item" data-hash="<?php echo $slug; ?>" style="width:500px">
-    <div class="item-overlay">
+    <div class="item-overlay" onclick="location.href='<?php echo $link; ?>'">
         <?php
         $pageHeading = get_the_title();
         $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
@@ -27,7 +28,7 @@ $slug = $cats[0]->slug;
             <div class="title"><?php echo $pageHeading; ?></div>
             <p><?php echo $excerpt; ?></p>
             <div class="button-arrow-div inline-50">
-                <a href="<?php echo get_the_permalink(); ?>" class="button-arrow"> </a>
+                <a href="<?php echo $link; ?>" class="button-arrow"> </a>
             </div>
         </div>
     </div>

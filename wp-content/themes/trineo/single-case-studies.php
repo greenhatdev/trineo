@@ -7,6 +7,7 @@ $logo = get_field("logo");
 <div class="blog">
 
     <?php while (have_posts()) : the_post(); ?>
+    <div class="bg1">
         <section class=" page-header">
             <div class="basic-heading vertically-middle header-menu-padding container">
                 <div class="row vertically-middle  padding-lg-top padding-lg-bottom">
@@ -56,7 +57,7 @@ $logo = get_field("logo");
                 </div>
             </div>
         </section>
-
+    </div>
         <!-- END Blog Header -->
 
         <!-- START Blog Main -->
@@ -113,7 +114,39 @@ $logo = get_field("logo");
                     </div>
             </div>
         </section>
+    <?php
+    $section_5 = get_field('record_breaking_results');
+    $repeater = $section_5['columns'];
 
+    ?>
+        <section class="section section-5 padding-xl-top padding-sm-bottom purple-background">
+            <div class="container">
+                <div class="row vertically-middle wow fadeIn new-effect">
+                    <div class="col-md-12 padding-lg-bottom">
+                        <div class="h3 white-text">Record-Breaking Results</div>
+                    </div>
+                </div>
+                <div class="row vertically-middle2 wow fadeIn new-effect">
+                    <?php
+                    foreach ($repeater as $row) {
+                        ?>
+                        <div class="col-md-3 col-icon-text padding-md-bottom  white-text">
+                            <div class="image-background"
+                                 style="background-image:url('<?php echo $row['icon']; ?>'); "></div>
+                            <div class="margin-sm-top heading">
+                                <p class="white-text  ">
+                                    <?php echo $row['text']; ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <?php
+                    }
+                    ?>
+
+                </div>
+            </div>
+        </section>
     <?php endwhile;
     ?>
     <?php
@@ -123,7 +156,7 @@ $logo = get_field("logo");
         <div class="container">
             <div class="row">
                 <div class="col-md-12 margin-md-bottom">
-                    <div class="case-study-section-title">Meet the Project Team</div>
+                    <div class="h3 primary-color">Meet the Project Team</div>
                 </div>
             </div>
             <div class="team-members">

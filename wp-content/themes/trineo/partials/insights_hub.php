@@ -50,8 +50,8 @@
                         </select>
                         </select>
                     </div>
-                    <div class="col-sm-3 pff-filters-label">
-<!--                        <i class="fa fa-search quick-search-icon"></i>-->
+                    <div class="col-sm-3 pff-filters-label quicksearchicon">
+                        <i class="fa fa-search quick-search-icon"></i>
                         <input type="text" class="quicksearch" placeholder="Search articles" />
                     </div>
                 </div>
@@ -67,10 +67,11 @@
         </div>
     </div>
 </div>
+</div>
 <section class="margin-md-bottom">
     <div class="container">
         <div class="row d-flex justify-content-center  grid">
-            <div class="col-md-12">
+            <div class="col-md-12   border-bottom">
                     <?php
                     $newslist = new WP_Query( array(
                         'post_type' => 'post',
@@ -123,6 +124,7 @@
                         endwhile;
                     endif;
                     ?>
+                <br/><br/>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
 <script src="<?php echo get_site_url(); ?>/wp-content/themes/trineo/assets/js/isotope.pkgd.min.js"></script>
 <section class="margin-lg-top">
     <div class="container">
-        <div class="row d-flex justify-content-center ">
+        <div class="row d-flex justify-content-center">
             <div class="col-md-12 padding-lg-bottom padding-left-zero">
                 <div class="button-group filters-button-group">
                     <button class="button is-checked button--tags margin-sm-right" data-filter="*">Show All</button>
@@ -27,8 +27,8 @@
 </section>
 <section class="margin-md-bottom">
     <div class="container">
-        <div class="row d-flex justify-content-center  grid border-bottom">
-            <div class="col-md-12">
+        <div class="row d-flex justify-content-center  grid border-bottom ">
+            <div class="col-md-12 equal">
                 <?php
                 $newslist = new WP_Query(array(
                     'post_type' => 'case-studies',
@@ -58,7 +58,7 @@
 
                         $postURL = get_the_permalink();
                         ?>
-                        <div class="insights-element <?php echo $post_categories; ?> grid-item"
+                        <div class="insights-element <?php echo $post_categories; ?> grid-item "
                              id="<?php echo get_the_ID() ?>">
 
                             <?php

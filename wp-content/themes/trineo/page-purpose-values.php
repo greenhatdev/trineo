@@ -71,8 +71,7 @@ endif;
 $text = get_field('vision_text');
 $image = get_field('vision_image');
 ?>
-</div>
-    <div class="bg2">
+
 <section class="padding-xl-top">
     <div class="container ">
         <div class="row margin-md-top vertically-middle">
@@ -86,6 +85,8 @@ $image = get_field('vision_image');
         </div>
     </div>
 </section>
+</div>
+<div class="bg2">
         <?php
         $values = get_field('values');
         $repeater = $values['value'];
@@ -108,7 +109,7 @@ $image = get_field('vision_image');
                                 $index++;
                             ?>
                             <li class="item">
-                                <input type="radio" id="radio_The garden <?php echo $row['title']; ?> <?php echo $row['text']; ?>" name="basic_carousel" value="" checked="checked"/>
+                                <input type="radio" id="radio_The garden <?php echo $row['title']; ?> <?php echo $row['text']; ?>" name="basic_carousel" value="" <?php if($index==1){echo 'checked="checked"';} ?>/>
                                 <label class="label_value<?php echo $index; ?> green-text" for="radio_The garden <?php echo $row['title']; ?> <?php echo $row['text']; ?>"><?php echo $row['title']; ?></label>
                                 <div class="content content_value<?php echo $index; ?>">
                                     <div class="row vertically-middle">
@@ -143,8 +144,8 @@ $impact = get_field('impact');
 <section class="padding-xl-top">
     <div class="container ">
         <div class="row margin-md-top vertically-middle">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
-                <div class="h5 green-text uppercase">Our Impact</div>
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop">
+                <a class="h5 green-text uppercase no-underline" href="/our-impact/">Our Impact</a>
                 <div class="h3 primary-color margin-md-bottom"><?php echo $impact['heading']; ?></div>
                 <p><?php echo $impact['text']; ?></p>
                 <div>

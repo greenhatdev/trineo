@@ -78,6 +78,7 @@
 
         if( get_row_layout() == 'layout-25-25-25-25' )
             get_template_part('partials/post-layout-4-columns', 'layout-25-25-25-25');
+
 //
 //        if( get_row_layout() == 'form_embed' )
 //            get_template_part('partials/post-form', 'form_embed');

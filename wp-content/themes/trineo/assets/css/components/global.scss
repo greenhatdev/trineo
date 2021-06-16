@@ -12,6 +12,8 @@ body {
   @include line-height(20px);
   font-weight: normal;
   color: $theme-black;
+  word-break: normal;
+  white-space: normal;
 
   @include media-breakpoint-up(md) {
     @include font-size(16px);
@@ -141,6 +143,8 @@ p {
   @include font-size(15px);
   @include line-height(20px);
   margin-bottom: 16px;
+  word-break: normal;
+  white-space: normal;
 
   @include media-breakpoint-up(md) {
     @include font-size(18px);
@@ -915,6 +919,12 @@ Image Grid
 
   }
 
+  .heading p{
+    font-family: 'Poppins', sans-serif;
+    @include font-size(20px);
+    @include line-height(26px);
+  }
+
 
 
 }
@@ -956,6 +966,17 @@ Image Grid
   -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   height: calc(100% - 20px);
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  transition: .5s ease;
+
+
+  &:hover{
+    -webkit-transform: scale(1.05,1.05);
+    -moz-transform: scale(1.05,1.05);
+    transform: scale(1.05,1.05);
+  }
 
   .single-case-study-image{
     height: 300px;
@@ -972,7 +993,7 @@ Image Grid
 
     .image-background{
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: center right;
       background-size: contain;
       margin-bottom: 15px;
       height: 40px;
@@ -982,6 +1003,7 @@ Image Grid
 
   .single-case-study-content{
     padding: 30px 30px 0px 30px;
+    min-height: 290px;
 
   }
 
@@ -1005,7 +1027,7 @@ Image Grid
 }
 
 .single-case-studies{
-  word-break: break-all;
+  word-break: normal;
   white-space: normal;
 
   .logo {
@@ -1114,18 +1136,22 @@ Image Grid
   background:$theme-background-color;
   padding:0px !important;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 
   .single-insight-image{
     height: 270px;
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-
-
   }
 
   .single-insight-content{
     padding: 30px 30px 0px 30px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    min-height: 237px;
   }
 
   .category{
@@ -1144,6 +1170,19 @@ Image Grid
   color: $theme-primary-color;
   margin-bottom:10px;
 }
+
+  .align-top{
+    //position: absolute;
+    //top: 0px;
+    //width: 85%;
+  }
+
+  .align-bottom{
+    //position: absolute;
+    //bottom: 0px;
+    //width: 85%;
+    margin-top: auto;
+  }
 }
 
 .rounded-edges-small{
@@ -1600,9 +1639,9 @@ background-color: rgba(247,246,250,0.9);
 .bg2{
   background-color: white;
   background-image: url('./assets/images/bg2.png');
-  background-size: contain;
+  background-size: 90%;
   background-repeat: no-repeat;
-  background-position: bottom left;
+  background-position: top left;
 }
 
 
@@ -1661,6 +1700,21 @@ background-color: rgba(247,246,250,0.9);
 
 .single-case-studies{
   background: $theme-background-color;
+
+  ul {
+    list-style-image: url('../trineo/assets/images/dash.svg');
+    li{
+      font-family: 'Poppins', sans-serif;
+      @include font-size(15px);
+      @include line-height(20px);
+      margin-bottom: 16px;
+
+      @include media-breakpoint-up(md) {
+        @include font-size(18px);
+        @include line-height(24px);
+      }
+    }
+  }
 }
 
 .pff-filters-label{
@@ -1837,4 +1891,39 @@ a{
   @include media-breakpoint-up(md) {
     max-width: 80%;
   }
+}
+
+.max-width-600{
+
+  @include media-breakpoint-up(md) {
+    max-width: 600px
+  }
+}
+
+.insights-element{
+  //height: 100%;
+
+  padding-bottom: 20px;
+}
+
+.basic-heading{
+  h1{
+    text-transform: none;
+  }
+}
+
+.clickablediv{
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  transition: .5s ease;
+
+
+  &:hover{
+    -webkit-transform: scale(1.05,1.05);
+    -moz-transform: scale(1.05,1.05);
+    transform: scale(1.05,1.05);
+  }
+
+
 }

@@ -19,6 +19,7 @@ if (have_rows('post_page_builder')):
         if (get_row_layout() == 'generic_page_header') {
             $pageHeading = get_sub_field('page_title');
             $subheading = get_sub_field('subheading');
+            $subheading_link = get_sub_field('subheading_link');
             $pageDescription = get_sub_field('page_description');
             $cta_text = get_sub_field('cta_text');
             $cta_link = get_sub_field('cta_link');
@@ -42,7 +43,7 @@ endif;
             <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
                 <div class=" padding-right-col-1 max-width-750px">
                     <?php if ($subheading) { ?>
-                        <div class="h5 green-text uppercase"><?php echo $subheading; ?></div>
+                        <a class="h5 green-text uppercase" href="<?php echo $subheading_link; ?>"><?php echo $subheading; ?></a>
                     <?php } ?>
                     <h1 class="<?php if ($light_purple_background) {
                         echo 'primary-color';
@@ -159,7 +160,7 @@ $join_the_team = get_field('join_the_team');
 <section class="padding-xl-top">
     <div class="container ">
         <div class="row margin-md-top vertically-middle border-bottom">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop">
                 <div class="h3 primary-color margin-md-bottom"><?php echo $join_the_team['heading']; ?></div>
                 <p><?php echo $join_the_team['text']; ?></p>
                 <div>

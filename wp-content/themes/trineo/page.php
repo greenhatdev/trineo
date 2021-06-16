@@ -37,7 +37,7 @@ endif;
                         <div class="h5 green-text uppercase"><?php echo $subheading; ?></div>
                     <?php } ?>
                     <h1 class="<?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?>"> <?php echo $pageHeading ?></h1>
-                    <div class="page-subtitle max-width-430 <?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?>"><?php echo $pageDescription; ?></div>
+                    <div class="page-subtitle max-width-600 <?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?>"><?php echo $pageDescription; ?></div>
                     <?php if ($cta_text && $cta_link) { ?>
                         <a href="<?php echo $cta_link; ?>"
                            class="button button--transparent button--transparent-white-arrow"
@@ -51,7 +51,7 @@ endif;
         </div>
     </div>
 </section>
-        <?php  if($light_purple_background){ ?>
+        <?php  if($light_purple_background && !$add_wings_background){ ?>
     </div>
 <?php } ?>
 <?php get_template_part('templates/post-page-builder', 'post-page-builder'); ?>

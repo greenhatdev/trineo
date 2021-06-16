@@ -5,6 +5,8 @@ $limit_to_4_columns = get_sub_field('limit_to_4_columns');
 $light_purple_background = get_sub_field('light_purple_background');
 $remove_bottom_margin = get_sub_field('remove_bottom_margin');
 $add_wings_background= get_sub_field('add_wings_background');
+$add_bottom_border= get_sub_field('add_bottom_border');
+
 ?>
 <section
         class="section  padding-xl-top <?php if (!$remove_bottom_margin) { ?>margin-md-bottom<?php } ?> <?php if ($light_purple_background) {
@@ -18,7 +20,7 @@ $add_wings_background= get_sub_field('add_wings_background');
                 </div>
             </div>
         <?php } ?>
-        <div class="row  wow fadeIn new-effect align-left">
+        <div class="row  wow fadeIn new-effect align-left <?php if ($add_bottom_border) { ?>border-bottom<?php } ?>">
             <?php
             foreach ($repeater as $row) {
                 ?>

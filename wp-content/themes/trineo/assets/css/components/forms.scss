@@ -16,6 +16,24 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
   color: $theme-primary-color !important;
 }
 
+input.quicksearch::placeholder{
+  color: grey !important;
+  font-weight: normal;
+  font-family: 'Poppins', sans-serif;
+}
+
+.quicksearchicon{
+  i{
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  input{
+    padding-left: 30px;
+  }
+}
+
 select,.select2-container--default .select2-selection--single {
   word-wrap: normal;
   width: 100% !important;
