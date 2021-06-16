@@ -180,6 +180,17 @@ $blog-spacing: $theme-lg-padding;
   }
 }
 
+.blog-meta{
+  font-family: 'Poppins', sans-serif;
+  @include font-size(16px);
+  @include line-height(23px);
+  margin-bottom:10px;
+
+  strong{
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
 .category{
   @include font-size(14px);
   @include line-height(23px);

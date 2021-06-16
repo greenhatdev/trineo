@@ -67,10 +67,11 @@
         </div>
     </div>
 </div>
+</div>
 <section class="margin-md-bottom">
     <div class="container">
         <div class="row d-flex justify-content-center  grid">
-            <div class="col-md-12">
+            <div class="col-md-12 border-bottom">
                     <?php
                     $newslist = new WP_Query( array(
                         'post_type' => 'tech-talk',

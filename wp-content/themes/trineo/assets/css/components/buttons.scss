@@ -440,18 +440,18 @@ $arrow-width: 42px;
 
   &--transparent--external {
     background: transparent;
-    color: $theme-primary-color;
+    color: $theme-green2;
     padding: $button-padding 50px $button-padding 0;
     letter-spacing: 0;
     margin-top: 5px;
 
     &:visited{
-      color: $theme-primary-color ;
+      color: $theme-green2 ;
     }
 
 
     &:after {
-      background-image: url('../trineo/assets/images/external-link.svg');
+      background-image: url('../trineo/assets/images/external.svg');
       height: 17px;
       top: 15px;
     }
@@ -461,7 +461,7 @@ $arrow-width: 42px;
       background: transparent;
 
       &:after {
-        background-image: url('../trineo/assets/images/external-link2.svg');
+        background-image: url('../trineo/assets/images/external.svg');
         height: 19px;
         top: 13px;
       }

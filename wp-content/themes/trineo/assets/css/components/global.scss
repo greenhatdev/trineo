@@ -64,7 +64,7 @@ h2, .h2 {
     border-bottom: 2px solid $theme-primary-color2;
   }
 
-  .no-underline{
+  &.no-underline{
     &:after{
       border-bottom: 0px solid $theme-primary-color2;
     }

@@ -1,6 +1,7 @@
 <?php
-$testimonial = get_field('testimonial');
+$testimonial = get_sub_field('testimonial');
 ?>
+<div class="bg1">
 <section class="section padding-xl-top  padding-lg-bottom purple-background ">
     <div class="container">
             <div class="row">
@@ -10,7 +11,6 @@ $testimonial = get_field('testimonial');
 
                 if ($team->have_posts()) :
                     while ($team->have_posts()) : $team->the_post();
-
                         $quote = get_field("quote");
                         $name = get_field("name");
                         $job_title = get_field("job_title");

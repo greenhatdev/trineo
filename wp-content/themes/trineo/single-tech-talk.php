@@ -29,15 +29,18 @@ get_header();
                 </div>
             </div>
         </section>
-
+        <?php
+        $cats = get_the_category();
+        ?>
     <!-- START Blog Main -->
     <section class="section blog-main ">
             <div class="container no-padding">
         <div class="row no-gutters">
             <div class="col-md-3 padding-md-top">
-                <p>By <?php echo get_the_author(); ?><br/>
-                    On <?php echo get_the_time('M d, Y', get_the_ID()); ?></p>
-                <p><?php echo do_shortcode('[rt_reading_time label="" postfix="minutes read" postfix_singular="minute read"]'); ?></p>
+                <div class="category green-text"><?php echo $cats[0]->name; ?></div>
+                <p class="blog-meta"><span style="margin-right:20px">By</span> <strong><?php echo get_the_author(); ?></strong><br/>
+                    <span style="margin-right:18px">On</span> <strong><?php echo get_the_time('d.m.Y', get_the_ID()); ?></strong></p>
+                <p class="blog-meta"><?php echo do_shortcode('[rt_reading_time label="" postfix="minutes read" postfix_singular="minute read"]'); ?></p>
                 <div class="blog-header__social">
                         <span class="js-social-icons-cta social-icons-cta share-text">
                             Share:
