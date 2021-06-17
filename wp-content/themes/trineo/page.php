@@ -12,6 +12,7 @@ if (have_rows('post_page_builder')):
         if (get_row_layout() == 'generic_page_header') {
             $pageHeading = get_sub_field('page_title');
             $subheading = get_sub_field('subheading');
+            $subheading_link = get_sub_field('subheading_link');
             $pageDescription = get_sub_field('page_description');
             $cta_text = get_sub_field('cta_text');
             $cta_link = get_sub_field('cta_link');
@@ -25,7 +26,7 @@ if (have_rows('post_page_builder')):
 endif;
 ?>
 <?php  if($light_purple_background || $add_wings_background){ ?>
-    <div class="bg1">
+
 <?php } ?>
 <section class="page-header <?php if($light_purple_background){echo 'light-purple-background';}else { echo 'purple-background';} ?>">
     <div class="basic-heading vertically-middle header-menu-padding">
@@ -34,7 +35,7 @@ endif;
             <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
                 <div class=" padding-right-col-1 max-width-750px">
                     <?php if ($subheading) { ?>
-                        <div class="h5 green-text uppercase"><?php echo $subheading; ?></div>
+                        <a class="h5 green-text uppercase" href="<?php echo $subheading_link; ?>"><?php echo $subheading; ?></a>
                     <?php } ?>
                     <h1 class="<?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?>"> <?php echo $pageHeading ?></h1>
                     <div class="page-subtitle max-width-600 <?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?>"><?php echo $pageDescription; ?></div>
@@ -52,7 +53,7 @@ endif;
     </div>
 </section>
         <?php  if($light_purple_background && !$add_wings_background){ ?>
-    </div>
+            <div class="bg1"></div>
 <?php } ?>
 <?php get_template_part('templates/post-page-builder', 'post-page-builder'); ?>
 

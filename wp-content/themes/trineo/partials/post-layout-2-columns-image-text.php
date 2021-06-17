@@ -35,5 +35,5 @@ $add_wings_background= get_sub_field('add_wings_background');
 </section>
 
 <?php  if($add_wings_background){ ?>
-    </div>
+    <div class="bg1"></div>
 <?php } ?>

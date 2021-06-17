@@ -31,7 +31,7 @@ if (have_rows('post_page_builder')):
     wp_reset_postdata();
 endif;
 ?>
-<div class="bg1">
+
 <section class="page-header <?php if ($light_purple_background) {
     echo 'light-purple-background';
 } else {
@@ -50,7 +50,7 @@ endif;
                     } else {
                         echo 'white-text';
                     } ?>"> <?php echo $pageHeading ?></h1>
-                    <div class="page-subtitle max-width-430 <?php if ($light_purple_background) {
+                    <div class="page-subtitle max-width-600 <?php if ($light_purple_background) {
                         echo 'primary-color';
                     } else {
                         echo 'white-text';
@@ -68,6 +68,7 @@ endif;
         </div>
     </div>
 </section>
+<div class="bg1"></div>
 <?php
 $text = get_field('leadership_text');
 $image = get_field('leadership_image');
@@ -87,7 +88,7 @@ $image = get_field('leadership_image');
     </div>
 </section>
 </div>
-</div>
+
 <section class="section meet-the-team padding-xl-top  padding-lg-bottom">
     <div class="container">
         <div class="team-members">

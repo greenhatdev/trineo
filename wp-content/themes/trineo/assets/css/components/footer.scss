@@ -79,8 +79,8 @@ footer.footer-section .middle-section {
 }
 
 footer .widget-title{
-  @include font-size(14px);
-  @include line-height(23px);
+  font-size: 15px;
+  line-height: 23px;
   font-family: 'Poppins-Semibold';
   text-decoration: underline;
   color: #fff!important;
@@ -90,8 +90,8 @@ footer .widget-title{
 }
 
 footer p{
-  @include font-size(13px);
-  @include line-height(18px);
+  font-size: 13px;
+  line-height: 18px;
   //font-family: 'Poppins-Semibold';
   color: #fff!important;
   padding-bottom: 20px;
@@ -144,8 +144,8 @@ footer li {
 }
 
 footer li a {
-  @include font-size(14px);
-  @include line-height(23px);
+  font-size: 15px;
+  line-height: 23px;
   font-family: 'Poppins-Semibold';
   text-decoration: underline;
   color: #fff!important;
@@ -218,27 +218,25 @@ footer.footer-section .copyright-footer p a:hover{
 }
 
 
+.social{
+  .title{
+    display: inline-block;
+    padding-right: 10px;
+    line-height: 25px;
+    float: left;
+    font-family: 'Poppins-Semibold';
+  }
 
+}
 .social ul {
   padding: 0 0;
   margin: 0;
   list-style: none;
-}
-
-.social ul li {
   display: inline-block;
-  margin: 0 12px 0 0;
-  transition: all ease-in-out 0.3s;
-  transform: translateY(0);
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  &:before {
-    display: none;
-  }
+  width: 111px;
 }
+
+
 
 .social ul li a {
   color: $theme-black;
@@ -344,7 +342,7 @@ footer li{
     a{
       color: white !important;
       margin-top: 0px !important;
-      font-family: 'Montserrat-Medium', sans-serif !important;
+      //font-family: 'Montserrat-Medium', sans-serif !important;
       font-size: 20px !important;
       font-weight: 500;
       line-height: 24px !important;
@@ -422,17 +420,19 @@ footer{
   }
 
   .textwidget{
-    font-family: 'Montserrat-Medium', sans-serif;
+    //font-family: 'Montserrat-Medium', sans-serif;
     @include font-size(16px);
     font-weight: 300;
     @include line-height(20px);
     color: #fff !important;
 
     a:not(.button--transparent2){
-      font-family: 'Montserrat-Medium', sans-serif;
+      //font-family: 'Montserrat-Medium', sans-serif;
       color: #fff !important;
       font-weight: normal;
       display: inline-flex;
+      font-size:13px;
+      text-decoration: none;
 
     }
   }
@@ -486,4 +486,29 @@ footer{
 
 .subscribe-block{
   background: $theme-secondary-color;
+}
+
+#footer5{
+  .widget-title{
+    text-decoration: none;
+  }
+}
+
+#footer1 .social ul li {
+  display: inline-block;
+  margin: 0 5px;
+  transition: all ease-in-out 0.3s;
+  transform: translateY(0);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:before {
+    display: none;
+  }
+
+  img{
+    height: 25px !important;
+  }
 }

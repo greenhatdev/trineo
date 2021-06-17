@@ -99,6 +99,9 @@ body{
               height: 30px;
               text-align: left;
               line-height: 30px;
+              font-family: 'Poppins-Semibold', sans-serif;
+              @include font-size(20px);
+              @include line-height(23px);
 
               &:first-letter {
                 text-transform: uppercase;

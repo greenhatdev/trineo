@@ -25,6 +25,7 @@
         </div>
     </div>
 </section>
+<div class="bg1"></div>
 <section class="margin-md-bottom">
     <div class="container">
         <div class="row d-flex justify-content-center  grid border-bottom ">

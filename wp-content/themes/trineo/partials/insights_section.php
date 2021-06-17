@@ -1,4 +1,4 @@
-<section class="section padding-lg-top ">
+<section class="section padding-lg-top padding-md-bottom">
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
             <div class="col-md-12 padding-sm-bottom">

@@ -36,13 +36,13 @@
     <div id="search" class="fade">
         <a href="#" class="close-btn" id="close-search"></a>
         <form id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <input id="searchbox" type="What can we help you with?" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
+            <input id="searchbox" type="search" name="s" placeholder="What can we help you with?" value="<?php echo get_search_query(); ?>">
             <button type="submit" class="searchsubmit">
                 <i class='fa fa-search'></i>
             </button>
 
             <div class="align-left tags margin-xl-top">
-                <div class="white-text margin-md-bottom">SUGGESTED AND TRENDING</div>
+                <div class="white-text margin-md-bottom"><b>SUGGESTED AND TRENDING</b></div>
                 <a href="/?s=tag1" class="search-tags">Tag 1</a>
             </div>
         </form>
@@ -205,6 +205,7 @@
     .searchsubmit{
         background: transparent;
         font-size:25px;
+        vertical-align: middle;
     }
 
     .searchsubmit:hover{

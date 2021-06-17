@@ -4,13 +4,17 @@ $hasTopMargin = get_sub_field('has_top_margin');
 
 $textAlignLeftCol = get_sub_field('text_alignment_left');
 $textAlignRightCol = get_sub_field('text_alignment_right');
-
-
+$use_background_image = get_sub_field('use_background_image');
+$background_image = get_sub_field('background_image');
 $custom_class = get_sub_field('custom_class');
 
 ?>
-<section class="post margin-lg-bottom"
-         <?php if ($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor; ?>"<?php } ?>>
+<section class="post padding-lg-bottom <?php if ($use_background_image) {
+    echo 'section-background-image';
+} ?> "  <?php if ($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor; ?>"<?php } ?>
+    <?php if ($use_background_image) {
+        echo 'style="background-image:url(' . esc_url($background_image['url']) . ')"';
+    } ?>>
     <div class="container <?php if ($hasTopMargin) { ?>padding-lg-top<?php } ?>">
         <div class="row margin-md-top">
             <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?>"

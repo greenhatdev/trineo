@@ -6,7 +6,7 @@ $pageHeading = get_the_title();
 $icon = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
 ?>
-<div class="bg1">
+
 <section class="page-header light-purple-background">
     <div class="basic-heading vertically-middle header-menu-padding container">
         <div class="row vertically-middle ">
@@ -49,7 +49,7 @@ $section_1_intro_text = $section_1['intro_text'];
         </div>
     </div>
 </section>
-</div>
+<div class="bg1"></div>
 <?php
 $section_2 = get_field('section_2');
 $section_2_image = $section_2['left_image'];

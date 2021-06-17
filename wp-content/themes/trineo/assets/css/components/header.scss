@@ -17,6 +17,8 @@ header.main-header {
   background: #ffffff;
   padding: 0px 0px;
   height: $nav-height-static-mobile;
+  box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
 
   &.fixed-header {
     height: $nav-height-fixed;
@@ -603,4 +605,8 @@ header .col-xs-9 {
 
 .header-search .dashicons-search{
   font-size: 20px !important;
+}
+
+#mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item.header-cta.mega-current-menu-item>a.mega-menu-link{
+  color: $theme-secondary-color !important;
 }

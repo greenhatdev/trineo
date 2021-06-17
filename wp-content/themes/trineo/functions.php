@@ -5,7 +5,7 @@ add_action('wp_enqueue_scripts', 'enqueue_parent_styles');
 function enqueue_parent_styles()
 {
     wp_enqueue_style('parent-style', '/wp-content/themes/twentynineteen/style.css');
-    wp_enqueue_style('', '/wp-content/themes/trineo/styles.css?v=2.0');
+    wp_enqueue_style('', '/wp-content/themes/trineo/styles.css?v=3.0');
     wp_enqueue_style('owl-carousel', get_stylesheet_directory_uri() . '/assets/css/vendor/owl.carousel.min.css');
     wp_enqueue_style('owl-carousel-theme', get_stylesheet_directory_uri() . '/assets/css/vendor/owl.theme.default.min.css');
 //    wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/assets/css/vendor/animate.css');

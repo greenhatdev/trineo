@@ -35,10 +35,10 @@ if ($layoutColumns) {
 
 
 $custom_class = get_sub_field('custom_class');
-
+$add_wings_background= get_sub_field('add_wings_background');
 ?>
 
-<section class="post margin-lg-bottom"
+<section class="post margin-lg-bottom <?php if ($custom_class) { echo $custom_class; } ?>"
          <?php if ($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor; ?>"<?php } ?>>
     <div class="container <?php if ($hasTopMargin) { ?>padding-lg-top<?php } ?>">
         <!--        <div class="row">-->
@@ -59,3 +59,8 @@ $custom_class = get_sub_field('custom_class');
         <!--        </div>-->
     </div>
 </section>
+
+
+<?php  if($add_wings_background){ ?>
+    <div class="bg1"></div>
+<?php } ?>

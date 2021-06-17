@@ -452,18 +452,19 @@ $arrow-width: 42px;
 
     &:after {
       background-image: url('../trineo/assets/images/external.svg');
-      height: 17px;
-      top: 15px;
+      height: 14px;
+      top: 11px;
+      width: 30px;
     }
 
     &:hover {
-      color: $theme-primary-color;
+      color: $theme-green2;
       background: transparent;
 
       &:after {
         background-image: url('../trineo/assets/images/external.svg');
-        height: 19px;
-        top: 13px;
+        height: 16px;
+        top: 9px;
       }
 
     }

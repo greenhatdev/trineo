@@ -186,6 +186,7 @@ $repeater = $section_5['columns'];
 
             </div>
         </div>
+
     </section>
 
     <?php
@@ -221,6 +222,7 @@ $repeater = $section_5['columns'];
             </div>
         </div>
 </div>
+
 </section>
 </div>
 <div class="bg2">

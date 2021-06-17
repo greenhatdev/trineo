@@ -2,7 +2,7 @@
 $footer_cta_block = get_field('footer_cta_block','option');
 $cta_text = $footer_cta_block['cta_text'];
 $cta_link = $footer_cta_block['cta_link'];
-if(!is_front_page() && !is_page_template('insights.php') && !is_single('post') && !is_page_template('page-contact-us.php')){
+if(!is_front_page() && !is_page_template('insights.php') && !is_single('post') && get_the_ID()!=743){
     ?>
     <section class="section cta_block padding-md-top padding-md-bottom">
         <div class="container">

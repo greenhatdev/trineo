@@ -29,6 +29,7 @@ get_header();
                 </div>
             </div>
         </section>
+        <div class="bg1"></div>
         <?php
 
         $cats = get_the_category();

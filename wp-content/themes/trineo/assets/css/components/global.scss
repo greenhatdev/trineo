@@ -581,50 +581,6 @@ hr{
   padding:0px 20px;
 }
 
-.single-recipe{
-  //padding: 15px;
-
-    -webkit-transition: .5s ease;
-    -moz-transition: .5s ease;
-    transition: .5s ease;
-
-    &:before{
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      position: absolute;
-      background: #000;
-      border-radius: 8px;
-      background: rgba(0,0,0,0.2);
-      z-index: 2;
-      opacity: 0;
-      -moz-transition: 0.5s ease;
-      -webkit-transition: 0.5s ease;
-      transition: 0.5s ease;
-    }
-
-    &:hover{
-      -webkit-transform: scale(1.1, 1.1);
-      -moz-transform: scale(1.1, 1.1);
-      transform: scale(1.1, 1.1);
-
-      &:before {
-        opacity: 1;
-      }
-    }
-
-}
-
-.single-recipe-image{
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 350px;
-  border-radius: 8px;
-}
 
 .border-top{
   border-top: 1px solid $theme-grey;
@@ -976,6 +932,8 @@ Image Grid
     -webkit-transform: scale(1.05,1.05);
     -moz-transform: scale(1.05,1.05);
     transform: scale(1.05,1.05);
+    -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+    box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   }
 
   .single-case-study-image{
@@ -1082,6 +1040,10 @@ Image Grid
     opacity:1 !important;
   }
 
+  .owl-prev, .owl-next{
+    display: none;
+  }
+
 }
 
 .case-study-urls{
@@ -1135,7 +1097,7 @@ Image Grid
   border-top-right-radius: 20px;
   background:$theme-background-color;
   padding:0px !important;
-  height: 100%;
+  height: calc( 100% - 25px );
   display: flex;
   flex-direction: column;
 
@@ -1182,6 +1144,12 @@ Image Grid
     //bottom: 0px;
     //width: 85%;
     margin-top: auto;
+  }
+
+  &:hover{
+
+    -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+    box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   }
 }
 
@@ -1630,10 +1598,15 @@ background-color: rgba(247,246,250,0.9);
 }
 
 .bg1{
-   background-image: url('./assets/images/bg1.svg');
-   background-size: 27%;
+   background-image: url('./assets/images/bg1.png');
+   background-size: contain;
    background-repeat: no-repeat;
    background-position: right top;
+  position: absolute;
+  top: 66px;
+  right: 0;
+  width: 22%;
+  height: 100%;
  }
 
 .bg2{
@@ -1910,6 +1883,14 @@ a{
   h1{
     text-transform: none;
   }
+
+  a.h5{
+    text-decoration: none;
+
+    &:hover{
+      color: $theme-green3;
+    }
+  }
 }
 
 .clickablediv{
@@ -1927,3 +1908,18 @@ a{
 
 
 }
+
+.section-background-image{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  background-size: 60%;
+}
+
+.single-testimonial-section{
+  position: relative;
+  top:0px;
+}
+
+
+

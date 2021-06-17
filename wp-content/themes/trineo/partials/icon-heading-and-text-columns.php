@@ -5,6 +5,8 @@ $limit_to_3_columns = get_sub_field('limit_to_3_columns');
 
 $remove_left_border = get_sub_field('remove_left_border');
 $light_purple_background = get_sub_field('light_purple_background');
+
+$h3_heading = get_sub_field('h3_heading');
 ?>
 <section class="section  padding-xl-top padding-lg-bottom <?php if ($light_purple_background) {
     echo 'light-purple-background';
@@ -12,7 +14,9 @@ $light_purple_background = get_sub_field('light_purple_background');
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
             <div class="col-md-12 no-padding padding-xl-bottom">
-                <div class="section-heading"><?php echo $section2_heading; ?></div>
+                <div class="<?php if ($light_purple_background) {
+                    echo 'h3';
+                }else{ echo 'section-heading'; } ?>"><?php echo $section2_heading; ?></div>
             </div>
         </div>
         <div class="row vertically-middle2s wow fadeIn new-effect align-left">

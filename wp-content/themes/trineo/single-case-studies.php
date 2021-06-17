@@ -7,7 +7,7 @@ $logo = get_field("logo");
 <div class="blog">
 
     <?php while (have_posts()) : the_post(); ?>
-    <div class="bg1">
+
         <section class=" page-header">
             <div class="basic-heading vertically-middle header-menu-padding container">
                 <div class="row vertically-middle  padding-lg-top padding-lg-bottom">
@@ -57,7 +57,7 @@ $logo = get_field("logo");
                 </div>
             </div>
         </section>
-    </div>
+        <div class="bg1"></div>
         <!-- END Blog Header -->
 
         <!-- START Blog Main -->

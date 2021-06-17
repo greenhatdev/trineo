@@ -52,5 +52,5 @@ $add_bottom_border= get_sub_field('add_bottom_border');
 </section>
 
 <?php  if($add_wings_background){ ?>
-    </div>
+    <div class="bg1"></div>
 <?php } ?>
