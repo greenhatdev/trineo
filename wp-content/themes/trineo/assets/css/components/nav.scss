@@ -47,3 +47,44 @@ div#mega-menu-wrap-main-menu {
   background:transparent !important;
 }
 
+
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-megamenu > ul.mega-sub-menu{
+  width: 100vw;
+  padding: 30px;
+  background: white;
+
+  .button--transparent{
+    color: $theme-primary-color !important;
+
+    &:after{
+      background-image: url(../trineo/assets/images/arrow-right-purple.svg);
+    }
+
+    &:hover{
+      color: $theme-primary-color !important;
+
+      &:after{
+        background-image: url(../trineo/assets/images/arrow-right-purple.svg);
+      }
+    }
+
+  }
+
+  .col-text{
+    color: $theme-black !important;
+  }
+}
+
+.mega-sub-menu .mega-mobile-parent-nav-menu-item{
+  display:none;
+}
+
+
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 input, #mega-menu-wrap-menu-1 #mega-menu-menu-1 img{
+  height: 65px !important;
+  text-align: left;
+  margin-left: 0px !important;
+  width: auto !important;
+}
+
+

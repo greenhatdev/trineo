@@ -1,6 +1,7 @@
 <?php
 $testimonial = get_sub_field('testimonial');
 ?>
+
 <section class="section padding-xl-top  padding-lg-bottom purple-background single-testimonial-section ">
     <div class="container">
             <div class="row">
@@ -28,5 +29,5 @@ $testimonial = get_sub_field('testimonial');
                 ?>
         </div>
     </div>
-    <div class="bg1"></div>
+    <div class="bg1b"></div>
 </section>

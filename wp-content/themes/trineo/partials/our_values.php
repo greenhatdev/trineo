@@ -6,7 +6,7 @@
     <section class="section padding-xl-top  padding-lg-bottom">
         <div class="container">
             <div class="row vertically-middle wow fadeIn new-effect">
-                <div class="col-md-12 padding-sm-bottom">
+                <div class="col-md-12 ">
                     <div class="h3 primary-color">Our Values</div>
                 </div>
             </div>

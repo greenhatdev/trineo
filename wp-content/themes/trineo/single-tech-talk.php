@@ -55,10 +55,7 @@ get_header();
                                              class="js-social-icon social-icon social-icon--linkedin" target="_blank">
                             <i class="fa fa-linkedin-square"></i>
                         </a>
-                                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"
-                                            class="js-social-icon social-icon social-icon--fb" target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                        </a>
+
                         <a href="mailto:?&subject=<?php the_title(); ?>&body=<?php the_permalink(); ?>"
                            class="js-social-icon social-icon social-icon--email">
                             <i class="fa fa-envelope"></i>

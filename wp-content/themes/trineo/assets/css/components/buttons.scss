@@ -9,7 +9,7 @@ $arrow-width: 42px;
   cursor: pointer;
   background: $theme-secondary-color;
   overflow:hidden;
-  padding: 15px 40px;
+  padding: 10px 40px;
   height: auto !important;
   letter-spacing: 0px;
   text-decoration: none;
@@ -47,7 +47,7 @@ $arrow-width: 42px;
   &:hover {
     background: transparent;
     text-decoration: none;
-    color: $theme-secondary-color;
+    color: $theme-secondary-color ;
     cursor: pointer;
 
     &:before{
@@ -73,7 +73,7 @@ $arrow-width: 42px;
     }
     &:hover {
       color: white !important;
-      background: transparent;
+      background: $theme-green1;
 
       &:before{
         background: $theme-green1;
@@ -272,6 +272,12 @@ $arrow-width: 42px;
 
   }
 
+  .button--transparent.primary-color{
+    color: $theme-primary-color !important;
+    &:hover {
+      color: $theme-primary-color2 !important;
+    }
+  }
   &--tags{
     position: relative;
     border-radius: 40px;
@@ -296,6 +302,12 @@ $arrow-width: 42px;
       background-image: none;
 
     }
+
+    &:before{
+      background: transparent;
+
+    }
+
 
     &:hover, &:focus{
      text-decoration: underline;
@@ -526,7 +538,7 @@ input[type="submit"]{
 .button-arrow{
   background: $theme-green2;
   border-radius: 50%;
-  padding:10px 20px;
+  padding:10px 21px;
   position: relative;
   border: 1px solid $theme-green2;
 

@@ -5,7 +5,7 @@
 <section class="margin-lg-top">
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="col-md-12 padding-lg-bottom padding-left-zero">
+            <div class="col-md-12 padding-md-bottom padding-left-zero">
                 <div class="button-group filters-button-group">
                     <button class="button is-checked button--tags margin-sm-right" data-filter="*">Show All</button>
                     <?php
@@ -14,6 +14,17 @@
                         'hide_empty' => true,
                     ));
                     foreach ($categories as $category): ?>
+                        <button class="button button--tags margin-sm-right"
+                                data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name ?></button>
+                    <?php
+                    endforeach;
+                    ?>
+                    <?php
+                    $services = get_terms(array(
+                        'taxonomy' => 'case_study_services',
+                        'hide_empty' => true,
+                    ));
+                    foreach ($services as $category): ?>
                         <button class="button button--tags margin-sm-right"
                                 data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name ?></button>
                     <?php
@@ -45,7 +56,9 @@
                         $imgUrl = get_the_post_thumbnail_url();
                         $post_slug = get_post_field('post_name', get_the_ID());
                         $cats = array();
+                        $ser = array();
                         $cs_cat = get_the_terms(get_the_ID(), 'case_study_category');
+                        $cs_ser = get_the_terms(get_the_ID(), 'case_study_services');
 
                         foreach ($cs_cat as $c) {
                             array_push($cats, strtolower($c->slug));
@@ -57,9 +70,20 @@
                             $post_categories = "";
                         }
 
+                        foreach ($cs_ser as $c) {
+                            array_push($ser, strtolower($c->slug));
+                        }
+
+                        if (sizeOf($ser) > 0) {
+                            $post_services = implode(' ', $ser);
+                        } else {
+                            $post_services = "";
+                        }
+
+
                         $postURL = get_the_permalink();
                         ?>
-                        <div class="insights-element <?php echo $post_categories; ?> grid-item "
+                        <div class="insights-element <?php echo $post_categories; ?> <?php echo $post_services; ?> grid-item "
                              id="<?php echo get_the_ID() ?>">
 
                             <?php

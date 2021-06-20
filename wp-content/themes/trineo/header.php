@@ -143,7 +143,7 @@
 
     .search-tags{
         background: transparent;
-        color: #4AB590;;
+        color: #4AB590 !important;
         padding: 10px 50px;
         letter-spacing: 0;
         margin-top:5px;
@@ -155,7 +155,7 @@
 
     .search-tags:hover{
         background: #4AB590;
-        color: #fff;;
+        color: #fff !important;
     }
 
     @media (max-width: 996px){

@@ -20,6 +20,7 @@ if (have_rows('post_page_builder')):
             $light_purple_background = get_sub_field('light_purple_background');
             $header_image = get_sub_field('header_image');
             $add_wings_background= get_sub_field('add_wings_background');
+            $uppercase_heading = get_sub_field('uppercase_heading');
         }
     endwhile;
     wp_reset_postdata();
@@ -37,7 +38,7 @@ endif;
                     <?php if ($subheading) { ?>
                         <a class="h5 green-text uppercase" href="<?php echo $subheading_link; ?>"><?php echo $subheading; ?></a>
                     <?php } ?>
-                    <h1 class="<?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?>"> <?php echo $pageHeading ?></h1>
+                    <h1 class="<?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?> <?php if($uppercase_heading){echo 'uppercase';}  ?>"> <?php echo $pageHeading ?></h1>
                     <div class="page-subtitle max-width-600 <?php if($light_purple_background){echo 'primary-color';}else { echo 'white-text';} ?>"><?php echo $pageDescription; ?></div>
                     <?php if ($cta_text && $cta_link) { ?>
                         <a href="<?php echo $cta_link; ?>"

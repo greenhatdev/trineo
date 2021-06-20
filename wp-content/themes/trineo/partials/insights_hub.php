@@ -59,7 +59,7 @@
         </div>
     </div>
 </section>
-<div class="pff-activefilters margin-md-bottom">
+<div class="pff-activefilters ">
     <div  class="container">
         <div class="row2">
             <div class="activeFilters"></div>
@@ -68,7 +68,7 @@
     </div>
 </div>
 <div class="bg1"></div>
-<section class="margin-md-bottom">
+<section class="margin-md-bottom padding-md-top">
     <div class="container">
         <div class="row d-flex justify-content-center  grid">
             <div class="col-md-12   border-bottom">
@@ -180,7 +180,7 @@
             // options
             itemSelector: '.grid-item',
             layoutMode: 'fitRows',
-            transitionDuration: 100,
+            transitionDuration: 300,
             masonry: {
                 columnWidth: '.grid-sizer'
             },

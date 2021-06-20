@@ -61,7 +61,7 @@ h2, .h2 {
     display:block;
     height:10px;
     width:101%;
-    border-bottom: 2px solid $theme-primary-color2;
+    border-bottom: 2px solid $theme-primary-color;
   }
 
   &.no-underline{
@@ -929,11 +929,11 @@ Image Grid
 
 
   &:hover{
-    -webkit-transform: scale(1.05,1.05);
-    -moz-transform: scale(1.05,1.05);
-    transform: scale(1.05,1.05);
-    -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
-    box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+    //-webkit-transform: scale(1.02,1.02);
+    //-moz-transform: scale(1.02,1.02);
+    //transform: scale(1.02,1.02);
+    //-webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+    //box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   }
 
   .single-case-study-image{
@@ -1018,7 +1018,7 @@ Image Grid
 }
 
 .owl-carousel .owl-stage-outer {
-  width: 70vw;
+  //width: 70vw;
 }
 .owl-theme .custom-nav .owl-prev, .owl-theme .custom-nav .owl-next{
   border-radius: 50% !important;
@@ -1040,11 +1040,28 @@ Image Grid
     opacity:1 !important;
   }
 
-  .owl-prev, .owl-next{
-    display: none;
+  .owl-theme .custom-nav .owl-prev, .owl-theme .custom-nav .owl-next{
+    display: none !important;
   }
 
 }
+
+.case-studies-carousel{
+
+
+  .owl-theme .owl-nav [class*=owl-]{
+    display: none !important;
+  }
+
+  .owl-stage-outer{
+
+  }
+}
+
+.overflow-hidden{
+  overflow: hidden !important;
+}
+
 
 .case-study-urls{
   @include font-size(20px);
@@ -1598,23 +1615,30 @@ background-color: rgba(247,246,250,0.9);
 }
 
 .bg1{
-   background-image: url('./assets/images/bg1.png');
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: right top;
-  position: absolute;
-  top: 66px;
-  right: 0;
-  width: 22%;
-  height: 100%;
- }
+    background-image: url('./assets/images/bg1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right top;
+    position: absolute;
+    top: 66px;
+    right: 0;
+    width: 22%;
+    height: 100%;
+  }
+
+.bg1b{
+  background-image: url('./assets/images/bg1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
 
 .bg2{
   background-color: white;
   background-image: url('./assets/images/bg2.png');
   background-size: 90%;
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: bottom left;
 }
 
 
@@ -1623,7 +1647,7 @@ background-color: rgba(247,246,250,0.9);
   background-image: url('./assets/images/bg3.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: bottom left;
   position: relative;
   content: "";
 }
@@ -1875,13 +1899,17 @@ a{
 
 .insights-element{
   //height: 100%;
-
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .basic-heading{
   h1{
     text-transform: none;
+
+    &.uppercase{
+      text-transform: none;
+    }
   }
 
   a.h5{
@@ -1901,9 +1929,9 @@ a{
 
 
   &:hover{
-    -webkit-transform: scale(1.05,1.05);
-    -moz-transform: scale(1.05,1.05);
-    transform: scale(1.05,1.05);
+    -webkit-transform: scale(1.02,1.02);
+    -moz-transform: scale(1.02,1.02);
+    transform: scale(1.02,1.02);
   }
 
 

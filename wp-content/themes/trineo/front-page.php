@@ -43,7 +43,7 @@ $banner_text = $hero_section['banner_text'];
                             all Solutions</a></div>
                 </div>
             </div>
-            <div class="row vertically-middle wow fadeIn new-effect">
+            <div class="row vertically-middle2 wow fadeIn new-effect">
                 <?php
                 foreach ($repeater as $row) {
                     ?>
@@ -67,7 +67,7 @@ $banner_text = $hero_section['banner_text'];
                 }
                 ?>
             </div>
-            <div class="row vertically-middle wow fadeIn new-effect padding-lg-top">
+            <div class="row vertically-middle wow fadeIn new-effects">
                 <div class="col-md-12 padding-xl-bottom border-top-white  padding-lg-top">
                     <div class="pink-text small-subheading">SERVICES</div>
                     <div class="service-links">
@@ -116,34 +116,6 @@ $banner_text = $hero_section['banner_text'];
                     </div>
                 </div>
             </div>
-
-        </div>
-    </section>
-
-    <?php
-    $section_4 = get_field('section_4');
-    $section_4_heading = $section_4['section4_heading'];
-    $section4_video = $section_4['section4_video'];
-    ?>
-    <section class="section section-4 padding-md-top padding-xl-bottom" style="display:none">
-        <div class="container">
-            <div class="row vertically-middle wow fadeIn new-effect">
-                <div class="col-md-6 padding-lg-bottom">
-                    <div class="videoWrapper">
-                        <iframe width="560" height="349" src="<?php echo $section4_video; ?>?rel=0&hd=1" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-md-6 padding-left-100">
-                    <div class="h4 "><?php echo $section_4_heading; ?></div>
-                    <p><?php echo $section_4['section4_text']; ?></p>
-                    <div>
-                        <a class="button button--white"
-                           href="<?php echo $section_4['section4_cta_link']; ?>"><?php echo $section_4['section4_cta_text']; ?></a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 </div>
@@ -154,7 +126,7 @@ $section5_heading = $section_5['section5_heading'];
 $repeater = $section_5['columns'];
 
 ?>
-<div class="bg1">
+<div class="bg1b">
     <section class="section section-5 padding-xl-top padding-md-bottom purple-background">
         <div class="container">
             <div class="row vertically-middle wow fadeIn new-effect">
@@ -240,7 +212,7 @@ $repeater = $section_5['columns'];
                     <div>
                         <a href="/case-studies" class="button button--transparent">View all</a></div>
                 </div>
-                <div class="col-md-8 padding-lg-bottom">
+                <div class="col-md-8 padding-lg-bottom overflow-hidden">
                     <div class="col-md-12" style="margin-left:20px">
                         <?php
 

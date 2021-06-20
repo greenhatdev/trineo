@@ -33,10 +33,7 @@ $logo = get_field("logo");
                                              class="js-social-icon social-icon social-icon--linkedin" target="_blank">
                             <i class="fa fa-linkedin-square"></i>
                         </a>
-                                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"
-                                            class="js-social-icon social-icon social-icon--fb" target="_blank">
-                            <i class="fa fa-facebook-square"></i>
-                        </a>
+
                         <a href="mailto:?&subject=<?php the_title(); ?>&body=<?php the_permalink(); ?>"
                            class="js-social-icon social-icon social-icon--email">
                             <i class="fa fa-envelope"></i>
@@ -82,7 +79,6 @@ $logo = get_field("logo");
                             <div class="case-study-section-title">The solution</div>
                             <p><?php echo get_field('solution'); ?></p>
                         </div>
-                        <div class="blog-main__content2  padding-md-bottom">
                         <div class="blog-main__content  padding-md-bottom">
                             <div class="case-study-section-title">The result</div>
                             <p><?php echo get_field('results'); ?></p>

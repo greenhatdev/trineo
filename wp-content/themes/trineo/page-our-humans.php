@@ -45,7 +45,7 @@ endif;
                     <?php if ($subheading) { ?>
                         <a class="h5 green-text uppercase" href="<?php echo $subheading_link; ?>"><?php echo $subheading; ?></a>
                     <?php } ?>
-                    <h1 class="<?php if ($light_purple_background) {
+                    <h1 class=" <?php if ($light_purple_background) {
                         echo 'primary-color';
                     } else {
                         echo 'white-text';
@@ -101,7 +101,7 @@ $image = get_field('leadership_image');
                     while ($team->have_posts()) : $team->the_post();
                         $index = $index + 0.2;
                         ?>
-                        <div class="col-lg-3 team-member margin-md-bottom wow fadeInUp"
+                        <div class="col-lg-4 team-member margin-md-bottom wow fadeInUp"
                              data-wow-delay="<?php echo $index; ?>s">
                             <div class="team-member-image">
                                 <?php the_post_thumbnail('large'); ?>
