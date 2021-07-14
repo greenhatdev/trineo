@@ -2,29 +2,56 @@
 get_header();
 $cats = get_the_terms(get_the_ID(),'case_study_category');
 $logo = get_field("logo");
+$casestudypdf = get_field("case_study_pdf");
+$light_purple_background = true;
+if (has_post_thumbnail()) {
+    $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
+}
 ?>
 
 <div class="blog">
 
     <?php while (have_posts()) : the_post(); ?>
+        <section class="page-header <?php if($light_purple_background){echo 'light-purple-background';}else { echo 'purple-background';} ?>">
+            <div class="basic-heading vertically-middle header-menu-padding">
 
-        <section class=" page-header">
-            <div class="basic-heading vertically-middle header-menu-padding container">
-                <div class="row vertically-middle  padding-lg-top padding-lg-bottom">
-                    <div class="col-sm-6  padding-xl-bottom wow fadeInUp new-effect "
-                         data-wow-delay="0.0s">
-                        <div class=" max-width-750px">
-                            <a href="<?php bloginfo('url') ?>/case-studies/"
-                               class="blog-main__back button button--transparent button--transparent--prev margin-lg-bottom">Back to all case studies</a>
-                            <div class="blog-header__title">
-                                <div class="category primary-color">CASE STUDY: <?php echo $cats[0]->name; ?></div>
-                                <div class="blog-header__title"><?php the_title(); ?></div>
-                                <p><?php echo get_the_excerpt(); ?></p>
-                                <div class="blog-header__social">
+                <div class="row vertically-middle ">
+                    <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
+                        <div class=" padding-right-col-1 max-width-750px">
+                            <div class=" max-width-750px">
+                                <a href="<?php bloginfo('url') ?>/case-studies/"
+                                   class="blog-main__back button button--transparent button--transparent--prev margin-md-bottom">Back to all case studies</a>
+                                <div class="blog-header__title">
+                                    <div class="category primary-color">CASE STUDY: <?php echo $cats[0]->name; ?></div>
+                                    <div class="blog-header__title" style="padding-bottom:0px;"><?php the_title(); ?></div>
+                                    <a class="h5 green-text no-underline single-download" href="<?php echo $casestudypdf; ?>" download>DOWNLOAD THIS CASE STUDY</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 background-image-cover"
+                         style="background-image: url('<?php echo $image[0]; ?>'); min-height: 350px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg1"></div>
+        <!-- END Blog Header -->
+
+        <!-- START Blog Main -->
+        <section class="section blog-main">
+            <div class="container no-padding">
+                <div class="row no-gutters padding-lg-top">
+                    <div class="col-md-3 padding-lg-top">
+                        <div class="logo">
+                            <div class="image-background" style="background-image: url(<?php echo $logo; ?>)"></div>
+                        </div>
+                        <div class="blog-header__social">
                         <span class="js-social-icons-cta social-icons-cta share-text">
                             Share:
                             </span>
-                                    <span class="social-icons">
+                            <span class="social-icons">
                         <a href="https://twitter.com/home?status=<?php the_permalink(); ?>"
                            class="js-social-icon social-icon social-icon--twitter" target="_blank">
                             <i class="fa fa-twitter"></i>
@@ -39,36 +66,11 @@ $logo = get_field("logo");
                             <i class="fa fa-envelope"></i>
                         </a>
                         </span>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                    <?php
-                    if (has_post_thumbnail()) {
-                        $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-                    }
-                    ?>
-                    <div class="col-sm-6 background-image-cover rounded-edges"
-                         style="background-image: url('<?php echo $image[0]; ?>'); min-height: 350px;">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="bg1"></div>
-        <!-- END Blog Header -->
-
-        <!-- START Blog Main -->
-        <section class="section blog-main">
-            <div class="container no-padding">
-                <div class="row no-gutters">
-                    <div class="col-md-3 padding-md-top">
-                        <div class="logo">
-                            <div class="image-background" style="background-image: url(<?php echo $logo; ?>)"></div>
-                        </div>
-                        <div class="h6 primary-color"><?php echo get_field('company_details'); ?></div>
                     </div>
                     <div class="col-md-6">
-                        <div class="blog-main__content padding-lg-bottom  ">
+                        <div class="blog-main__content padding-md-bottom  ">
+                            <div class="h6 primary-color padding-sm-bottom"><?php echo get_field('company_details'); ?></div>
                             <div class=""><?php the_content(); ?></div>
                         </div>
                         <div class="blog-main__content  padding-md-bottom">
@@ -197,7 +199,7 @@ $logo = get_field("logo");
                 <div class="row vertically-middle wow fadeIn new-effect padding-lg-top  ">
                     <div class="col-md-4 padding-lg-bottom">
                         <div class="h2 primary-color">Explore our case studies</div>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                        <p>Our combined experience and hard work pioneers transformative initiatives that make a lasting impact for our customers</p>
                         <div>
                             <a href="/case-studies" class="button button--transparent">View all</a></div>
                     </div>

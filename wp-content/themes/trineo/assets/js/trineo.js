@@ -188,7 +188,32 @@ jQuery(document).ready(function() {
         }
     }
 
+    $(document).on('click', 'a.anchor', function (event) {
+        event.preventDefault();
 
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 100
+            // 100 is the sticky nav height
+        }, 500);
+    });
+
+
+});
+
+
+$(document).ready(function() {
+   $(window).scroll(function () {
+
+        console.log($(window).scrollTop());
+
+        if ($(window).scrollTop() > 350) {
+            $('.impact_navigation').addClass('navbar-fixed-top');
+        }
+
+        if ($(window).scrollTop() < 351) {
+            $('.impact_navigation').removeClass('navbar-fixed-top');
+        }
+    });
 });
 
 

@@ -6,11 +6,11 @@ $image_on_left = get_sub_field('image_on_left');
 $layoutColumn1 = "col-md-6";
 $layoutColumn2 = "col-md-6";
 $custom_class = get_sub_field('custom_class');
-
+$custom_id = get_sub_field('custom_id');
 $add_wings_background= get_sub_field('add_wings_background');
 ?>
 
-<section class="post margin-lg-bottom <?php echo $custom_class; ?>" <?php if($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor;?>"<?php } ?>>
+<section class="post margin-lg-bottom <?php echo $custom_class; ?>" <?php if($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor;?>"<?php } ?> id="<?php echo $custom_id; ?>">
     <div class="container <?php if($hasTopMargin) { ?>padding-lg-top<?php } ?>">
         <div class="row vertically-middle">
             <?php if($image_on_left){ ?>

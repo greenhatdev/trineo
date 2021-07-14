@@ -92,7 +92,7 @@ $banner_text = $hero_section['banner_text'];
                 <div class="col-md-4 padding-lg-bottom padding-lg-right">
                     <div class="h3"><?php echo $section3_heading; ?></div>
                     <div>
-                        <a class="button button--white" href="/partners">Explore More</a>
+                        <a class="button button--white" href="/why-trineo/our-partners/">Explore More</a>
                     </div>
                 </div>
                 <div class="col-md-8 padding-md-bottom">
@@ -176,7 +176,7 @@ $repeater = $section_5['columns'];
             </div>
             <div class="row  wow fadeIn new-effect margin-md-top ">
                 <?php
-                $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "asc",);
+                $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc",);
                 $loop = new WP_Query($args);
                 while ($loop->have_posts()) : $loop->the_post();
                     $title = get_the_title();

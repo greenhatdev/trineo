@@ -320,10 +320,14 @@ width:100%;
   color: $theme-green2 !important;
 }
 
+a.green-text:hover{
+  color: $theme-green3 !important;
+}
+
 .uppercase{
   text-transform: uppercase;
 }
-.section-subheading {
+.section-subhea.single-case-studiesding {
   font-family: 'Byrd-SemiBold', sans-serif;
   @include font-size(25px);
   @include line-height(25px);
@@ -567,11 +571,6 @@ hr{
 
 }
 
-.single-download{
-  background: white;
-  padding: 15px;
-  height: 100%;
-}
 
 .single-link, .single-product{
   background: white;
@@ -927,6 +926,10 @@ Image Grid
   -moz-transition: .5s ease;
   transition: .5s ease;
 
+  .item-overlay{
+    overflow: hidden;
+  }
+
 
   &:hover{
     //-webkit-transform: scale(1.02,1.02);
@@ -934,6 +937,9 @@ Image Grid
     //transform: scale(1.02,1.02);
     //-webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
     //box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+    .single-case-study-image{
+      transform: scale(1.02,1.02);
+    }
   }
 
   .single-case-study-image{
@@ -941,8 +947,9 @@ Image Grid
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-
-
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    transition: .5s ease;
   }
 
   .logo {
@@ -1000,6 +1007,10 @@ Image Grid
       height: 40px;
     }
 
+  }
+
+  .single-testimonial{
+    background: $theme-background-color !important;
   }
 
 }
@@ -1631,6 +1642,10 @@ background-color: rgba(247,246,250,0.9);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right top;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
 }
 
 .bg2{
@@ -1696,7 +1711,7 @@ background-color: rgba(247,246,250,0.9);
 }
 
 .single-case-studies{
-  background: $theme-background-color;
+  //background: $theme-background-color;
 
   ul {
     list-style-image: url('../trineo/assets/images/dash.svg');
@@ -1947,6 +1962,32 @@ a{
 .single-testimonial-section{
   position: relative;
   top:0px;
+}
+
+
+.impact_navigation{
+  background-color:$theme-grey;
+
+  ul{
+    list-style-image: none;
+    margin: 10px 0px !important;
+    padding-left: 0px;
+
+    li{
+      display: inline-block;
+      padding-right:30px;
+
+      a{
+        color: $theme-green2;
+        text-transform: uppercase;
+        font-family: 'Poppins-Semibold';
+        text-decoration: none;
+      }
+
+    }
+  }
+
+
 }
 
 

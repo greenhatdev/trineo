@@ -1,7 +1,7 @@
 <?php
 $testimonial = get_field('testimonials');
 ?>
-<section class="section padding-xl-top  padding-lg-bottom purple-background">
+<section class="section padding-xl-top  padding-lg-bottom light-purple-background">
     <div class="container">
         <div class="testimonials-carousel wow fadeIn new-effect" data-wow-delay="0.3s">
             <div class="vertically-top testimonials-owl-carousel owl-carousel  owl-theme">

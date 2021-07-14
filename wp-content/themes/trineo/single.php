@@ -1,34 +1,36 @@
 <?php
 get_header();
+if (has_post_thumbnail()) {
+    $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
+}
+$light_purple_background = true;
 ?>
 
 <div class="blog">
 
-    <?php while ( have_posts() ) : the_post(); ?>
-        <section class=" page-header">
-            <div class="basic-heading vertically-middle header-menu-padding container">
-                <div class="row vertically-middle  padding-lg-top padding-lg-bottom">
-                    <div class="col-sm-6  padding-xl-bottom wow fadeInUp new-effect "
-                         data-wow-delay="0.0s">
-                        <div class=" max-width-750px">
-                            <a href="<?php bloginfo('url') ?>/resources/insights"
-                               class="blog-main__back button button--transparent button--transparent--prev margin-lg-bottom">Back to all insights</a>
-                            <div class="blog-header__title">
-                                <div class="blog-header__title"><?php the_title(); ?></div>
+    <?php while (have_posts()) : the_post(); ?>
+        <section class="page-header <?php if($light_purple_background){echo 'light-purple-background';}else { echo 'purple-background';} ?>">
+            <div class="basic-heading vertically-middle header-menu-padding">
+
+                <div class="row vertically-middle ">
+                    <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
+                        <div class=" padding-right-col-1 max-width-750px">
+                            <div class=" max-width-750px">
+                                <a href="<?php bloginfo('url') ?>/insights/"
+                                   class="blog-main__back button button--transparent button--transparent--prev margin-md-bottom">Back to all insights</a>
+                                <div class="blog-header__title">
+                                    <div class="blog-header__title"><?php the_title(); ?></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <?php
-                    if (has_post_thumbnail()) {
-                        $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-                    }
-                    ?>
-                    <div class="col-sm-6 background-image-cover rounded-edges"
+                    <div class="col-sm-5 background-image-cover"
                          style="background-image: url('<?php echo $image[0]; ?>'); min-height: 350px;">
                     </div>
                 </div>
             </div>
         </section>
+
         <div class="bg1"></div>
         <?php
 
@@ -38,7 +40,7 @@ get_header();
     <!-- START Blog Main -->
     <section class="section blog-main ">
             <div class="container no-padding">
-        <div class="row no-gutters">
+        <div class="row no-gutters padding-lg-top">
             <div class="col-md-3 padding-md-top">
                 <div class="category green-text"><?php echo $cats[0]->name; ?></div>
                 <p class="blog-meta"><span style="margin-right:20px">By</span> <strong><?php echo get_the_author(); ?></strong><br/>
@@ -102,7 +104,7 @@ get_header();
 
                 $the_query = new WP_Query($args);
                     $post_count = 0;
-                    $total = count($posts);
+                    $total = count($the_query);
                 ?>
 
                 <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
@@ -133,4 +135,4 @@ get_header();
 
 <?php
 get_footer();
-?>
+ ?>

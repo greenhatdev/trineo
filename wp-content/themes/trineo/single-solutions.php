@@ -105,7 +105,7 @@ $limit_to_3_columns = true;
         <div class="row vertically-middle wow fadeIn new-effect padding-lg-top  ">
             <div class="col-md-4 padding-lg-bottom">
                 <div class="h2 primary-color">Related case studies</div>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+                <p>Our combined experience and hard work pioneers transformative initiatives that make a lasting impact for our customers</p>
                 <div>
                     <a href="/case-studies" class="button button--transparent">View all</a></div>
             </div>

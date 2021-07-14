@@ -1,6 +1,6 @@
-$menu-width: 350px;
-$scene-width: 1000px;
-$scene-height: 300px;
+$menu-width: 450px;
+$scene-width: 1100px;
+$scene-height: 270px;
 
 $sections: strawberry, banana, apple, orange;
 
@@ -56,7 +56,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: left;
-
     width: 100%;
     height: $scene-height;
     position: relative;
@@ -75,6 +74,7 @@ body{
       width: $menu-width;
       align-items: center;
       justify-content: left;
+      border-right: 1px solid white;
 
       .list{
         display: flex;
@@ -100,8 +100,15 @@ body{
               text-align: left;
               line-height: 30px;
               font-family: 'Poppins-Semibold', sans-serif;
-              @include font-size(20px);
+              @include font-size(18px);
               @include line-height(23px);
+              color: $theme-pink !important;
+              text-decoration: underline;
+              transition:         0.08s ease-in;
+              -o-transition:      0.08s ease-in;
+              -ms-transition:     0.08s ease-in;
+              -moz-transition:    0.08s ease-in;
+              -webkit-transition: 0.08s ease-in;
 
               &:first-letter {
                 text-transform: uppercase;
@@ -146,6 +153,8 @@ body{
               align-items: start;
               justify-content: center;
               flex-direction: column;
+              padding-left: 50px;
+
               @each $item in $sections{
                 &.content_#{$item} {
 
@@ -165,14 +174,37 @@ body{
               p {
                 max-width: 80%;
                 text-align: left;
+                color: white !important;
               }
+
+              h4{
+                color: white !important;
+              }
+
+              .image-background{
+                height: 60px;
+                background-size: contain;
+                background-position: bottom left;
+                background-repeat: no-repeat;
+                margin-bottom: 20px;
+              }
+
             }
 
             &:checked{
               & ~ label {
                 opacity: 1;
                 animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-                text-decoration: underline;
+                //text-decoration: underline;
+                padding-left: 25px;
+                background-image: url('../trineo/assets/images/right-caret-green.svg');
+                background-size: 17px 15px;
+                background-repeat: no-repeat;
+                background-position: left 1px;
+                color: $theme-green2 !important;
+                text-decoration: none;
+                @include font-size(20px);
+
 
                 @each $item in $sections{
                   &.label_#{$item} {

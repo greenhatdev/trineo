@@ -195,7 +195,7 @@ $arrow-width: 42px;
         content: '';
         background-repeat: no-repeat;
         background-image: url('../trineo/assets/images/chevron-left-green.svg');
-
+        z-index: 999;
         background-position: 1px 4px;
         opacity: 1;
         left: 5px;
@@ -563,6 +563,37 @@ input[type="submit"]{
       background-image: url('../trineo/assets/images/arrow-right-green1.svg');
       opacity: 1;
       top:16px;
+    }
+  }
+}
+
+
+.single-download{
+  padding:0px 25px 0px 0px;
+  position: relative;
+
+  &:after {
+    background-image: url('../trineo/assets/images/download.svg');
+    background-repeat: no-repeat;
+    background-position: 2px 0;
+    background-size: contain;
+    content: '';
+    width: 23px;
+    height: 16px;
+    opacity: 1;
+    top: 2px;
+    right: -8px;
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &:hover{
+    //background: white;
+
+    &:after {
+      //background-image: url('../trineo/assets/images/arrow-right-green1.svg');
+      //opacity: 1;
+      //top:16px;
     }
   }
 }

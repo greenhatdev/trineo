@@ -67,6 +67,11 @@
         if( get_row_layout() == 'our_values' )
             get_template_part('partials/our_values', 'our_values');
 
+        if( get_row_layout() == 'impact_navigation' )
+            get_template_part('partials/impact_navigation', 'impact_navigation');
+
+
+
         if( get_row_layout() == 'testimonial_slider' )
             get_template_part('partials/testimonial_slider', 'testimonial_slider');
 
