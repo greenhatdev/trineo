@@ -407,14 +407,23 @@ footer li{
 footer{
   .col-md-2{
     text-align: left;
-    margin-top: 60px;
+    margin-top: 0px;
+    flex: 0 0 50%;
+
 
     @include media-breakpoint-up(md) {
       flex: 0 0 50%;
+      margin-top: 60px;
     }
 
     @include media-breakpoint-up(lg) {
       flex: 0 0 15%;
+    }
+
+    &:last-of-type{
+      @include media-breakpoint-down(md) {
+        //flex: 0 0 100%;
+      }
     }
 
   }
@@ -434,6 +443,13 @@ footer{
       font-size:13px;
       text-decoration: none;
 
+    }
+  }
+
+  .col-md-4.align-right{
+    @include media-breakpoint-down(md) {
+      text-align: left;
+      padding-top:15px;
     }
   }
 

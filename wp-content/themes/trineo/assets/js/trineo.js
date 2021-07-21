@@ -204,7 +204,7 @@ jQuery(document).ready(function() {
 $(document).ready(function() {
    $(window).scroll(function () {
 
-        console.log($(window).scrollTop());
+        // console.log($(window).scrollTop());
 
         if ($(window).scrollTop() > 350) {
             $('.impact_navigation').addClass('navbar-fixed-top');
@@ -214,6 +214,37 @@ $(document).ready(function() {
             $('.impact_navigation').removeClass('navbar-fixed-top');
         }
     });
+
+
+});
+
+$("body").on('click', ".whr-item",function(event) {
+    var careerlink = $(this).find("a").attr("href");
+    // console.log(careerlink);
+    // document.location.href = careerlink;
+    window.open(careerlink, '_blank');
+});
+
+
+
+
+$(document).ready(function() {
+
+    // The function
+    var background_image_parallax = function ($object, multiplier) {
+        multiplier = typeof multiplier !== "undefined" ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        $object.css({ "background-attatchment": "fixed" });
+        $(window).scroll(function () {
+            var from_top = $doc.scrollTop(),
+                bg_css = "0px " + multiplier * from_top + "px";
+            $object.css({ "background-position": bg_css });
+        });
+    };
+
+    background_image_parallax($(".col-sm-5.background-image-cover"), 0.25);
+
 });
 
 

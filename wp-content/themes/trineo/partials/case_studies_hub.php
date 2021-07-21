@@ -40,7 +40,7 @@
 <section class="margin-md-bottom">
     <div class="container">
         <div class="row d-flex justify-content-center  grid border-bottom ">
-            <div class="col-md-12 equal">
+            <div class=" equal">
                 <?php
                 $newslist = new WP_Query(array(
                     'post_type' => 'case-studies',
@@ -70,8 +70,8 @@
                             $post_categories = "";
                         }
 
-                        foreach ($cs_ser as $c) {
-                            array_push($ser, strtolower($c->slug));
+                        foreach ($cs_ser as $ser2) {
+                            array_push($ser, strtolower($ser2->slug));
                         }
 
                         if (sizeOf($ser) > 0) {
@@ -83,7 +83,7 @@
 
                         $postURL = get_the_permalink();
                         ?>
-                        <div class="insights-element <?php echo $post_categories; ?> <?php echo $post_services; ?> grid-item "
+                        <div class="col-md-4 insights-element <?php echo $post_categories; ?> <?php echo $post_services; ?> grid-item "
                              id="<?php echo get_the_ID() ?>">
 
                             <?php
@@ -106,7 +106,7 @@
             // options
             itemSelector: '.grid-item',
             layoutMode: 'fitRows',
-            transitionDuration: 100,
+            transitionDuration: 300,
             masonry: {
                 columnWidth: '.grid-sizer'
             },

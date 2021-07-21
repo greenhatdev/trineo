@@ -15,28 +15,29 @@ $banner_background = $hero_section['banner_background'];
 $banner_text = $hero_section['banner_text'];
 ?>
 
-<?php include 'partials/front-page-hero-section.php' ?>
+   <?php include 'partials/front-page-hero-section.php' ?>
 
 <section id="hero-mob" class="section hero-section ms visible-md" data-anchor="hero"
->
+         >
     <div class="">
         <div class="container">
             <div class="row vertically-middle">
                 <div class="home-header col-md-12 padding-xl-top padding-xl-bottom  wow fadeInUp ">
-                    <div class="hero-heading h1">REIMAGINE POSSIBILITIES</div>
-                    <div class="hero-text align-left"><?php echo $banner_text; ?></div>
+<img src="<?php echo $banner_background; ?>" />
+                    <div class="hero-text"><?php echo $banner_text; ?></div>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-<div class="bg3" >
+<div class="bg3">
     <?php
     $section_2 = get_field('section_2');
     $section2_heading = $section_2['section2_heading'];
     $repeater = $section_2['section2_columns'];
     ?>
-    <section class="section section-2 padding-xl-top padding-md-bottom starrybg" id="section2">
+    <section class="section section-2 padding-xl-top padding-md-bottom starrybg">
         <div class="container">
             <div class="row vertically-middle wow fadeIn new-effect">
                 <div class="col-md-12 padding-lg-bottom">
@@ -179,7 +180,7 @@ $repeater = $section_5['columns'];
             <div class="row vertically-middle wow fadeIn new-effect">
                 <div class="col-md-12 padding-sm-top">
                     <div><span class="h2 primary-color"><?php echo $section6_heading; ?></span> <div class="visible-md"><br/></div><a href="/insights"
-                                                                                                                                      class="button button--transparent margin-md-left">View
+                                                                                                   class="button button--transparent margin-md-left">View
                             all</a></div>
                 </div>
             </div>
@@ -240,18 +241,18 @@ $repeater = $section_5['columns'];
                     </div>
                     <div class="case-studies-carousel wow fadeIn new-effect" data-wow-delay="0.3s">
                         <div class="vertically-top home-case-study-owl-carousel owl-carousel  owl-theme">
-                            <?php
-                            $args = array('post_type' => 'case-studies', 'posts_per_page' => -1, 'order' => "desc",);
-                            $loop = new WP_Query($args);
-                            while ($loop->have_posts()) : $loop->the_post();
-                                $title = get_the_title();
-                                $permalink = get_the_permalink();
+                                <?php
+                                $args = array('post_type' => 'case-studies', 'posts_per_page' => -1, 'order' => "desc",);
+                                $loop = new WP_Query($args);
+                                while ($loop->have_posts()) : $loop->the_post();
+                                    $title = get_the_title();
+                                    $permalink = get_the_permalink();
 
-                                get_template_part('partials/single-case-study', get_post_format());
+                                    get_template_part('partials/single-case-study', get_post_format());
 
-                            endwhile;
-                            ?>
-                            <?php wp_reset_postdata(); ?>
+                                endwhile;
+                                ?>
+                                <?php wp_reset_postdata(); ?>
                         </div>
                         <div class="owl-theme">
                             <div class="owl-controls">

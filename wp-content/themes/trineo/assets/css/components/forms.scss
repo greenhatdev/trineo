@@ -50,3 +50,15 @@ select,.select2-container--default .select2-selection--single {
 .select2-container{
   width: 100% !important;
 }
+
+
+input[type="search" i]::-webkit-search-cancel-button {
+  background-image: url('../trineo/assets/images/close.svg') !important;
+  background-size: cover;
+  appearance: none !important;
+  width: 20px;
+  height: 20px;
+}
+
+
+

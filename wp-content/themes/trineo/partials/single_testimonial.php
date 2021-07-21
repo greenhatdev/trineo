@@ -29,5 +29,5 @@ $testimonial = get_sub_field('testimonial');
                 ?>
         </div>
     </div>
-    <div class="bg1b"></div>
+    <div class="bg1c"></div>
 </section>

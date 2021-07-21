@@ -54,6 +54,7 @@ $section_1_intro_text = $section_1['intro_text'];
 $section_2 = get_field('section_2');
 $section_2_image = $section_2['left_image'];
 $section_2_text = $section_2['text'];
+if($section_2_image){
 ?>
 
 <section class="padding-md-bottom padding-lg-top">
@@ -71,6 +72,8 @@ $section_2_text = $section_2['text'];
 </section>
 
 <?php
+
+}
 $section_3 = get_field('section_3');
 $repeater = $section_3['column'];
 $limit_to_3_columns = true;
@@ -79,23 +82,18 @@ $limit_to_3_columns = true;
         class="section  padding-lg-top  padding-md-bottom">
     <div class="container">
         <div class="row  wow fadeIn new-effect align-left">
+            <div class="small-subheading margin-sm-bottom">SERVICES WE ALSO SUPPORT</div>
+            <div class="service-links">
+                <ul>
             <?php
             foreach ($repeater as $row) {
                 ?>
-                <div class="col-md-4 col-icon-text padding-md-bottom">
-                    <div class="col-content left-border max-width-320">
-                        <div class="col-heading">
-                            <?php echo $row['heading']; ?>
-                        </div>
-                        <div class="col-text">
-                            <?php echo $row['text']; ?>
-                        </div>
-
-                    </div>
-                </div>
+                <li><?php echo $row['heading']; ?></li>
                 <?php
             }
             ?>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
@@ -109,27 +107,43 @@ $limit_to_3_columns = true;
                 <div>
                     <a href="/case-studies" class="button button--transparent">View all</a></div>
             </div>
-            <div class="col-md-8 padding-lg-bottom">
+            <div class="col-md-8 ">
                 <div class="case-studies-carousel wow fadeIn new-effect" data-wow-delay="0.3s">
-                    <div class="col-md-12" style="margin-left:20px">
+                    <div class="col-md-12" >
                         <?php
+                        global $post;
+                        $post_slug = $post->post_name;
+
+                        $args = array('post_type' => 'case-studies', 'posts_per_page' => 3, 'order' => "asc",
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'case_study_services',
+                                    'field' => 'slug',
+                                    'terms' => $post_slug
+                                )
+                            ));
 
                         $terms = get_terms( array(
                             'taxonomy' => 'case_study_category',
                             'hide_empty' => true,
                         ) );
+                        $loop = new WP_Query($args);
+                        while ($loop->have_posts()) : $loop->the_post();
+                            $terms = get_the_terms( get_the_ID(), 'case_study_category' );
+                            foreach ( $terms as $term ) {
 
-                        foreach($terms as $term){
-                            ?>
-                            <a class="url case-study-urls" href="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
-                            <?php
-                        }
+                                ?>
+                                <a class="url case-study-urls" href="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
+                                <?php
+                            }
+
+                        endwhile;
+
                         ?>
                         <br/><br/>
                     </div>
                     <div class="vertically-top home-case-study-owl-carousel owl-carousel  owl-theme">
-                        <?php
-                        $args = array('post_type' => 'case-studies', 'posts_per_page' => -1, 'order' => "asc",);
+                      <?php
                         $loop = new WP_Query($args);
                         while ($loop->have_posts()) : $loop->the_post();
                             $title = get_the_title();

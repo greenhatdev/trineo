@@ -99,7 +99,7 @@ $image = get_field('vision_image');
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 hidden-md">
                 <div id="scene">
                     <div id="left-zone">
                         <ul class="list">
@@ -132,6 +132,28 @@ $image = get_field('vision_image');
                     </div>
                     <div id="middle-border"></div>
                     <div id="right-zone"></div>
+                </div>
+            </div>
+            <div class="col-md-12 visible-md">
+
+                            <?php
+                            $index = 0;
+                            foreach ($repeater as $row) {
+                                $index++;
+                                ?>
+                                <div class="row vertically-middle margin-md-top">
+                                    <div class="col-md-12">
+                                        <img src="<?php echo $row['image']; ?>" class="margin-sm-bottom" style="max-width: 60px">
+
+                                        <div class="h4 white-text"><?php echo $row['title']; ?></div>
+                                        <p class=" white-text"><?php echo $row['text']; ?></p>
+                                    </div>
+
+                                </div>
+                                <?php
+                            }
+                            ?>
+
                 </div>
             </div>
         </div>

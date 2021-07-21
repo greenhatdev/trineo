@@ -367,7 +367,7 @@ function create_team() {
 add_action('init', 'create_team');
 
 function wpdocs_custom_excerpt_length( $length ) {
-    return 12;
+    return 14;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -396,5 +396,10 @@ function create_media_type_taxonomy() {
         )
     );
 }
+
+function new_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 

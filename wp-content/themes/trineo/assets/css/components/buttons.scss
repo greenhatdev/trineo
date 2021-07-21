@@ -20,11 +20,9 @@ $arrow-width: 42px;
   text-transform: uppercase;
   font-family: 'Poppins-Semibold';
   border: 2px solid $theme-secondary-color !important;
-  transition:         0.08s ease-in;
-  -o-transition:      0.08s ease-in;
-  -ms-transition:     0.08s ease-in;
-  -moz-transition:    0.08s ease-in;
-  -webkit-transition: 0.08s ease-in;
+ transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
 
   span {
     position: relative;
@@ -32,51 +30,55 @@ $arrow-width: 42px;
   }
 
   &:before{
-    content: "";
+     background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    border-radius: 40px;
-    background: $theme-secondary-color;
-    bottom: 0;
     left: 0;
-    right: 0;
-    top: 100%;
+    top: 0;
+    transform: translate(0%, 100%) rotate(0deg);
+    transform-origin: bottom center;
+    transition: 0.2s transform ease-out;
+    will-change: transform;
     z-index: -1;
-    -webkit-transition: top 0.1s ease-in;
+
   }
 
   &:hover {
-    background: transparent;
+    background: $theme-secondary-color ;
     text-decoration: none;
     color: $theme-secondary-color ;
     cursor: pointer;
 
     &:before{
-      top: 0;
+      transform: translate(0, 0);
     }
   }
 
 
-
-
-  &:hover {
-
-  }
 
   &--white{
     background: white;
     color: $theme-green1 !important;
     border-radius: 40px;
     border: 2px solid $theme-green1 !important;
+    transition:0.2s transform ease-in-out;
 
-    &:before{
-      background: $theme-green1;
+    &::before{
+      background-color: white;
+
     }
+
+
     &:hover {
       color: white !important;
-      background: $theme-green1;
+      background: white !important;
 
-      &:before{
-        background: $theme-green1;
+      &::before{
+        background-color: $theme-green1;
+
       }
 
     }
@@ -104,10 +106,18 @@ $arrow-width: 42px;
     border: 2px solid $theme-green2 !important;
     background-color: white;
     color: $theme-green2;
-
-    &:hover {
+    &:before {
       background: $theme-green2;
-      color: #fff !important;
+    }
+    &:hover {
+      background: white ;
+      text-decoration: none;
+      color: white ;
+      cursor: pointer;
+
+      &:before{
+        transform: translate(0, 0);
+      }
     }
 
 
@@ -120,7 +130,7 @@ $arrow-width: 42px;
   &--transparent {
     background: transparent;
     color: $theme-green2;
-    padding: $button-padding 50px $button-padding 0;
+    padding: $button-padding 40px $button-padding 0;
     letter-spacing: 0;
     margin-top:5px;
     text-transform: uppercase;
@@ -135,10 +145,10 @@ $arrow-width: 42px;
 
     &:after {
       content: '';
-      width: 30px;
+      width: 22px;
       height: 16px;
       opacity: 1;
-      top: 13px;
+      top: 16px;
       right: 13px;
       position: absolute;
       transition: all ease-in-out 0.3s;
@@ -146,6 +156,7 @@ $arrow-width: 42px;
       background-repeat: no-repeat;
       background-position: 0px 0;
       background-size: contain;
+
     }
 
     &:focus{
@@ -160,8 +171,10 @@ $arrow-width: 42px;
 
       &:after {
         background-image: url('../trineo/assets/images/arrow-right-green2.svg');
-        top: 15px;
-        right: 8px;
+        width: 30px;
+        right: 3px;
+        //top: 13px;
+        //right: 8px;
       }
 
       &:before{
@@ -181,6 +194,7 @@ $arrow-width: 42px;
       font-weight:normal !important;
       font-size: 13px;
       text-transform: none;
+
       transition:         0.08s ease-in;
       -o-transition:      0.08s ease-in;
       -ms-transition:     0.08s ease-in;
@@ -200,6 +214,7 @@ $arrow-width: 42px;
         opacity: 1;
         left: 5px;
         width: 10px;
+        transform: translate(0, 0) !important;
         top: 12px;
         transition:         0.08s ease-in;
         -o-transition:      0.08s ease-in;
@@ -538,9 +553,16 @@ input[type="submit"]{
 .button-arrow{
   background: $theme-green2;
   border-radius: 50%;
-  padding:10px 21px;
+  padding:10px 22px 10px 21px;
   position: relative;
-  border: 1px solid $theme-green2;
+  border: 2px solid $theme-green2;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  overflow: hidden !important;
+  float:left;
+  width: 45px;
+  height: 45px;
 
   &:after {
     background-image: url('../trineo/assets/images/arrow-right-white.svg');
@@ -551,18 +573,46 @@ input[type="submit"]{
     width: 23px;
     height: 16px;
     opacity: 1;
-    top: 15px;
-    right: 7px;
+    top: 16px;
+    right: 8px;
     position: absolute;
     transition: all ease-in-out 0.3s;
   }
 
-  &:hover{
+
+  &:before{
     background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0%, 100%) rotate(0deg);
+    transform-origin: bottom center;
+    transition: 0.2s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+
+
+  }
+
+  &:hover {
+    background: $theme-green2;
+    text-decoration: none;
+    color: $theme-green2 ;
+    cursor: pointer;
+
+    &:before{
+      transform: translate(0, 0);
+
+    }
+
     &:after {
       background-image: url('../trineo/assets/images/arrow-right-green1.svg');
       opacity: 1;
-      top:16px;
+      //top:16px;
     }
   }
 }
@@ -595,6 +645,12 @@ input[type="submit"]{
       //opacity: 1;
       //top:16px;
     }
+  }
+}
+
+.button.button--transparent.margin-md-left{
+  @include media-breakpoint-down(md) {
+    margin-left: 0px !important;
   }
 }
 

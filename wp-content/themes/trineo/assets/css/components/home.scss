@@ -6,11 +6,11 @@
 
 .home #hero {
   margin-top: 0px;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   background-color: $theme-grey;
-  display: none;
+  //display: none;
 
 
   @include media-breakpoint-up(md) {
@@ -71,6 +71,15 @@
   }
 }
 
+#hero-mob{
+  background: $theme-background-color;
+  padding: 50px 10px 20px 10px;
+
+  .hero-text{
+    text-align: left !important;
+  }
+}
+
 @media only screen and (min-width: 1550px){
 
   .home #hero {
@@ -80,7 +89,7 @@
 
 .home #hero-mob {
 
-  background-color: #fff;
+  background-color: $theme-background-color;
 
 
   @include media-breakpoint-up(md) {
@@ -180,6 +189,15 @@
     margin: auto;
     margin-bottom: 15px !important;
     max-width: 120px;
+
+    @include media-breakpoint-down(md) {
+      height: 40px;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+  width: 33% !important;
+    padding: 5px !important;
   }
 
 }
@@ -245,6 +263,14 @@
   }
 }
 
+.purple-background.single-testimonial-section{
+  color: white !important;
+
+  .quote{
+    color: white !important;
+  }
+}
+
 .hero-text{
   font-family: 'Poppins-Semibold', sans-serif;
   color: $theme-primary-color;
@@ -294,8 +320,12 @@
     margin-left:-20px;
 
     li {
-      width: 33.33%;
+      width: 100%;
       float: left;
+
+      @include media-breakpoint-up(md) {
+        width: 33.33%;
+      }
 
       a {
         font-family: 'Poppins', sans-serif;

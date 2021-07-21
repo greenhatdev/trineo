@@ -83,7 +83,7 @@
         height: 100vh !important;
         opacity:1;
         width: 100vw !important;
-        z-index: 99;
+        z-index: 9999;
     }
     #search:target .close-btn {
         display: block;
@@ -206,6 +206,7 @@
         background: transparent;
         font-size:25px;
         vertical-align: middle;
+        margin-bottom: 10px;
     }
 
     .searchsubmit:hover{

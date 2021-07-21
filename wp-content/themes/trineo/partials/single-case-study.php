@@ -17,7 +17,7 @@ $link =  get_the_permalink();
         <div class="single-case-study-image background-image-cover"
              style="background-image: url('<?php echo $image; ?>')" cat="<?php echo $cats[0]->slug; ?>">
         </div>
-        <div class="single-case-study-content margin-lg-bottom">
+        <div class="single-case-study-content margin-md-bottom">
             <div class="row">
                 <div class="category col-md-6">CASE STUDY: <?php echo $cats[0]->name; ?></div>
                 <div class="logo col-md-6">

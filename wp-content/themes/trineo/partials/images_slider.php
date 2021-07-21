@@ -6,7 +6,7 @@
                 while( have_rows('imagesrep') ) : the_row();
                 $i = get_sub_field('images');
                         ?>
-                  <img src="<?php echo $i; ?>" class="rounded-edges">
+                    <div style="background-image:url(<?php echo $i; ?>);height: 300px" class="background-image-cover rounded-edges"></div>
                 <?php
                 endwhile;
                 endif;

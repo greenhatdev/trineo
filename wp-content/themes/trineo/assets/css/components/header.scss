@@ -1,6 +1,10 @@
 .logo {
   float: left;
-  padding:10px 0px;
+  padding:7px 0px;
+
+  @include media-breakpoint-up(md) {
+    padding:13px 0px;
+  }
 
   a {
     float: left;
@@ -113,8 +117,14 @@ header.main-header .logo img {
   height: $nav-height-static-mobile;
   transition: width 0.3s ease-out;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     height: auto;
+    //margin-top:10px;
+  }
+
+  @include media-breakpoint-down(md) {
+    height: 35px;
+    margin-left: 20px;
   }
 
   @include media-breakpoint-up(lg) {
@@ -400,11 +410,13 @@ header.main-header .main-menus ul li ul li a {
 }
 
 header .col-xs-3 {
-  width: 100%;
+  width: 50%;
   position: fixed;
   left: 0;
   top: 0px;
   padding: 0px;
+  z-index: 999;
+  background: white !important;
 
 
   @include media-breakpoint-up(md) {
@@ -417,11 +429,12 @@ header .col-xs-3 {
 }
 
 header .col-xs-9 {
-  width: 50px;
+  width: 50%;
   position: fixed;
   right: 0;
   top: 0px;
   padding-right: 0px;
+  padding-left: 0px;
 
   @include media-breakpoint-up(md) {
     width: 75% !important;
@@ -525,14 +538,12 @@ header .col-xs-9 {
 }
 
 #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item.header-cta>a.mega-menu-link{
-
+  overflow:hidden;
   background: $theme-secondary-color;
   color: white !important;
   padding: 20px 21px;
   height: auto !important;
   line-height: 2px;
-  border-radius: 31px;
-  border: none;
   border-radius: 40px;
   color: #fff;
   cursor: pointer;
@@ -545,35 +556,44 @@ header .col-xs-9 {
   display: inline-flex;
   font-family: 'Poppins-Semibold';
   border: 1px solid $theme-secondary-color !important;
-  transition:         0.08s ease-in;
-  -o-transition:      0.08s ease-in;
-  -ms-transition:     0.08s ease-in;
-  -moz-transition:    0.08s ease-in;
-  -webkit-transition: 0.08s ease-in;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
 
+  @include media-breakpoint-down(md) {
+    margin-bottom: 20px;
+  }
+
+  span {
+    position: relative;
+    transition: all ease-in-out 0.3s;
+  }
 
   &:before{
-    content: "";
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    border-radius: 40px;
-    background: $theme-secondary-color;
-    bottom: 0;
     left: 0;
-    right: 0;
-    top: 100%;
+    top: 0;
+    transform: translate(0%, 100%) rotate(0deg);
+    transform-origin: bottom center;
+    transition: 0.2s transform ease-out;
+    will-change: transform;
     z-index: -1;
-    -webkit-transition: top 0.1s ease-in;
+
   }
 
   &:hover {
-    background: transparent !important;
+    background: $theme-secondary-color !important;
     text-decoration: none;
     color: $theme-secondary-color !important;
     cursor: pointer;
-    //border-bottom: 5px  solid white !important;
+
     &:before{
-      top: 0;
-      background: white;
+      transform: translate(0, 0);
     }
   }
 
@@ -609,4 +629,22 @@ header .col-xs-9 {
 
 #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item.header-cta.mega-current-menu-item>a.mega-menu-link{
   color: $theme-secondary-color !important;
+}
+
+#mega-menu-wrap-menu-1 .mega-menu-toggle{
+  background: white;
+  margin-top: 0px;
+  height: 50px;
+}
+
+#mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner, #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner::before, #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner::after{
+  background-color: $theme-secondary-color;
+}
+
+#mega-menu-wrap-menu-1 .mega-menu-toggle + #mega-menu-menu-1{
+  background: white;
+  width: 100vw;
+
+
+
 }

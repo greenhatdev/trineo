@@ -77,7 +77,7 @@ $image = get_field('leadership_image');
     <div class="container ">
         <div class="row margin-md-top vertically-middle">
             <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
-                <div class="h5 primary-color uppercase">Our Leadership</div>
+                <div class="h5 primary-color uppercase">Our Inspiration</div>
                 <div class="h3 left-border primary-color"><?php echo $text; ?></div>
             </div>
 
@@ -101,7 +101,7 @@ $image = get_field('leadership_image');
                     while ($team->have_posts()) : $team->the_post();
                         $index = $index + 0.2;
                         ?>
-                        <div class="col-lg-4 team-member margin-md-bottom wow fadeInUp"
+                        <div class="col-lg-3 team-member margin-md-bottom wow fadeInUp"
                              data-wow-delay="<?php echo $index; ?>s">
                             <div class="team-member-image">
                                 <?php the_post_thumbnail('large'); ?>
@@ -137,7 +137,7 @@ $blog_heading = get_field('blog_heading');
         </div>
         <div class="row  wow fadeIn new-effect margin-md-top ">
             <?php
-            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "asc",);
+            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc", 'tag' => 'spotlight');
             $loop = new WP_Query($args);
             while ($loop->have_posts()) : $loop->the_post();
                 $title = get_the_title();

@@ -304,7 +304,7 @@ $blog-spacing: $theme-lg-padding;
 }
 
 .blog-main {
-  padding: 0 40px $blog-spacing 40px;
+  padding: 0 20px $blog-spacing 20px;
 
   @include media-breakpoint-up(lg) {
     padding: 0 0 $blog-spacing 0;

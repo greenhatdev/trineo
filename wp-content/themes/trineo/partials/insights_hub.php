@@ -89,7 +89,7 @@
                             $cats = array();
                             foreach ( get_the_category( get_the_ID() ) as $c ) {
                                 $cat = get_category( $c );
-                                array_push( $cats, strtolower( $cat->name ) );
+                                array_push( $cats, str_replace("!","",strtolower( $cat->name )) );
                             }
 
                             if ( sizeOf( $cats ) > 0 ) {
@@ -125,7 +125,12 @@
                     endif;
                     ?>
                 <br/><br/>
+
             </div>
+
+        </div>
+        <div class="row">
+            <button class="btn  showMore" id="showMore" >Load more</button>
         </div>
     </div>
 </section>
@@ -157,19 +162,25 @@
         };
     }
     jQuery(document).ready(function() {
+        window.onpageshow = function() {
         jQuery("#filters-select-solutions").select2({
             placeholder: "Solutions",
-            minimumResultsForSearch: -1,
+            // minimumResultsForSearch: -1,
         });
         jQuery("#filters-select-media_type").select2({
             placeholder: "Media Type",
-            minimumResultsForSearch: -1,
+            // minimumResultsForSearch: -1,
         });
         jQuery("#filters-select-topic").select2({
             placeholder: "Topic",
-            minimumResultsForSearch: -1,
+            // minimumResultsForSearch: -1,
         });
+        jQuery("#filters-select-solutions").val("").trigger("change");
+        jQuery("#filters-select-media_type").val("").trigger("change");
+        jQuery("#filters-select-topic").val("").trigger("change");
+            hideItems(initial_items);
 
+    };
         var qsRegex;
         var filters = {};
         var filterValue;
@@ -255,6 +266,7 @@
                 jQuery('#showMore').hide();
             }
             $grid.isotope('layout');
+            console.log("herer");
         }
 
         function showAllItems(){
@@ -269,7 +281,7 @@
             showNextItems(next_items);
         });
 
-        hideItems(initial_items);
+        // hideItems(initial_items);
 
         function updateActiveFilters(){
             var filtopic= jQuery("#filters-select-topic").find('option:selected').val();
@@ -346,6 +358,8 @@
             };
 
         });
+
+
     });
 
 </script>

@@ -104,7 +104,7 @@ $light_purple_background = true;
 
                 $the_query = new WP_Query($args);
                     $post_count = 0;
-                    $total = count($the_query);
+//                    $total = count($the_query);
                 ?>
 
                 <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
