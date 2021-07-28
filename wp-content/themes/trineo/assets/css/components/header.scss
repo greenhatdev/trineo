@@ -16,13 +16,16 @@ header.main-header {
   font-weight: 500;
   //   position: fixed;
   width: 100%;
-  z-index: 99;
+  z-index: 9999;
   transition: 0.3s ease-in-out;
   background: #ffffff;
   padding: 0px 0px;
   height: $nav-height-static-mobile;
   box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
+  z-index: 999;
+  position: fixed;
+  display: block;
 
   &.fixed-header {
     height: $nav-height-fixed;
@@ -433,6 +436,7 @@ header .col-xs-9 {
   position: fixed;
   right: 0;
   top: 0px;
+  z-index: 999;
   padding-right: 0px;
   padding-left: 0px;
 
@@ -617,10 +621,10 @@ header .col-xs-9 {
 }
 
 .sticky {
-  position: fixed;
+  position: fixed !important;
   top: 0 !important;
   width: 100%;
-  z-index: 10;
+  z-index: 99999 !important;
 }
 
 .header-search .dashicons-search{
@@ -643,7 +647,7 @@ header .col-xs-9 {
 
 #mega-menu-wrap-menu-1 .mega-menu-toggle + #mega-menu-menu-1{
   background: white;
-  width: 100vw;
+  //width: 100vw;
 
 
 

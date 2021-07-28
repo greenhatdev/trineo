@@ -16,14 +16,17 @@ $h3_heading = get_sub_field('h3_heading');
             <div class="col-md-12 no-padding padding-xl-bottom">
                 <div class="<?php if ($light_purple_background) {
                     echo 'h3';
-                }else{ echo 'section-heading'; } ?>"><?php echo $section2_heading; ?></div>
+                }else{ echo 'section-heading'; } ?> wow fadeIn new-effect"><?php echo $section2_heading; ?></div>
             </div>
         </div>
         <div class="row vertically-middle2s wow fadeIn new-effect align-left">
             <?php
+            $index= 0;
             foreach ($repeater as $row) {
+                $index++;
                 ?>
-                <div class="<?php if($limit_to_3_columns) { echo 'col-md-4'; } else { echo 'col-md-3'; } ?> col-icon-text  margin-md-bottom <?php if(!$remove_left_border){ ?>left-border left-border-chevron<?php } ?> ">
+                <div class="<?php if($limit_to_3_columns) { echo 'col-md-4'; } else { echo 'col-md-3'; } ?> col-icon-text  margin-md-bottom <?php if(!$remove_left_border){ ?>left-border left-border-chevron<?php } ?> wow fadeIn new-effect"
+                     data-wow-delay="0.<?php echo $index; ?>s">
                     <div class="image-background"
                          style="background-image:url('<?php echo $row['icon']; ?>')"></div>
                     <div class="col-content max-width-320">

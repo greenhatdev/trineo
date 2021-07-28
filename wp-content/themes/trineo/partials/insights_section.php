@@ -1,3 +1,14 @@
+<?php
+global $post;
+$post_slug = $post->post_name;
+$Insightscategory = '';
+if($post_slug=="our-impact"){
+    $Insightscategory = 'impact';
+}
+
+
+?>
+
 <section class="section padding-lg-top padding-md-bottom">
     <div class="container">
         <div class="row vertically-middle wow fadeIn new-effect">
@@ -7,7 +18,7 @@
         </div>
         <div class="row  wow fadeIn new-effect margin-md-top  padding-lg-bottom  border-bottom">
             <?php
-            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "asc",);
+            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc", 'category_name' => $Insightscategory);
             $loop = new WP_Query($args);
             while ($loop->have_posts()) : $loop->the_post();
                 $title = get_the_title();

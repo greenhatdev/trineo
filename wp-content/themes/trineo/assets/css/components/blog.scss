@@ -192,8 +192,8 @@ $blog-spacing: $theme-lg-padding;
 }
 
 .category{
-  @include font-size(14px);
-  @include line-height(23px);
+  font-size: 15px;
+  @include line-height(24px);
   font-family: 'Poppins-Semibold';
   text-transform: uppercase;
   margin-bottom:15px;
@@ -314,7 +314,8 @@ $blog-spacing: $theme-lg-padding;
 .blog-main__content {
   p {
     margin-bottom: $theme-md-margin;
-    @include line-height(23px);
+    @include line-height(30px);
+    @include font-size(18px);
   }
 
   blockquote {
@@ -336,6 +337,11 @@ $blog-spacing: $theme-lg-padding;
     @include font-size(20px);
     @include line-height(28px);
     margin-bottom:$theme-sm-margin;
+
+     &:after{
+       height: 0px;
+       border-bottom: 0px solid white;
+     }
   }
 
   .container{
@@ -347,7 +353,27 @@ $blog-spacing: $theme-lg-padding;
       padding-right: 30px;
     }
   }
+  ul {
+    list-style-image: none;
+    padding-left: 0px !important;
 
+    li {
+      font-family: 'Poppins', sans-serif;
+      @include font-size(15px);
+      @include line-height(20px);
+      margin-bottom: 16px;
+      background: url(../trineo/assets/images/dash.svg) no-repeat 0px 12px transparent;
+      background-size: 27px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0px 0px 1px 43px;
+
+      @include media-breakpoint-up(md) {
+        @include font-size(18px);
+        @include line-height(30px);
+      }
+    }
+  }
 
 }
 
@@ -509,4 +535,19 @@ color: #3b5998;
 
 .social-icon--email{
   //color: #3b5998;
+}
+
+
+.blog-main {
+
+    .logo {
+
+
+      .image-background {
+        height: 100px;
+      }
+
+    }
+
+
 }

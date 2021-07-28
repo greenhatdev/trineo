@@ -35,7 +35,7 @@ jQuery('.js-accordion-trigger').click(function (e) {
 });
 
 jQuery(document).ready(function() {
-    // new WOW().init();
+    new WOW().init();
     jQuery('.home-case-study-owl-carousel').on('initialized.owl.carousel', function(event) {
 
         jQuery( "a[href='#"+jQuery(".owl-item.active.center").find('.single-case-study-image').attr("cat")+"'" ).addClass( "active" )
@@ -50,6 +50,8 @@ jQuery(document).ready(function() {
         autoplayHoverPause:true,
         startPosition: 'URLHash',
         center:true,
+        smartSpeed:450,
+        animateOut: 'fadeOut',
         navText: [
             '<i class="owl-carousel-prev" aria-hidden="true"></i>',
             '<i class="owl-carousel-next" aria-hidden="true"></i>'
@@ -137,37 +139,14 @@ jQuery(document).ready(function() {
         });
 
 
-    // /** Masonry Grid Component **/
-    //
-    // var $imageGridContainer = jQuery('.js-image-grid');
-    // var htlml5Videos = jQuery('.js-image-grid').find('video');
-    //
-    // var $grid = $imageGridContainer.masonry({
-    //     // options...
-    //     columnWidth: '.grid-sizer',
-    //     itemSelector: '.image-grid__item',
-    //     gutter: '.gutter-sizer'
-    // });
-    //
-    // function waitForvidLoad(vids, callback) {
-    //     if(vids.length === 0){
-    //         callback();
-    //     }
-    //     var vidsLoaded = 0;
-    //     vids.on('loadeddata', function() {
-    //         vidsLoaded++;
-    //         if (vids.length === vidsLoaded) {
-    //             callback();
-    //         }
-    //     });
-    // }
-    //
-    // //Fixes alignment issues for video elements
-    // waitForvidLoad(htlml5Videos, function() {
-    //     $grid.imagesLoaded(function () {
-    //         $grid.masonry('layout');
-    //     });
-    // });
+    $(document).on('click', 'a.anchor', function (event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 100
+            // 100 is the sticky nav height
+        }, 500);
+    });
 
     // When the user scrolls the page, execute myFunction
     window.onscroll = function() {myFunction()};
@@ -188,14 +167,6 @@ jQuery(document).ready(function() {
         }
     }
 
-    $(document).on('click', 'a.anchor', function (event) {
-        event.preventDefault();
-
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 100
-            // 100 is the sticky nav height
-        }, 500);
-    });
 
 
 });
@@ -226,6 +197,15 @@ $("body").on('click', ".whr-item",function(event) {
 });
 
 
+$(document).on('click', 'a#close-search', function (event) {
+    // event.preventDefault();
+
+});
+
+
+
+
+
 
 
 $(document).ready(function() {
@@ -244,6 +224,44 @@ $(document).ready(function() {
     };
 
     background_image_parallax($(".col-sm-5.background-image-cover"), 0.25);
+
+    $(".no-link-menu a").each(function(){
+        $(this).removeAttr("href");
+    })
+
+    $("#menu-services-menu a").each(function(){
+        $(this).removeAttr("href");
+    })
+
+
+
+    function noMoreLonelyWords(selector, numWords){
+
+
+        var elems = document.querySelectorAll(selector);
+        var i;
+        for(i = 0; i < elems.length; ++i){
+
+
+            var textArray = elems[i].innerText.split(" ");
+
+
+            var lastWords = textArray.splice(-numWords, numWords).join("&nbsp;");
+
+
+            var textMinusLastWords = textArray.join(" ");
+            elems[i].innerHTML = textMinusLastWords + " " +  lastWords;
+        }
+    }
+
+    // Goodbye lonely words
+    // noMoreLonelyWords("p", 2);
+    // noMoreLonelyWords("div.h4", 2);
+    // noMoreLonelyWords("div.h3", 2);
+    // noMoreLonelyWords("div.title", 2);
+    // noMoreLonelyWords("div.solutions-text", 2);
+    // noMoreLonelyWords(".section-3 div.h3", 2);
+
 
 });
 

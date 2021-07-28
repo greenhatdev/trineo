@@ -14,8 +14,8 @@
                         'hide_empty' => true,
                     ));
                     foreach ($categories as $category): ?>
-                        <button class="button button--tags margin-sm-right"
-                                data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name ?></button>
+<!--                        <button class="button button--tags margin-sm-right"-->
+<!--                                data-filter=".--><?php //echo $category->slug; ?><!--">--><?php //echo $category->name ?><!--</button>-->
                     <?php
                     endforeach;
                     ?>
@@ -39,7 +39,7 @@
 <div class="bg1"></div>
 <section class="margin-md-bottom">
     <div class="container">
-        <div class="row d-flex justify-content-center  grid border-bottom ">
+        <div class="row d-flex justify-content-center  grid padding-lg-bottom border-bottom ">
             <div class=" equal">
                 <?php
                 $newslist = new WP_Query(array(

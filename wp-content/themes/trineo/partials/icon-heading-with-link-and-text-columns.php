@@ -15,20 +15,23 @@ $add_bottom_border= get_sub_field('add_bottom_border');
     <div class="container">
         <?php if ($section2_heading) { ?>
             <div class="row vertically-middle wow fadeIn new-effect">
-                <div class="col-md-12 padding-lg-bottom">
+                <div class="col-md-12 padding-lg-bottom wow fadeIn new-effect">
                     <div class="h2 primary-color"><?php echo $section2_heading; ?></div>
                 </div>
             </div>
         <?php } ?>
-        <div class="row  wow fadeIn new-effect align-left <?php if ($add_bottom_border) { ?>border-bottom<?php } ?>">
+        <div class="row  align-left <?php if ($add_bottom_border) { ?>border-bottom<?php } ?>">
             <?php
+            $index= 0;
             foreach ($repeater as $row) {
+                $index++;
                 ?>
                 <div class="<?php if ($limit_to_4_columns) {
                     echo 'col-md-3';
                 } else {
                     echo 'col-md-4';
-                } ?> col-icon-text padding-md-bottom">
+                } ?> col-icon-text padding-md-bottom wow fadeIn new-effect"
+                     data-wow-delay="0.<?php echo $index; ?>s">
                     <div class="image-background"
                          style="background-image:url('<?php echo $row['icon']; ?>')"></div>
                     <div class="col-content max-width-320">

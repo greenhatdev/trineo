@@ -5,7 +5,8 @@ $excerpt = get_the_excerpt();
 $cats = get_the_category();
 $link = get_the_permalink();
 ?>
-<div class="item single-insight clickablediv" onclick="location.href='<?php echo $link; ?>'">
+<div class="item single-insight clickablediv wow fadeIn new-effect"
+     data-wow-delay="0.<?php echo $index; ?>s" onclick="location.href='<?php echo $link; ?>'">
     <div class="single-insight-image background-image-cover" style="background-image: url('<?php echo $image; ?>')">
     </div>
     <div class="single-insight-content ">

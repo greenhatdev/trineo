@@ -83,7 +83,7 @@
         height: 100vh !important;
         opacity:1;
         width: 100vw !important;
-        z-index: 9999;
+        z-index: 999999;
     }
     #search:target .close-btn {
         display: block;

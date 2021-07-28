@@ -172,6 +172,13 @@ flex-direction: row;
   padding-right:$theme-sm-padding;
 }
 
+.padding-xl-right{
+
+  @include media-breakpoint-up(md) {
+    padding-right: 61px;
+  }
+}
+
 .padding-xl-top{
   padding-top: $theme-lg-padding;
 

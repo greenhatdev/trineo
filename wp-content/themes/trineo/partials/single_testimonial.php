@@ -17,7 +17,7 @@ $testimonial = get_sub_field('testimonial');
                         ?>
                     <div class="col-md-3"></div>
                         <div class="col-md-6 wow fadeInUp testimonial-section">
-                            <div class="quote h3"><?php echo $quote; ?></div>
+                            <div class="quote"><?php echo $quote; ?></div>
                             <div class="name"><?php echo $name; ?></div>
                             <div class="job-title"><?php echo $job_title; ?></div>
                         </div>

@@ -230,8 +230,15 @@ if (has_post_thumbnail()) {
                                 <?php
                                 global $post;
                                 $post_slug = $post->post_name;
+                                $serv = get_the_terms(get_the_ID(), 'case_study_services');
 
-                                $args = array('post_type' => 'case-studies', 'posts_per_page' => 3, 'order' => "desc", 'post__not_in'  => array(get_the_ID()));
+                                $args = array('post_type' => 'case-studies', 'posts_per_page' => 3, 'order' => "desc",   'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'case_study_services',
+                                        'field' => 'slug',
+                                        'terms' => $serv[0]->name
+                                    )
+                                ) ,'post__not_in'  => array(get_the_ID()));
 
                                 $terms = get_terms( array(
                                     'taxonomy' => 'case_study_category',

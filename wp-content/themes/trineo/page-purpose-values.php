@@ -171,7 +171,7 @@ $impact = get_field('impact');
                 <div class="h3 primary-color margin-md-bottom"><?php echo $impact['heading']; ?></div>
                 <p><?php echo $impact['text']; ?></p>
                 <div>
-                    <a href="/<?php echo $join_the_team['cta_link']; ?>"
+                    <a href="<?php echo $impact['cta_link']; ?>"
                        class="button button--secondary"><?php echo $impact['cta_text']; ?></a>
                 </div>
             </div>
@@ -192,7 +192,7 @@ $impact = get_field('impact');
         </div>
         <div class="row  wow fadeIn new-effect margin-md-top padding-lg-bottom border-bottom">
             <?php
-            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "asc",);
+            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc", 'category_name' => 'culture');
             $loop = new WP_Query($args);
             while ($loop->have_posts()) : $loop->the_post();
                 $title = get_the_title();

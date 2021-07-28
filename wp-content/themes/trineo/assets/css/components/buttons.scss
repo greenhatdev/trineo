@@ -112,7 +112,7 @@ $arrow-width: 42px;
     &:hover {
       background: white ;
       text-decoration: none;
-      color: white ;
+      color: white !important ;
       cursor: pointer;
 
       &:before{
@@ -299,19 +299,19 @@ $arrow-width: 42px;
     cursor: pointer;
     letter-spacing: 0px;
     text-decoration: none;
-    @include font-size(16px);
-    @include line-height(18px);
+    @include font-size(20px);
+    @include line-height(28px);
     border: 0px solid white !important;
     margin-top: 20px;
     display: inline-flex;
     font-family: 'Poppins-Semibold';
     font-weight: normal;
     background: transparent;
-    color: $theme-green2;
+    color: $theme-green4;
     letter-spacing: 0;
     margin-top:5px;
     text-align: center;
-      padding:14px 10px;
+    padding:14px 10px 0px 10px;
 
     &:after{
       background-image: none;
@@ -324,9 +324,9 @@ $arrow-width: 42px;
     }
 
 
-    &:hover, &:focus{
+    &:hover, &:focus, &.is-checked{
      text-decoration: underline;
-      color: $theme-green2;
+      color: $theme-green4;
       background: white !important;
 
       &:after{

@@ -41,7 +41,7 @@ endif;
 
         <div class="row vertically-middle ">
             <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
-                <div class=" padding-right-col-1 max-width-750px">
+                <div class=" max-width-750px">
                     <?php if ($subheading) { ?>
                         <a class="h5 green-text uppercase" href="<?php echo $subheading_link; ?>"><?php echo $subheading; ?></a>
                     <?php } ?>
@@ -50,7 +50,7 @@ endif;
                     } else {
                         echo 'white-text';
                     } ?>"> <?php echo $pageHeading ?></h1>
-                    <div class="page-subtitle max-width-600 <?php if ($light_purple_background) {
+                    <div class="page-subtitle  <?php if ($light_purple_background) {
                         echo 'primary-color';
                     } else {
                         echo 'white-text';
@@ -137,7 +137,7 @@ $blog_heading = get_field('blog_heading');
         </div>
         <div class="row  wow fadeIn new-effect margin-md-top ">
             <?php
-            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc", 'tag' => 'spotlight');
+            $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc", 'category_name' => 'culture');
             $loop = new WP_Query($args);
             while ($loop->have_posts()) : $loop->the_post();
                 $title = get_the_title();
@@ -165,7 +165,7 @@ $join_the_team = get_field('join_the_team');
                 <div class="h3 primary-color margin-md-bottom"><?php echo $join_the_team['heading']; ?></div>
                 <p><?php echo $join_the_team['text']; ?></p>
                 <div>
-                    <a href="/<?php echo $join_the_team['cta_link']; ?>"
+                    <a href="<?php echo $join_the_team['cta_link']; ?>"
                        class="button button--secondary"><?php echo $join_the_team['cta_text']; ?></a>
                 </div>
             </div>

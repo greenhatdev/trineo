@@ -18,6 +18,7 @@ $link =  get_the_permalink();
              style="background-image: url('<?php echo $image; ?>')" cat="<?php echo $cats[0]->slug; ?>">
         </div>
         <div class="single-case-study-content margin-md-bottom">
+            <div class="align-top">
             <div class="row">
                 <div class="category col-md-6">CASE STUDY: <?php echo $cats[0]->name; ?></div>
                 <div class="logo col-md-6">
@@ -27,8 +28,11 @@ $link =  get_the_permalink();
 
             <div class="title"><?php echo $pageHeading; ?></div>
             <p><?php echo $excerpt; ?></p>
+            </div>
+            <div class="align-bottom">
             <div class="button-arrow-div inline-50">
                 <a href="<?php echo $link; ?>" class="button-arrow"> </a>
+            </div>
             </div>
         </div>
     </div>

@@ -192,6 +192,7 @@ ol li::before {
 
 blockquote {
   margin-bottom: $theme-sm-padding;
+  border-left: 2px solid $theme-primary-color;
 
   p {
     //color: $theme-font-dark;
@@ -354,8 +355,8 @@ img {
 }
 
 strong {
-  font-family: 'Byrd';
-  font-weight: bold;
+  font-family: 'Byrd-Bold';
+  font-weight: normal;
 }
 
 blockquote {
@@ -977,7 +978,7 @@ Image Grid
 
     .image-background {
       background-repeat: no-repeat;
-      background-position: center right;
+      background-position: 88% center;
       background-size: contain;
       margin-bottom: 15px;
       height: 40px;
@@ -987,14 +988,23 @@ Image Grid
 
   .single-case-study-content {
     padding: 30px 30px 0px 30px;
-    min-height: 315px;
+    min-height: 355px;
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    .button-arrow-div{
+      padding-top: 20px;
+    }
+  }
+
+  .link-more{
+    display:none !important;
   }
 
   .category {
-    @include font-size(14px);
+    font-size: 15px;
     @include line-height(23px);
     font-family: 'Poppins-Semibold';
     color: $theme-primary-color;
@@ -1010,7 +1020,16 @@ Image Grid
     margin-bottom: 10px;
   }
 
+  p{
+    margin-bottom: 0px !important;
+  }
+
 }
+.home .single-case-study-item .single-case-study-content{
+  min-height: 300px;
+}
+
+
 
 .single-case-studies {
   word-break: normal;
@@ -1114,7 +1133,7 @@ Image Grid
   @include font-size(20px);
   @include line-height(28px);
   font-family: 'Poppins-Semibold';
-  color: $theme-green2 !important;
+  color: $theme-green4 !important;
   text-transform: uppercase;
   margin-bottom: 15px;
   margin-right: 20px;
@@ -1183,8 +1202,8 @@ Image Grid
   }
 
   .category {
-    @include font-size(14px);
-    @include line-height(23px);
+    font-size: 15px;
+    @include line-height(24px);
     font-family: 'Poppins-Semibold';
     color: $theme-green2;
     text-transform: uppercase;
@@ -1649,6 +1668,7 @@ ul {
         @include font-size(20px);
         @include line-height(50px);
         text-decoration: none;
+        cursor: normal !important;
       }
     }
   }
@@ -1747,7 +1767,7 @@ ul {
 .bg2 {
   background-color: white;
   background-image: url('./assets/images/bg2.png');
-  background-size: 93%;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: bottom left;
 }
@@ -1776,8 +1796,9 @@ ul {
   .team-position {
     font-family: 'Poppins-Medium', sans-serif;
     @include font-size(20px);
-    @include line-height(40px);
+    @include line-height(24px);
     color: $theme-primary-color;
+    margin-bottom:15px;
   }
 
   .h4 {
@@ -1811,13 +1832,19 @@ ul {
   //background: $theme-background-color;
 
   ul {
-    list-style-image: url('../trineo/assets/images/dash.svg');
+    list-style-image: none;
+    padding-left: 0px !important;
 
     li {
       font-family: 'Poppins', sans-serif;
       @include font-size(15px);
       @include line-height(20px);
       margin-bottom: 16px;
+      background: url(../trineo/assets/images/dash.svg) no-repeat 0px 12px transparent;
+      background-size: 27px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0px 0px 1px 43px;
 
       @include media-breakpoint-up(md) {
         @include font-size(18px);

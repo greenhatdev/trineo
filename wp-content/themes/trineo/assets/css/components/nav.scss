@@ -45,6 +45,10 @@ div#mega-menu-wrap-main-menu {
   //color: $theme-light-blue !important;
   border-bottom: 5px solid rgba(144,99,205,.3) !important;
 
+  span:after{
+    transform: rotate(90deg) !important;
+  }
+
   @include media-breakpoint-down(md){
     border-bottom: 0px solid rgba(144,99,205,.3) !important;
   }

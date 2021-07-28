@@ -6,7 +6,7 @@ $testimonial = get_field('testimonials');
         <div class="testimonials-carousel wow fadeIn new-effect" data-wow-delay="0.3s">
             <div class="vertically-top testimonials-owl-carousel owl-carousel  owl-theme">
                 <?php
-                $postarg1 = array('post_type' => 'testimonials', 'post_status' => 'publish', 'order' => "asc",'p' => $testimonial );
+                $postarg1 = array('post_type' => 'testimonials','posts_per_page' => 3, 'post_status' => 'publish', 'order' => "desc",'p' => $testimonial );
                 $team = new WP_Query($postarg1);
 
                 if ($team->have_posts()) :
