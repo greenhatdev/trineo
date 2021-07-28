@@ -9,10 +9,12 @@ $menu_id = get_sub_field('menu_id');
 ?>
 <section class="section padding-md-bottom <?php if($light_purple_background){ echo 'light-purple-background'; } ?>">
     <div class="container">
-        <div class="row vertically-middle wow fadeIn new-effect padding-lg-top">
+        <div class="row vertically-middle padding-lg-top">
             <div class="col-md-12 padding-xl-bottom <?php if($add_top_border){ ?>border-top-grey<?php } ?>  padding-xl-top">
-                <div class="small-subheading padding-md-top"><?php echo $section2_heading; ?></div>
-                <div class="menu-links no-link-menu">
+                <div class="small-subheading padding-md-top wow fadeIn new-effect"
+                     data-wow-delay="0.1s"><?php echo $section2_heading; ?></div>
+                <div class="menu-links no-link-menu wow fadeIn new-effect"
+                     data-wow-delay="0.2s">
                     <?php
                     wp_nav_menu(array(
                             'menu' => $menu_id,

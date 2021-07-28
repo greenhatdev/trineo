@@ -11,6 +11,16 @@
   }
 }
 
+
+.home {
+
+  header.main-header{
+    position: fixed;
+  }
+
+}
+
+
 header.main-header {
   //@include fontStack500;
   font-weight: 500;
@@ -24,7 +34,7 @@ header.main-header {
   box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   -webkit-box-shadow: 3px 3px 15px 4px rgba(0,0,0,0.1);
   z-index: 999;
-  position: fixed;
+
   display: block;
 
   &.fixed-header {
