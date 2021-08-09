@@ -197,11 +197,11 @@ body{
                 animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
                 //text-decoration: underline;
                 padding-left: 25px;
-                background-image: url('../trineo/assets/images/right-caret-green.svg');
+                background-image: url('../trineo/assets/images/right-caret-white.svg');
                 background-size: 17px 15px;
                 background-repeat: no-repeat;
                 background-position: left 1px;
-                color: $theme-green2 !important;
+                color: white !important;
                 text-decoration: none;
                 @include font-size(20px);
 

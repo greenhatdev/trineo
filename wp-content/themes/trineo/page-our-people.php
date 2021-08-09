@@ -40,7 +40,7 @@ endif;
     <div class="basic-heading vertically-middle header-menu-padding">
 
         <div class="row vertically-middle ">
-            <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
+            <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeIn new-effect " data-wow-delay="0.0s">
                 <div class=" max-width-750px">
                     <?php if ($subheading) { ?>
                         <a class="h5 green-text uppercase" href="<?php echo $subheading_link; ?>"><?php echo $subheading; ?></a>
@@ -73,15 +73,17 @@ endif;
 $text = get_field('leadership_text');
 $image = get_field('leadership_image');
 ?>
-<section class="padding-xl-top">
+<section class="padding-xl-top wow fadeIn new-effect ">
     <div class="container ">
         <div class="row margin-md-top vertically-middle">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom "
+                 data-wow-delay="0.1s" >
                 <div class="h5 primary-color uppercase">Our Inspiration</div>
                 <div class="h3 left-border primary-color"><?php echo $text; ?></div>
             </div>
 
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom "
+                 data-wow-delay="0.2s" >
                 <img class="rounded-edges" src="<?php echo $image; ?>"/>
             </div>
         </div>
@@ -89,28 +91,29 @@ $image = get_field('leadership_image');
 </section>
 </div>
 
-<section class="section meet-the-team padding-xl-top  padding-lg-bottom">
+<section class="section meet-the-team padding-xl-top  padding-lg-bottom wow fadeIn new-effect ">
     <div class="container">
         <div class="team-members">
             <div class="row">
                 <?php
                 $postarg1 = array('post_type' => 'team-members', 'post_status' => 'publish', 'order' => "asc");
                 $team = new WP_Query($postarg1);
-                $index = 0.5;
+                $index = 1;
                 if ($team->have_posts()) :
                     while ($team->have_posts()) : $team->the_post();
-                        $index = $index + 0.2;
+                        $index++;
+                        $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
                         ?>
-                        <div class="col-lg-3 team-member margin-md-bottom wow fadeInUp"
-                             data-wow-delay="<?php echo $index; ?>s">
-                            <div class="team-member-image">
-                                <?php the_post_thumbnail('large'); ?>
+                        <div class="col-lg-4 team-member margin-md-bottom "
+                             data-wow-delay="0.<?php echo $index; ?>s">
+                            <div class="team-member-image" style="background-image:url(<?php echo $image; ?>);">
+
                             </div>
                             <div class="content">
                                 <div class="team-name h4 primary-color"><?php the_title(); ?></div>
                                 <div class="team-position "><?php echo get_field("position"); ?></div>
                                 <p><?php echo get_field("bio"); ?></p>
-                                <div class="linkedin"><a href="<?php echo get_field("linkedin_profile_link"); ?>"><img
+                                <div class="linkedin"><a href="<?php echo get_field("linkedin_profile_link"); ?>" target="_blank"><img
                                                 src="<?php echo get_site_url(); ?>/wp-content/themes/trineo/assets/images/linkedin.svg"/></a>
                                 </div>
                             </div>
@@ -128,22 +131,26 @@ $image = get_field('leadership_image');
 <?php
 $blog_heading = get_field('blog_heading');
 ?>
-<section class="section padding-lg-top ">
+<section class="section padding-lg-top wow fadeIn new-effect">
     <div class="container">
-        <div class="row vertically-middle wow fadeIn new-effect">
-            <div class="col-md-12 padding-sm-bottom">
+        <div class="row vertically-middle ">
+            <div class="col-md-12 padding-sm-bottom "
+                 data-wow-delay="0.1s" >
                 <div class="h3 primary-color"><?php echo $blog_heading; ?> <a href="/insights" class="button button--transparent margin-md-left">View all</a></div>
             </div>
         </div>
-        <div class="row  wow fadeIn new-effect margin-md-top ">
+        <div class="row   margin-md-top ">
             <?php
             $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc", 'category_name' => 'culture');
             $loop = new WP_Query($args);
+            $index=1;
             while ($loop->have_posts()) : $loop->the_post();
                 $title = get_the_title();
                 $permalink = get_the_permalink();
+                $index++;
                 ?>
-                <div class="col-md-4 equal">
+                <div class="col-md-4 equal "
+                     data-wow-delay="0.<?php echo $index; ?>s" >
                     <?php
                     get_template_part('partials/single-insight', get_post_format());
                     ?>
@@ -160,8 +167,9 @@ $join_the_team = get_field('join_the_team');
 ?>
 <section class="padding-xl-top">
     <div class="container ">
-        <div class="row margin-md-top vertically-middle border-bottom">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop">
+        <div class="row margin-md-top vertically-middle border-bottom wow fadeIn new-effect">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop "
+                 data-wow-delay="0.1s" >
                 <div class="h3 primary-color margin-md-bottom"><?php echo $join_the_team['heading']; ?></div>
                 <p><?php echo $join_the_team['text']; ?></p>
                 <div>
@@ -170,7 +178,8 @@ $join_the_team = get_field('join_the_team');
                 </div>
             </div>
 
-            <div class="col-md-6 margin-lg-bottom">
+            <div class="col-md-6 margin-lg-bottom "
+                 data-wow-delay="0.2s" >
                 <img class="rounded-edges" src="<?php echo $join_the_team['image']; ?>"/>
             </div>
         </div>

@@ -2,8 +2,9 @@
 $testimonial = get_sub_field('testimonial');
 ?>
 
-<section class="section padding-xl-top  padding-lg-bottom purple-background single-testimonial-section ">
-    <div class="container">
+<section class="section padding-xl-top  padding-lg-bottom purple-background single-testimonial-section "
+         data-wow-delay="0.1s" >
+    <div class="container wow fadeIn new-effect">
             <div class="row">
                 <?php
                 $postarg1 = array('post_type' => 'testimonials', 'post_status' => 'publish', 'order' => "asc",'p' => $testimonial );

@@ -17,13 +17,13 @@
     <header class="main-header" id="main-header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3">
                     <div class="logo">
                         <a href="<?php echo get_site_url(); ?>"><img
                                     src="<?php echo get_site_url(); ?>/wp-content/themes/trineo/assets/images/logo.svg"></a>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="col-lg-9 col-md-10 col-sm-9 col-xs-9">
                     <nav id="menu" class="custom-menu">
                         <?php wp_nav_menu(array('theme_location' => 'menu-1')); ?>
                     </nav>
@@ -43,7 +43,11 @@
 
             <div class="align-left tags margin-xl-top">
                 <div class="white-text margin-md-bottom"><b>SUGGESTED AND TRENDING</b></div>
-                <a href="/?s=tag1" class="search-tags">Tag 1</a>
+                <a href="/?s=Optimized Organization" class="search-tags">Optimized Organization</a>
+                <a href="/?s=Employee Experience" class="search-tags">Employee Experience</a>
+                <a href="/?s=Customer Experience" class="search-tags">Customer Experience</a>
+                <a href="/?s=Case Study" class="search-tags">Case Study</a>
+                <a href="/?s=Insights" class="search-tags">Insights</a>
             </div>
         </form>
 
@@ -151,6 +155,8 @@
         border: 1px solid #4AB590 !important;
         border-radius: 40px;
         text-decoration: none;
+        display: inline-block;
+        margin-bottom: 10px;
     }
 
     .search-tags:hover{

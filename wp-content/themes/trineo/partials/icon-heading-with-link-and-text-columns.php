@@ -12,10 +12,10 @@ $add_bottom_border= get_sub_field('add_bottom_border');
         class="section  padding-xl-top <?php if (!$remove_bottom_margin) { ?>margin-md-bottom<?php } ?> <?php if ($light_purple_background) {
             echo 'light-purple-background';
         } ?>">
-    <div class="container">
+    <div class="container wow fadeIn new-effect">
         <?php if ($section2_heading) { ?>
             <div class="row vertically-middle wow fadeIn new-effect">
-                <div class="col-md-12 padding-lg-bottom wow fadeIn new-effect">
+                <div class="col-md-12 padding-lg-bottom ">
                     <div class="h2 primary-color"><?php echo $section2_heading; ?></div>
                 </div>
             </div>
@@ -30,7 +30,7 @@ $add_bottom_border= get_sub_field('add_bottom_border');
                     echo 'col-md-3';
                 } else {
                     echo 'col-md-4';
-                } ?> col-icon-text padding-md-bottom wow fadeIn new-effect"
+                } ?> col-icon-text padding-md-bottom "
                      data-wow-delay="0.<?php echo $index; ?>s">
                     <div class="image-background"
                          style="background-image:url('<?php echo $row['icon']; ?>')"></div>

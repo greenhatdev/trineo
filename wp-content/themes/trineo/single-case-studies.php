@@ -53,7 +53,7 @@ if (has_post_thumbnail()) {
         <section class="section blog-main">
             <div class="container no-padding">
                 <div class="row no-gutters padding-lg-top">
-                    <div class="col-md-3 padding-lg-top">
+                    <div class="col-md-3 padding-lg-top wow fadeInUp new-effect " data-wow-delay="0.0s">
                         <div class="logo">
                             <div class="image-background" style="background-image: url(<?php echo $logo; ?>)"></div>
                         </div>
@@ -78,7 +78,7 @@ if (has_post_thumbnail()) {
                         </span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 wow fadeInUp new-effect " data-wow-delay="0.0s">
                         <div class="blog-main__content padding-md-bottom  ">
                             <div class="h6 primary-color padding-sm-bottom"><?php echo get_field('company_details'); ?></div>
                             <div class=""><?php the_content(); ?></div>
@@ -102,22 +102,6 @@ if (has_post_thumbnail()) {
                             </div>
                         <?php } ?>
 
-                        <?php
-                        $section6_testimonial = get_field('testimonial');
-                        $quote = get_field("quote", $section6_testimonial);
-                        $name = get_field("name", $section6_testimonial);
-                        $job_title = get_field("job_title", $section6_testimonial);
-
-                        ?>
-                        <div class="padding-md-top padding-lg-bottom single-testimonial">
-
-                            <div class="quote h3"><?php echo $quote; ?></div>
-                            <div class="name"><?php echo $name; ?></div>
-                            <div class="job-title"><?php echo $job_title; ?></div>
-
-                        </div>
-
-
                     </div>
                     <div class="col-md-2">
 
@@ -125,43 +109,32 @@ if (has_post_thumbnail()) {
                 </div>
                 <div class="col-md-3">
                 </div>
+
             </div>
         </section>
-        <?php
-        $section_5 = get_field('record_breaking_results');
-        $repeater = $section_5['columns'];
-        if ($repeater) {
-            ?>
-            <section class="section section-5 padding-xl-top padding-sm-bottom purple-background">
-                <div class="container">
-                    <div class="row vertically-middle wow fadeIn new-effect">
-                        <div class="col-md-12 padding-lg-bottom">
-                            <div class="h3 white-text">Record-Breaking Results</div>
-                        </div>
-                    </div>
-                    <div class="row vertically-middle2 wow fadeIn new-effect">
-                        <?php
-                        foreach ($repeater as $row) {
-                            ?>
-                            <div class="col-md-3 col-icon-text padding-md-bottom  white-text">
-                                <div class="image-background"
-                                     style="background-image:url('<?php echo $row['icon']; ?>'); "></div>
-                                <div class="margin-sm-top heading">
-                                    <p class="white-text  ">
-                                        <?php echo $row['text']; ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-1"></div>
-                            <?php
-                        }
-                        ?>
+        <?php if( have_rows('post_builder') ):
+            while ( have_rows('post_builder') ) : the_row();
+                if( get_row_layout() == 'layout-centered' ){
+                    get_template_part('partials/post-layout-1-column', 'layout-centered');
+                }else if( get_row_layout() == 'layout-2-columns-image-text' ){
+                    get_template_part('partials/post-layout-2-columns-image-text', 'layout-2-columns-image-text');
+                }else if( get_row_layout() == 'layout-2-columns' ){
+                    get_template_part('partials/post-layout-2-columns', 'layout-2-columns');
+                }else if( get_row_layout() == 'layout-3-columns' ){
+                    get_template_part('partials/post-layout-3-columns', 'layout-3-columns');
+                }else if( get_row_layout() == 'testimonial-section' ){
+                    get_template_part('partials/single_testimonial2', 'testimonial-section');
+                }else if( get_row_layout() == 'results-section' ){
+                    get_template_part('partials/results_section', 'results-section');
+                }
 
-                    </div>
-                </div>
-            </section>
-            <?php
-        }
+
+            endwhile; // close the loop of flexible content
+            wp_reset_postdata();
+        endif;
+        ?>
+        <?php
+
     endwhile;
 
     ?>
@@ -173,7 +146,7 @@ if (has_post_thumbnail()) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 margin-md-bottom">
-                        <div class="h3 primary-color">Meet the Project Team</div>
+                        <div class="h3 primary-color fix-size">Meet the Project Team</div>
                     </div>
                 </div>
                 <div class="team-members">
@@ -215,18 +188,17 @@ if (has_post_thumbnail()) {
         </section>
     <?php } ?>
     <div class="bg2">
-        <section class="section section-7 padding-xl-top ">
+        <section class="section section-7">
             <div class="container">
-                <div class="row vertically-middle wow fadeIn new-effect padding-lg-top  ">
+                <div class="row vertically-middle wow fadeIn new-effect ">
                     <div class="col-md-4 padding-lg-bottom">
-                        <div class="h2 primary-color">Related case studies</div>
+                        <div class="h2 primary-color fix-size">Related case studies</div>
                         <p>Our combined experience and hard work pioneers transformative initiatives that make a lasting impact for our customers</p>
                         <div>
                             <a href="/case-studies" class="button button--transparent">View all</a></div>
                     </div>
                     <div class="col-md-8 ">
                         <div class="case-studies-carousel wow fadeIn new-effect" data-wow-delay="0.3s">
-                            <div class="col-md-12" >
                                 <?php
                                 global $post;
                                 $post_slug = $post->post_name;
@@ -244,21 +216,10 @@ if (has_post_thumbnail()) {
                                     'taxonomy' => 'case_study_category',
                                     'hide_empty' => true,
                                 ) );
-                                $loop = new WP_Query($args);
-                                while ($loop->have_posts()) : $loop->the_post();
-                                    $terms = get_the_terms( get_the_ID(), 'case_study_category' );
-                                    foreach ( $terms as $term ) {
 
-                                        ?>
-                                        <a class="url case-study-urls" href="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
-                                        <?php
-                                    }
-
-                                endwhile;
 
                                 ?>
-                                <br/><br/>
-                            </div>
+
                             <div class="vertically-top home-case-study-owl-carousel owl-carousel  owl-theme">
                                 <?php
                                 $loop = new WP_Query($args);

@@ -1576,7 +1576,7 @@
     animation-name: fadeInRightBig;
 }
 
-@-webkit-keyframes fadeIn new-effect {
+@-webkit-keyframes fadeInNew-effect {
     from {
         opacity: 0;
         -webkit-transform: translate3d(0, 100%, 0);
@@ -1590,7 +1590,7 @@
     }
 }
 
-@keyframes fadeIn new-effect {
+@keyframes fadeInNew-effect {
     from {
         opacity: 0;
         -webkit-transform: translate3d(0, 100%, 0);
@@ -1604,11 +1604,10 @@
     }
 }
 
-.fadeIn new-effect {
-    -webkit-animation-name: fadeIn new-effect;
-    animation-name: fadeIn new-effect;
+.fadeIn.new-effect {
+    -webkit-animation-name: fadeInNew-effect;
+    animation-name: fadeInNew-effect;
 }
-
 
 
 

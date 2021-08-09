@@ -73,14 +73,16 @@ $text = get_field('vision_text');
 $image = get_field('vision_image');
 ?>
 
-<section class="padding-xl-top">
+<section class="padding-xl-top wow fadeIn new-effect">
     <div class="container ">
         <div class="row margin-md-top vertically-middle">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom "
+                 data-wow-delay="0.1s" >
                 <div class="h5 primary-color uppercase">Our Vision</div>
                 <div class="h3 left-border primary-color"><?php echo $text; ?></div>
             </div>
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom "
+                 data-wow-delay="0.2s" >
                 <img class="rounded-edges" src="<?php echo $image; ?>"/>
             </div>
         </div>
@@ -92,14 +94,15 @@ $image = get_field('vision_image');
         $repeater = $values['value'];
         ?>
 <section class="section padding-xl-top  padding-lg-bottom purple-background">
-    <div class="container">
-        <div class="row vertically-middle wow fadeIn new-effect">
-            <div class="col-md-12">
+    <div class="container wow fadeIn new-effect">
+        <div class="row vertically-middle ">
+            <div class="col-md-12 ">
                 <div class="h3 white-text">Our Values</div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 hidden-md">
+            <div class="col-md-12 hidden-md "
+                 data-wow-delay="0.1s" >
                 <div id="scene">
                     <div id="left-zone">
                         <ul class="list">
@@ -143,7 +146,7 @@ $image = get_field('vision_image');
                                 ?>
                                 <div class="row vertically-middle margin-md-top">
                                     <div class="col-md-12">
-                                        <img src="<?php echo $row['image']; ?>" class="margin-sm-bottom" style="max-width: 60px">
+                                        <img src="<?php echo $row['image']; ?>" class="margin-sm-bottom" style="max-width: 60px; max-height: 48px;">
 
                                         <div class="h4 white-text"><?php echo $row['title']; ?></div>
                                         <p class=" white-text"><?php echo $row['text']; ?></p>
@@ -165,40 +168,46 @@ $impact = get_field('impact');
 ?>
 <section class="padding-xl-top">
     <div class="container ">
-        <div class="row margin-md-top vertically-middle">
-            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop">
+        <div class="row margin-md-top vertically-middle wow fadeIn new-effect">
+            <div class="col-md-6 has-margin-bottom-lg margin-md-bottom padding-right-desktop "
+                 data-wow-delay="0.1s" >
                 <a class="h5 green-text uppercase no-underline" href="/our-impact/">Our Impact</a>
-                <div class="h3 primary-color margin-md-bottom"><?php echo $impact['heading']; ?></div>
+                <div class="h3 primary-color margin-md-bottom margin-xs-top"><?php echo $impact['heading']; ?></div>
                 <p><?php echo $impact['text']; ?></p>
                 <div>
                     <a href="<?php echo $impact['cta_link']; ?>"
-                       class="button button--secondary"><?php echo $impact['cta_text']; ?></a>
+                       class="button button--transparent"><?php echo $impact['cta_text']; ?></a>
                 </div>
             </div>
 
-            <div class="col-md-6 margin-lg-bottom">
+            <div class="col-md-6 margin-lg-bottom "
+                 data-wow-delay="0.2s" >
                 <img class="rounded-edges" src="<?php echo $impact['image']; ?>"/>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section padding-lg-top ">
+<section class="section padding-lg-top wow fadeIn new-effect">
     <div class="container">
-        <div class="row vertically-middle wow fadeIn new-effect">
-            <div class="col-md-12 padding-sm-bottom">
+        <div class="row vertically-middle ">
+            <div class="col-md-12 padding-sm-bottom wow fadeIn new-effect"
+                 data-wow-delay="0.1s" >
                 <div class="h3 primary-color">You may also like <a href="/insights" class="button button--transparent margin-md-left">View all</a></div>
             </div>
         </div>
-        <div class="row  wow fadeIn new-effect margin-md-top padding-lg-bottom border-bottom">
+        <div class="row  margin-md-top padding-lg-bottom border-bottom">
             <?php
             $args = array('post_type' => 'post', 'posts_per_page' => 3, 'order' => "desc", 'category_name' => 'culture');
             $loop = new WP_Query($args);
+            $index=1;
             while ($loop->have_posts()) : $loop->the_post();
                 $title = get_the_title();
                 $permalink = get_the_permalink();
+                $index++;
                 ?>
-                <div class="col-md-4 equal padding-md-bottom">
+                <div class="col-md-4 equal padding-md-bottom "
+                     data-wow-delay="0.<?php echo $index; ?>s" >
                     <?php
                     get_template_part('partials/single-insight', get_post_format());
                     ?>

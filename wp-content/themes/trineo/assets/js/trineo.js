@@ -35,23 +35,26 @@ jQuery('.js-accordion-trigger').click(function (e) {
 });
 
 jQuery(document).ready(function() {
-    new WOW().init();
+
     jQuery('.home-case-study-owl-carousel').on('initialized.owl.carousel', function(event) {
 
-        jQuery( "a[href='#"+jQuery(".owl-item.active.center").find('.single-case-study-image').attr("cat")+"'" ).addClass( "active" )
+        // jQuery( "a[href='#"+jQuery(".owl-item.active.center").find('.single-case-study-image').attr("cat")+"'" ).addClass( "active" )
     })
 
     jQuery('.home-case-study-owl-carousel').owlCarousel({
         loop: true,
-        nav: false,
+        nav: true,
         dots: false,
         margin: 20,
-        URLhashListener:true,
-        autoplayHoverPause:true,
-        startPosition: 'URLHash',
+        // URLhashListener:true,
+        // autoplayHoverPause:true,
+        // startPosition: 'URLHash',
         center:true,
+        mouseDrag: false,
+        touchDrag: false,
         smartSpeed:450,
-        animateOut: 'fadeOut',
+        // animateOut: 'fadeOut',
+
         navText: [
             '<i class="owl-carousel-prev" aria-hidden="true"></i>',
             '<i class="owl-carousel-next" aria-hidden="true"></i>'
@@ -74,16 +77,20 @@ jQuery(document).ready(function() {
     });
 
     jQuery('.home-case-study-owl-carousel').on('translated.owl.carousel', function(event) {
-        jQuery(".case-study-urls").removeClass("active");
-        jQuery( "a[href='#"+jQuery(".owl-item.active.center").find('.single-case-study-image').attr("cat")+"'" ).addClass( "active" )
+        // jQuery(".case-study-urls").removeClass("active");
+        // jQuery( "a[href='#"+jQuery(".owl-item.active.center").find('.single-case-study-image').attr("cat")+"'" ).addClass( "active" )
     })
+
+
 
 
     jQuery('.testimonials-owl-carousel').owlCarousel({
         loop: true,
-        nav: true,
+        nav: false,
         dots: true,
+        center: true,
         margin: 20,
+        navSpeed: 500,
         navText: [
             '<i class="owl-carousel-prev" aria-hidden="true"></i>',
             '<i class="owl-carousel-next" aria-hidden="true"></i>'
@@ -209,7 +216,7 @@ $(document).on('click', 'a#close-search', function (event) {
 
 
 $(document).ready(function() {
-
+    // new WOW().init();
     // The function
     var background_image_parallax = function ($object, multiplier) {
         multiplier = typeof multiplier !== "undefined" ? multiplier : 0.5;
@@ -223,7 +230,7 @@ $(document).ready(function() {
         });
     };
 
-    background_image_parallax($(".col-sm-5.background-image-cover"), 0.25);
+    background_image_parallax($(".col-sm-5.background-image-cover"), 0.5);
 
     $(".no-link-menu a").each(function(){
         $(this).removeAttr("href");
@@ -261,6 +268,13 @@ $(document).ready(function() {
     // noMoreLonelyWords("div.title", 2);
     // noMoreLonelyWords("div.solutions-text", 2);
     // noMoreLonelyWords(".section-3 div.h3", 2);
+
+    var windowWidth = window.screen.width < window.outerWidth ?
+        window.screen.width : window.outerWidth;
+    if(windowWidth < 996){
+        console.log(windowWidth);
+        $(".accordion__item.is-expanded").find(".js-accordion-trigger").trigger("click");
+    }
 
 
 });

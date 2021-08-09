@@ -16,8 +16,8 @@ $light_purple_background = true;
                     <div class="col-sm-7 padding-xl-top padding-xl-bottom wow fadeInUp new-effect " data-wow-delay="0.0s">
                         <div class=" padding-right-col-1 max-width-750px">
                             <div class=" max-width-750px">
-                                <a href="<?php bloginfo('url') ?>/insights/"
-                                   class="blog-main__back button button--transparent button--transparent--prev margin-md-bottom">Back to all insights</a>
+                                <a href="<?php bloginfo('url') ?>/resources/"
+                                   class="blog-main__back button button--transparent button--transparent--prev margin-md-bottom">Back to all resources</a>
                                 <div class="blog-header__title">
                                     <div class="blog-header__title"><?php the_title(); ?></div>
                                 </div>
@@ -25,7 +25,7 @@ $light_purple_background = true;
                         </div>
                     </div>
                     <div class="col-sm-5 background-image-cover"
-                         style="background-image: url('<?php echo $image[0]; ?>'); min-height: 350px;">
+                         style="background-image: url('<?php echo $image[0]; ?>'); min-height: 370px;">
                     </div>
                 </div>
             </div>
@@ -42,9 +42,9 @@ $light_purple_background = true;
             <div class="container no-padding">
         <div class="row no-gutters padding-lg-top">
             <div class="col-md-3 padding-md-top">
-                <div class="category green-text"><?php echo $cats[0]->name; ?></div>
+                <div class="category primary-color"><?php echo $cats[0]->name; ?></div>
                 <p class="blog-meta"><span style="margin-right:20px">By</span> <strong><?php echo get_the_author(); ?></strong><br/>
-                    <span style="margin-right:18px">On</span> <strong><?php echo get_the_time('d.m.Y', get_the_ID()); ?></strong></p>
+                    <span style="margin-right:18px">On</span> <strong><?php echo get_the_time('d F Y', get_the_ID()); ?></strong></p>
                 <p class="blog-meta"><?php echo do_shortcode('[rt_reading_time label="" postfix="minutes read" postfix_singular="minute read"]'); ?></p>
                 <div class="blog-header__social">
                         <span class="js-social-icons-cta social-icons-cta share-text">
@@ -70,15 +70,28 @@ $light_purple_background = true;
             <div class="col-md-6 ">
                 <div class="blog-main__content padding-xl-top padding-md-bottom">
                 <?php the_content(); ?>
-
                 </div>
-
-
             </div>
             <div class="col-md-3">
-
             </div>
         </div>
+<?php if( have_rows('post_builder') ):
+    while ( have_rows('post_builder') ) : the_row();
+        if( get_row_layout() == 'layout-centered' ){
+            get_template_part('partials/post-layout-1-column', 'layout-centered');
+        }else if( get_row_layout() == 'layout-2-columns-image-text' ){
+            get_template_part('partials/post-layout-2-columns-image-text', 'layout-2-columns-image-text');
+        }else if( get_row_layout() == 'layout-2-columns' ){
+            get_template_part('partials/post-layout-2-columns', 'layout-2-columns');
+        }else if( get_row_layout() == 'layout-3-columns' ){
+            get_template_part('partials/post-layout-3-columns', 'layout-3-columns');
+        }
+
+
+    endwhile; // close the loop of flexible content
+    wp_reset_postdata();
+endif;
+?>
             </div>
     </section>
     <!-- END Blog Main -->

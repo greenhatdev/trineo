@@ -4,6 +4,18 @@
 
 section{
   overflow: hidden;
+
+  &.margin-lg-bottom{
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &.margin-lg-top{
+    @include media-breakpoint-down(md) {
+      margin-top: 10px;
+    }
+  }
 }
 
 .vertically-middle{
@@ -68,6 +80,10 @@ flex-direction: row;
 .margin-bottom-zero{
   margin-bottom: 0px !important;
 }
+.margin-xs-top{
+  margin-top: 10px;
+}
+
 
 .margin-sm-top{
   margin-top: $theme-sm-margin;

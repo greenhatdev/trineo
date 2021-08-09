@@ -1,15 +1,13 @@
  #hero {
   //max-height: 645px;
-   height: calc(100vh - 90px);
+  // height: calc(100vh - 90px);
 
 }
 
 .home #hero {
   margin-top: 0px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: $theme-grey;
+  background-color: #F7F6FA;
+
   //display: none;
 
 
@@ -18,13 +16,19 @@
     //max-height: 550px;
     //min-height: 550px;
     //padding-bottom:150px;
+    height: calc(100vh);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     display: block;
   }
 
+.container, .row{
 
+  @include media-breakpoint-up(md) {
+    height: 100%;
+  }
+}
 
 
   .row {
@@ -43,16 +47,28 @@
   }
 
   .h1 {
-    color: white;
-    font-family: 'Montserrat-ExtraBold', sans-serif;
-
+    //color: white;
+    font-family: 'Byrd-Bold', sans-serif;
+    margin: auto;
     font-weight: normal;
-    max-width: 850px;
+    //max-width: 850px;
     text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 10.5em;
+    line-height: 0.9em;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../trineo/assets/images/starry3.jpg');
 
     @include media-breakpoint-down(md) {
-      //font-size: 24px;
-      //line-height: 32px;
+      font-size: 45px;
+      line-height: 43px;
+      padding-top: 70px;
     }
 
 
@@ -130,7 +146,7 @@
 
 
 }
-@media (min-width: 1400px){
+@media (min-width: 992px){
   .home #hero {
     background-size: cover;
     background-repeat: no-repeat;
@@ -193,6 +209,22 @@
     @include media-breakpoint-down(md) {
       height: 40px;
     }
+  }
+
+  &:first-of-type .image-background{
+    height: 70px;
+  }
+
+  &:nth-of-type(3) .image-background{
+    max-width: 150px;
+  }
+
+  &:nth-of-type(5) .image-background{
+    max-width: 100px;
+  }
+
+  &:nth-of-type(6) .image-background{
+    height: 50px;
   }
 
   @include media-breakpoint-down(md) {
@@ -274,14 +306,19 @@
 .hero-text{
   font-family: 'Poppins-Semibold', sans-serif;
   color: $theme-primary-color;
-  text-align:center;
-  max-width:850px;
+  text-align:left;
+  //max-width:850px;
   margin: auto;
-
+  font-size: 15px;
+  line-height: 19px;
+  padding-bottom: 30px;
 
   @include media-breakpoint-up(md) {
     @include font-size(30px);
     @include line-height(40px);
+    padding-bottom: 0px;
+    max-width: 87%;
+    margin-left: 0;
   }
 }
 
@@ -319,6 +356,8 @@
 .service-links{
   ul {
     margin-left:-20px;
+    float:left;
+    margin-top: 10px;
 
     li {
       width: 100%;
@@ -353,4 +392,20 @@
   }
 }
 
+ @media (min-width: 1200px) and (max-width: 1400px){
+   .home #hero .h1{
+     font-size: 9.5em;
+   }
+ }
+ @media (min-width: 996px) and (max-width: 1200px){
+   .home #hero .h1{
+     font-size: 7.5em;
+   }
+ }
+
+ @media (min-width: 786px) and (max-width: 996px){
+   .home #hero .h1{
+     font-size: 5.5em;
+   }
+ }
 

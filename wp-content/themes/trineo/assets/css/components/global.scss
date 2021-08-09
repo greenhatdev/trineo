@@ -8,16 +8,16 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  @include font-size(15px);
-  @include line-height(20px);
+  font-size: 16px;
+  line-height: 26px;
   font-weight: normal;
   color: $theme-black;
   word-break: normal;
   white-space: normal;
 
   @include media-breakpoint-up(md) {
-    @include font-size(16px);
-    @include line-height(23px);
+    //@include font-size(18px);
+    //@include line-height(28px);
   }
 }
 
@@ -115,6 +115,7 @@ h5, .h5 {
   font-weight: bold;
   color: $theme-primary-color;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 
   @include media-breakpoint-up(md) {
     @include font-size(20px);
@@ -138,15 +139,15 @@ h6, .h6 {
 
 p {
   font-family: 'Poppins', sans-serif;
-  @include font-size(15px);
-  @include line-height(20px);
+  font-size: 16px;
+  line-height: 26px;
   margin-bottom: 16px;
   word-break: normal;
   white-space: normal;
 
   @include media-breakpoint-up(md) {
-    @include font-size(18px);
-    @include line-height(24px);
+    font-size: 16px;
+    line-height: 26px;
   }
 }
 
@@ -216,20 +217,24 @@ video::-webkit-media-controls-panel {
 .post {
 
   ul {
-    padding: 0;
-    margin: 0 0 $theme-md-padding 0;
+    //padding: 0;
+    //margin: 0 0 $theme-md-padding 0;
   }
 
   ul li {
-    position: relative;
-    list-style-type: none;
-    margin-bottom: 10px;
-    padding-left: 20px;
+    //position: relative;
+    //list-style-type: none;
+    //margin-bottom: 10px;
+    //padding-left: 20px;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
 
     &:before {
-      position: absolute;
-      content: '-';
-      left: 0;
+      //position: absolute;
+      //content: '-';
+      //left: 0;
 
     }
   }
@@ -267,8 +272,8 @@ video {
 
 .section-heading {
   font-family: 'Byrd', sans-serif;
-  @include font-size(25px);
-  @include line-height(25px);
+  @include font-size(26px);
+  @include line-height(28px);
   font-weight: bold;
   color: $theme-primary-color;
   max-width: 600px;
@@ -593,6 +598,13 @@ hr {
   border-bottom: 1px solid $theme-grey;
 }
 
+#awards{
+  .order-first{
+    order: 1 !important;
+  }
+
+
+}
 
 a:visited {
   color: inherit;
@@ -666,12 +678,12 @@ a:visited {
       z-index: 100;
 
       i {
-        width: 20px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
 
         @include media-breakpoint-up(md) {
-          width: 30px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
         }
       }
     }
@@ -693,33 +705,33 @@ a:visited {
     }
   }
 
-  .owl-carousel-prev {
-    background-color: transparent !important;
-    background-image: url('../trineo/assets/images/chevron-right.svg') !important;
-    background-size: contain !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    height: 25px !important;
-    margin-top: 10px !important;
-    padding: 7px 5px 0px 5px !important;
-    transform: rotate(180deg) !important;
-  }
-
-  .owl-carousel-next {
-    background-color: transparent !important;
-    background-image: url('../trineo/assets/images/chevron-right.svg') !important;
-    background-size: contain !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    height: 25px !important;
-    padding: 7px 5px 0px 5px !important;
-
-    margin-top: 10px !important;
-  }
-
-  .owl-nav [class*=owl-]:hover {
-    background-color: transparent !important;
-  }
+  //.owl-carousel-prev {
+  //  background-color: transparent !important;
+  //  background-image: url('../trineo/assets/images/chevron-right.svg') !important;
+  //  background-size: contain !important;
+  //  background-position: center center !important;
+  //  background-repeat: no-repeat !important;
+  //  height: 25px !important;
+  //  margin-top: 10px !important;
+  //  padding: 7px 5px 0px 5px !important;
+  //  transform: rotate(180deg) !important;
+  //}
+  //
+  //.owl-carousel-next {
+  //  background-color: transparent !important;
+  //  background-image: url('../trineo/assets/images/chevron-right.svg') !important;
+  //  background-size: contain !important;
+  //  background-position: center center !important;
+  //  background-repeat: no-repeat !important;
+  //  height: 25px !important;
+  //  padding: 7px 5px 0px 5px !important;
+  //
+  //  margin-top: 10px !important;
+  //}
+  //
+  //.owl-nav [class*=owl-]:hover {
+  //  background-color: transparent !important;
+  //}
 }
 
 .owl-carousel .owl-item img {
@@ -963,13 +975,17 @@ Image Grid
   }
 
   .single-case-study-image {
-    height: 300px;
+    height: 150px;
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     -webkit-transition: .5s ease;
     -moz-transition: .5s ease;
     transition: .5s ease;
+
+    @include media-breakpoint-up(md) {
+      height: 300px;
+    }
   }
 
   .logo {
@@ -988,7 +1004,7 @@ Image Grid
 
   .single-case-study-content {
     padding: 30px 30px 0px 30px;
-    min-height: 355px;
+    min-height: 377px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1035,7 +1051,8 @@ Image Grid
   word-break: normal;
   white-space: normal;
 
-  .logo {
+  .blog-main{
+    .logo {
     float: none;
     padding: 0px;
 
@@ -1044,13 +1061,19 @@ Image Grid
       background-position: left center;
       background-size: contain;
       margin-bottom: 15px;
-      height: 40px;
+      //height: 40px;
     }
 
   }
+}
 
   .single-testimonial {
     background: $theme-background-color !important;
+  }
+
+  .blog-main__content{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
 }
@@ -1074,10 +1097,10 @@ Image Grid
 
 .owl-theme .custom-nav .owl-prev, .owl-theme .custom-nav .owl-next {
   border-radius: 50% !important;
-  background: rgb(97, 47, 121) !important;
-  background: linear-gradient(90deg, rgba(97, 47, 121, 1) 0%, rgba(29, 9, 96, 1) 100%) !important;
+  background: $theme-green2 !important;
   height: auto !important
 }
+
 
 .home-case-study-owl-carousel {
 
@@ -1111,7 +1134,7 @@ Image Grid
   }
 
   .owl-theme .owl-nav [class*=owl-] {
-    display: none !important;
+    //display: none !important;
   }
 
   .owl-stage-outer {
@@ -1187,10 +1210,11 @@ Image Grid
   flex-direction: column;
 
   .single-insight-image {
-    height: 270px;
+    height: 215px;
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    background-position: center top !important;
   }
 
   .single-insight-content {
@@ -1198,7 +1222,11 @@ Image Grid
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: 270px;
+
+
+    @include media-breakpoint-up(md) {
+      min-height: 290px;
+    }
   }
 
   .category {
@@ -1344,6 +1372,7 @@ Image Grid
   font-family: 'Poppins-Semibold', sans-serif;
   color: $theme-primary-color;
   margin-bottom: 10px;
+  font-size: 20px;
 
   @include media-breakpoint-up(md) {
     @include font-size(27px);
@@ -1586,8 +1615,30 @@ li {
   text-transform: uppercase;
 }
 
-ul {
+section:not(.footer-main) ul.menu {
   list-style-image: url('../trineo/assets/images/right-caret-purple.svg');
+
+}
+section:not(.footer-main) ul:not(.menu) {
+  list-style-image: none;
+  padding-left: 0px !important;
+
+  li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 16px;
+    background: url(../trineo/assets/images/dash.svg) no-repeat 0px 12px transparent;
+    background-size: 27px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 1px 43px;
+
+    @include media-breakpoint-up(md) {
+      //@include font-size(18px);
+      //@include line-height(30px);
+    }
+  }
 }
 
 
@@ -1654,6 +1705,8 @@ ul {
 .menu-links {
   ul {
     margin-left: -20px;
+    float:left;
+    margin-top:20px;
 
     li {
       width: 100%;
@@ -1692,6 +1745,10 @@ ul {
   }
 
   .service-links{
+    ul{
+      float:left;
+      margin-top: 10px;
+    }
     li{
       //margin-bottom: 15px;
       font-family: 'Poppins', sans-serif;
@@ -1710,6 +1767,11 @@ ul {
 .left-border-chevron {
   position: relative;
 
+  @include media-breakpoint-down(md) {
+    margin-left: 20px;
+    width: calc(100% - 20px);
+  }
+
   &:before {
     background-image: url('./assets/images/right-caret-purple.svg');
     background-size: contain;
@@ -1725,6 +1787,15 @@ ul {
   }
 }
 
+.single-solutions{
+  .left-border-chevron {
+    &:before {
+      top: 15px;
+    }
+  }
+
+}
+
 .max-width-320 {
   max-width: 320px;
 }
@@ -1737,12 +1808,13 @@ ul {
   position: absolute;
   top: 50px;
   right: 0;
-  width:50%;
+  width:35%;
   height: 100%;
 
   @include media-breakpoint-up(md) {
     width: 22%;
     top: 66px;
+
   }
 }
 
@@ -1762,6 +1834,10 @@ ul {
   position: absolute;
   top: 0px;
   width: 100vw;
+
+  @include media-breakpoint-down(md) {
+    background-image: none;
+  }
 }
 
 .bg2 {
@@ -1786,10 +1862,17 @@ ul {
 .team-member {
 
   .team-member-image {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    margin-bottom: 20px;
+    filter: grayscale(1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 320px;
+
     img {
-      border-top-right-radius: 20px;
-      border-top-left-radius: 20px;
-      margin-bottom: 20px;
+
     }
   }
 
@@ -1802,7 +1885,7 @@ ul {
   }
 
   .h4 {
-    margin-bottom: 0px;
+    margin-bottom: 5px;
   }
 
   .linkedin {
@@ -1831,14 +1914,14 @@ ul {
 .single-case-studies {
   //background: $theme-background-color;
 
-  ul {
+  section:not(.footer-main) ul{
     list-style-image: none;
     padding-left: 0px !important;
 
     li {
       font-family: 'Poppins', sans-serif;
-      @include font-size(15px);
-      @include line-height(20px);
+      font-size: 16px;
+      line-height: 23px;
       margin-bottom: 16px;
       background: url(../trineo/assets/images/dash.svg) no-repeat 0px 12px transparent;
       background-size: 27px;
@@ -1847,19 +1930,49 @@ ul {
       padding: 0px 0px 1px 43px;
 
       @include media-breakpoint-up(md) {
-        @include font-size(18px);
-        @include line-height(24px);
+
       }
     }
+  }
+
+  h2:not(.fix-size){
+    font-family: 'Poppins-Semibold', sans-serif;
+    color: $theme-primary-color;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+    &:after{
+      display: none !important;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(27px);
+      @include line-height(32px);
+    }
+  }
+
+   h3:not(.fix-size){
+    @include font-size(24px);
+    @include line-height(28px);
+    margin-bottom:$theme-sm-margin;
+       color:black !important;
+       font-family: 'Poppins-Semibold' !important;
+
+  }
+
+  h3:not(.fix-size) strong{
+    color:black !important;
+    font-family: 'Poppins-Semibold' !important;
   }
 }
 
 .pff-filters-label {
-  color: $theme-primary-color;
+  //color: $theme-primary-color;
   @include font-size(16px);
   @include line-height(23px);
-  font-family: 'Poppins-Semibold', sans-serif;
+  font-family: 'Poppins', sans-serif;
   z-index: 96;
+  margin-bottom: 20px;
 
   div {
     margin-top: 8px;
@@ -1877,6 +1990,16 @@ ul {
   text-decoration: underline;
   cursor: pointer;
   display: inline-block;
+  float:right;
+  margin-top: 0px !important;
+}
+
+.filterTitle{
+  float:left;
+  font-family: 'Poppins-Semibold', sans-serif;
+  color: $theme-primary-color;
+  font-size: 16px !important;
+
 }
 
 .active-filter-item {
@@ -1929,7 +2052,7 @@ ul {
 
   .name {
     font-family: 'Poppins-Semibold', sans-serif;
-    @include font-size(14px);
+    @include font-size(16px);
     @include line-height(23px);
     //color: white;
     text-transform: uppercase;
@@ -1937,7 +2060,7 @@ ul {
 
   .job-title {
     font-family: 'Poppins', sans-serif;
-    @include font-size(14px);
+    @include font-size(16px);
     @include line-height(23px);
     //color: white;
 
@@ -1952,8 +2075,149 @@ ul {
 }
 
 .testimonials-owl-carousel.owl-carousel .owl-stage-outer {
-  width: 90vw;
+  width: calc(100%);
   margin: auto;
+}
+.testimonials-owl-carousel.owl-carousel{
+  margin-left: 100px;
+  margin-right: 100px;
+  width: calc(100% - 200px);
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .testimonial-section{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+
+  }
+
+  .col-md-1{
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+  }
+
+ .owl-item img{
+
+    @include media-breakpoint-down(md) {
+      max-width: 69% !important;
+    }
+  }
+}
+.testimonials-carousel{
+  position: relative;
+
+
+    margin-bottom: 30px;
+
+
+  .owl-dots{
+    @include media-breakpoint-up(md) {
+      //display: none;
+    }
+  }
+  .owl-controls{
+
+      display: none;
+
+  }
+}
+.image-carousel{
+  .owl-theme:last-of-type{
+    z-index: 9999;
+    position: relative;
+    display: block;
+    margin-top: -380px;
+    height: 300px;
+    @include media-breakpoint-down(md) {
+     display: none;
+    }
+  }
+
+  .owl-theme .owl-nav [class*=owl-]:hover{
+    background-color: white !important;
+  }
+
+  .owl-dots{
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+.custom-nav2, .custom-nav3{
+
+.owl-prev {
+  position: absolute;
+  top: 40%;
+  margin-left: -20px;
+  display: block !important;
+  background: $theme-green2 !important;
+  border-radius: 50% !important;
+  padding:10px 22px 10px 21px;
+  border: 2px solid $theme-green2;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s transform ease-in-out;
+
+  &:hover{
+    background-color: white !important;
+  }
+}
+
+  //.owl-carousel-prev{
+  //  background-image: url('../trineo/assets/images/arrow-right-white.svg') !important;
+  //  padding: 10px !important;
+  //  margin-top: 6px !important;
+  //  background-size: contain !important;
+  //  background-position: center center;
+  //
+  //  &:hover{
+  //    background-image: url('../trineo/assets/images/arrow-right-green1.svg') !important;
+  //  }
+  //}
+
+.owl-next {
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  display: block !important;
+  background: $theme-green2 !important;
+  border-radius: 50% !important;
+  padding:10px 22px 10px 21px !important;
+  border: 2px solid $theme-green2;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s transform ease-in-out;
+
+  &:hover{
+    background-color: white !important;
+  }
+}
+
+  .owl-carousel-next{
+    background-image: url('../trineo/assets/images/arrow-right-white.svg') !important;
+    transform: rotate(180deg);
+    padding: 10px !important;
+    margin-top: 6px !important;
+    background-size: contain !important;
+    background-position: center center !important;
+    height: 25px !important;
+    display: inline !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+    margin-left: -6px !important;
+
+    &:hover{
+      background-image: url('../trineo/assets/images/arrow-right-green1.svg') !important;
+    }
+  }
+.owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
+
 }
 
 .image-owl-carousel {
@@ -1970,7 +2234,25 @@ ul {
 .image-owl-carousel.owl-carousel .owl-stage-outer {
   width: 100vw;
   margin: auto;
+
+  @include media-breakpoint-down(md) {
+    width: 98vw;
+  }
 }
+
+.owl-theme .owl-dots, .owl-theme .owl-nav{
+  @include media-breakpoint-down(md) {
+    margin-top: 10px;
+  }
+}
+.image-carousel{
+  .owl-controls{
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}
+
 
 
 table,
@@ -2148,6 +2430,7 @@ a {
   ul {
     margin-left: 0px;
     list-style-image: none;
+    padding-left: 0px;
 
     li.whr-item {
       width: 31%;
@@ -2160,12 +2443,19 @@ a {
       min-height: 195px;
       cursor: pointer;
 
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        min-height: 50px;
+        float: none;
+        display: block;
+      }
+
       &:before {
         content: "";
       }
 
       &:first-of-type {
-        display: none;
+        //display: none;
       }
 
       &:hover{
@@ -2193,6 +2483,10 @@ a {
         }
       }
 
+      .whr-title{
+        line-height: 30px !important;
+      }
+
       .whr-title a {
         color: white;
         font-family: 'Poppins-Semibold', sans-serif;
@@ -2202,13 +2496,14 @@ a {
 
         @include media-breakpoint-up(md) {
           @include font-size(30px);
-          @include line-height(30px);
+          @include line-height(25px);
         }
 
       }
 
       .whr-info {
         margin-bottom: 0px;
+
 
         li {
           &:before {
@@ -2220,8 +2515,9 @@ a {
       li.whr-location {
         background-image: url('../trineo/assets/images/locationpin.svg') !important;
         background-size: auto 14px !important;
-        background-position: left center !important;
+        background-position: left 7px !important;
         background-repeat: no-repeat !important;
+        padding-left: 20px;
 
         span {
           display: none !important;
@@ -2252,7 +2548,11 @@ a {
     width: 200px;
     max-width: 220px;
     margin: 0 auto 1.5rem;
-    float:left;
+
+    @include media-breakpoint-up(md) {
+      float:left;
+    }
+
 
     .circle {
       stroke-dasharray: 0 100;
@@ -2343,14 +2643,15 @@ a {
 .arrow-container {
   width: 20px;
   /* cubic-bezier-easing = sine / mehr Beispiele: https://easings.net/ */
-  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation: bounce 1000ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
   cursor: pointer;
   height: 20px;
   position: absolute;
   bottom: 50px;
-  left: 50%;
+  left: 45%;
   z-index: 99999;
   color: $theme-secondary-color;
+  animation-iteration-count: 1
 }
 
 .arrow-down {
@@ -2371,3 +2672,170 @@ a {
   display: none;
 }
 
+.accordion{
+  h6{
+    font-family: 'Poppins', sans-serif;
+    @include font-size(20px);
+    @include line-height(22px);
+    color: $theme-primary-color;
+    font-style: normal;
+    font-weight: bold;
+    border-bottom: 2px solid $theme-primary-color;
+    padding-right: 20px;
+    position: relative;
+    display: block;
+
+    &:after{
+      display: block;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-image: url('../trineo/assets/images/down-chevron-purple.svg');
+      transform: rotate(0deg);
+      background-position: right center;
+      background-size: 11px auto;
+      background-repeat: no-repeat;
+      width: 11px;
+      height: 20px;
+    }
+  }
+
+  .is-expanded{
+    h6{
+      &:after{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.row.wow.fadeIn.new-effect.margin-md-top{
+  @include media-breakpoint-down(md) {
+
+    margin-top: 0px;
+  }
+}
+
+
+.wow {
+  visibility: hidden;
+}
+
+
+
+.owl-next {
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  display: block !important;
+  background: $theme-green2 !important;
+  border-radius: 50% !important;
+  padding:10px 22px 10px 21px !important;
+  border: 2px solid $theme-green2;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s transform ease-in-out;
+
+  &:hover{
+    background-color: white !important;
+  }
+}
+
+.owl-carousel-next{
+  background-image: url('../trineo/assets/images/arrow-right-white.svg') !important;
+  //transform: rotate(180deg);
+  //padding: 10px !important;
+  //margin-top: 6px !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  height: 25px !important;
+  width: 20px !important;
+  display: inline-block !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  margin-top: -2px !important;
+  margin-left: -8px !important;
+
+  &:hover{
+    background-image: url('../trineo/assets/images/arrow-right-green1.svg') !important;
+  }
+}
+
+.owl-theme .custom-nav .owl-next{
+  margin-top: 0px !important;
+  top:-445px;
+  right: 100px;
+  height: 43px !important;
+  width: 40px !important;
+}
+
+.owl-theme .custom-nav .owl-prev{
+  margin-top: 0px !important;
+  top:-400px;
+  left: 100px;
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.owl-theme .custom-nav2 .owl-prev{
+  margin-top: 5px !important;
+  //top:-400px;
+  left: 100px;
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.owl-theme .custom-nav .owl-prev{
+  display: none !important;
+}
+
+.owl-carousel-prev{
+  background-image: url('../trineo/assets/images/arrow-right-white.svg') !important;
+  transform: rotate(180deg) !important;
+  //padding: 10px !important;
+  //margin-top: 6px !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  height: 25px !important;
+  width: 20px !important;
+  display: inline-block !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  //margin-left: 2px !important;
+
+  &:hover{
+    background-image: url('../trineo/assets/images/arrow-right-green1.svg') !important;
+  }
+}
+
+.team-members {
+  .team-member{
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include media-breakpoint-down(md) {
+padding: 15px !important;
+    }
+  }
+  .team-member:nth-of-type(1),
+  .team-member:nth-of-type(4){
+    padding-left: 0px;
+    padding-right: 40px;
+  }
+
+  .team-member:nth-of-type(3){
+    padding-right: 0px;
+    padding-left: 40px;
+  }
+
+
+
+}
+
+.big_text{
+  font-family: 'Byrd-Medium', sans-serif;
+  font-size: 50px;
+  line-height: 60px;
+  color: $theme-pink;
+}

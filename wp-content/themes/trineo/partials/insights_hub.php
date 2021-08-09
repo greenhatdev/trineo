@@ -1,136 +1,187 @@
 <!--<link href="--><?php //echo get_site_url(); ?><!--/wp-content/themes/trineo/assets/css/vendor/select2.min.css" rel="stylesheet" />-->
 <!--<script src="--><?php //echo get_site_url(); ?><!--/wp-content/themes/trineo/assets/js/select2.min.js"></script>-->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="<?php echo get_site_url(); ?>/wp-content/themes/trineo/assets/js/isotope.pkgd.min.js"></script>
-<section class="margin-lg-top">
-    <div class="container">
-        <div class="row d-flex justify-content-center ">
-                <div class="col-sm-1 pff-filters-label title"><div>Filter:</div></div>
-            <div class="col-sm-11">
-                <div class="row">
-                    <div class="col-sm-3 pff-filters-label">
-                        <select class="filter-dropdown filters-select" name="topic" id="filters-select-topic" data-filter-group="topic">
-                            <option></option>
-                            <?php
-                            $categories = get_terms( 'category', array( 'hide_empty' => '1' ) );
-                            foreach ( $categories as $category ): ?>
-                                <option value=".<?php echo $category->slug; ?>" data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name ?></option>
-                                <?php
-                            endforeach;
-                            ?>
-                        </select>
-                    </div>
-                    <div class="col-sm-3 pff-filters-label">
-                        <select class="filter-dropdown filters-select" name="solutions" data-filter-group="solutions" id="filters-select-solutions">
-                            <option></option>
-                            <?php
-
-                            $categories = get_terms( 'post_solutions', array( 'hide_empty' => '1' ) );
-                            foreach ( $categories as $category ): ?>
-                                <option value=".<?php echo $category->slug; ?>" data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name ?></option>
-                                <?php
-
-                            endforeach;
-                            ?>
-                        </select>
-                    </div>
-                    <div class="col-sm-3 pff-filters-label">
-                        <select class="filter-dropdown filters-select" name="media_type" data-filter-group="media_type" id="filters-select-media_type">
-                            <option></option>
-                            <?php
-
-                            $categories = get_terms( 'post_media_type', array( 'hide_empty' => '1' ) );
-                            foreach ( $categories as $category ): ?>
-                                <option value=".<?php echo $category->slug; ?>" data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name ?></option>
-                                <?php
-
-                            endforeach;
-                            ?>
-                        </select>
-                        </select>
-                    </div>
-                    <div class="col-sm-3 pff-filters-label quicksearchicon">
-                        <i class="fa fa-search quick-search-icon"></i>
-                        <input type="text" class="quicksearch" placeholder="Search articles" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="pff-activefilters ">
-    <div  class="container">
-        <div class="row2">
-            <div class="activeFilters"></div>
-            <div class="clearFilters" id="clearFilters">Clear Filters</div>
-        </div>
-    </div>
-</div>
 <div class="bg1"></div>
-<section class="margin-md-bottom padding-md-top">
+<section class="margin-md-bottom padding-md-top margin-lg-top">
     <div class="container">
-        <div class="row d-flex justify-content-center  grid">
-            <div class="col-md-12   border-bottom">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-2">
+                <div class="row d-flex justify-content-center" id="filters">
+                    <div class="pff-filters-label ">
+                        <div class="filterTitle"><b>FILTER:</b></div>
+                        <div class="clearFilters" id="clearFilters">Clear all</div>
+                    </div>
+
+                    <div class="pff-filters-label" id="filters-topic">
+                        <div class="accordion" id="accordion1">
+                            <div class="accordion__item is-expanded">
+                                <div class="accordion__heading">
+                                    <h6 class="accordion-trigger js-accordion-trigger">Topics</h6>
+                                </div>
+                                <div class="accordion__subcontent js-accordion-subcontent">
+                                    <div class="control-group">
+                                    <?php
+                                    $categories = get_terms(array(
+                                        'taxonomy'			=> 'category',
+                                        'meta_query'		=> array(
+                                            'relation'		=> 'AND',
+                                            array(
+                                                'key'			=> 'show_as_a_filter',
+                                                'value'			=> true,
+                                                'compare'		=> '='
+                                            )
+                                        )
+                                    ));
+                                    foreach ($categories as $category): ?>
+                                            <label class="control control-checkbox">
+                                                <?php echo $category->name ?>
+                                                <input type="checkbox" value=".<?php echo $category->slug; ?>"
+                                                       data-filter=".<?php echo $category->slug; ?>"/>
+                                                <div class="control_indicator"></div>
+                                            </label>
+
+                                    <?php
+                                    endforeach;
+                                    ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pff-filters-label">
+                        <div class="accordion" id="accordion2">
+                            <div class="accordion__item is-expanded">
+                                <div class="accordion__heading">
+                                    <h6 class="accordion-trigger js-accordion-trigger">Solutions</h6>
+                                </div>
+                                <div class="accordion__subcontent js-accordion-subcontent">
+                                    <div class="control-group">
+                                    <?php
+                                    $categories = get_terms('post_solutions', array('hide_empty' => '1'));
+                                    foreach ($categories as $category): ?>
+                                        <label class="control control-checkbox">
+                                            <?php echo $category->name ?>
+                                            <input type="checkbox" value=".<?php echo $category->slug; ?>"
+                                                   data-filter=".<?php echo $category->slug; ?>"/>
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                    <?php
+                                    endforeach;
+                                    ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pff-filters-label">
+                        <div class="accordion" id="accordion3">
+                            <div class="accordion__item is-expanded">
+                                <div class="accordion__heading">
+                                    <h6 class="accordion-trigger js-accordion-trigger">Media Type</h6>
+                                </div>
+                                <div class="accordion__subcontent js-accordion-subcontent">
+                                    <div class="control-group">
+                                    <?php
+                                    $categories = get_terms(array(
+                                        'taxonomy'			=> 'post_media_type',
+                                        'meta_query'		=> array(
+                                            'relation'		=> 'AND',
+                                            array(
+                                                'key'			=> 'show_as_a_filter',
+                                                'value'			=> true,
+                                                'compare'		=> '='
+                                            )
+                                        )
+                                    ));
+                                    foreach ($categories as $category): ?>
+                                        <label class="control control-checkbox">
+                                            <?php echo $category->name ?>
+                                            <input type="checkbox" value=".<?php echo $category->slug; ?>"
+                                                   data-filter=".<?php echo $category->slug; ?>"/>
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                    <?php
+                                    endforeach;
+                                    ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<br/><br/>
+                        <div class="pff-filters-label quicksearchicon">
+                            <i class="fa fa-search quick-search-icon"></i>
+                            <input type="text" class="quicksearch" placeholder="Search articles"/>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-10">
+                <div class=" grid">
                     <?php
-                    $newslist = new WP_Query( array(
+                    $newslist = new WP_Query(array(
                         'post_type' => 'post',
                         'posts_per_page' => -1,
                         'post_status' => 'publish',
                         'orderby' => 'date',
                         'order' => 'DESC',
-                    ) );
+                    ));
                     $i = 1;
 
-                    if ( $newslist->have_posts() ):
-                        while ( $newslist->have_posts() ): $newslist->the_post();
+                    if ($newslist->have_posts()):
+                        while ($newslist->have_posts()): $newslist->the_post();
                             $imgUrl = get_the_post_thumbnail_url();
-                            $post_slug = get_post_field( 'post_name', get_the_ID() );
+                            $post_slug = get_post_field('post_name', get_the_ID());
                             $cats = array();
-                            foreach ( get_the_category( get_the_ID() ) as $c ) {
-                                $cat = get_category( $c );
-                                array_push( $cats, str_replace("!","",strtolower( $cat->name )) );
+                            foreach (get_the_category(get_the_ID()) as $c) {
+                                $cat = get_category($c);
+                                array_push($cats, str_replace("!", "", strtolower($cat->slug)));
                             }
 
-                            if ( sizeOf( $cats ) > 0 ) {
-                                $post_categories = implode( ' ', $cats );
+                            if (sizeOf($cats) > 0) {
+                                $post_categories = implode(' ', $cats);
                             } else {
                                 $post_categories = " ";
                             }
 
                             $postURL = get_the_permalink();
-                            $term_list_solutions = wp_get_post_terms( $post->ID, 'post_solutions', array( "fields" => "all" ) );
+                            $term_list_solutions = wp_get_post_terms($post->ID, 'post_solutions', array("fields" => "all"));
                             $solutionss = '';
-                            foreach ( $term_list_solutions as $solutions ) {
+                            foreach ($term_list_solutions as $solutions) {
                                 $solutionss .= $solutions->slug . ' ';
                             }
 
-                            $term_list_industries = wp_get_post_terms( $post->ID, 'post_media_type', array( "fields" => "all" ) );
+                            $term_list_industries = wp_get_post_terms($post->ID, 'post_media_type', array("fields" => "all"));
                             $industries = '';
-                            foreach ( $term_list_industries as $media_type ) {
+                            foreach ($term_list_industries as $media_type) {
                                 $industries .= $media_type->slug . ' ';
 
                             }
 
                             ?>
-                            <div class="insights-element <?php echo $post_categories; ?> grid-item" id="<?php echo get_the_ID() ?>">
+                            <div class="insights-element <?php echo $post_categories; ?> <?php echo $solutionss; ?> <?php echo $industries; ?>grid-item"
+                                 id="<?php echo get_the_ID() ?>">
 
-                                    <?php
-                                    get_template_part('partials/single-insight', get_post_format());
-                                    ?>
+                                <?php
+                                get_template_part('partials/single-insight', get_post_format());
+                                ?>
 
                             </div>
                         <?php
                         endwhile;
                     endif;
                     ?>
-                <br/><br/>
-
+                    <br/><br/>
+                </div>
             </div>
 
         </div>
         <div class="row">
-            <button class="btn  showMore" id="showMore" >Load more</button>
+            <button class="button  showMore" id="showMore">Load more</button>
         </div>
     </div>
 </section>
@@ -139,103 +190,96 @@
 <script>
 
     // flatten object by concatting values
-    function concatValues( obj ) {
+    function concatValues(obj) {
         var value = '';
-        for ( var prop in obj ) {
-            value += obj[ prop ];
+        for (var prop in obj) {
+            value += obj[prop];
         }
         return value;
     }
 
     // debounce so filtering doesn't happen every millisecond
-    function debounce( fn, threshold ) {
+    function debounce(fn, threshold) {
         var timeout;
         threshold = threshold || 100;
         return function debounced() {
-            clearTimeout( timeout );
+            clearTimeout(timeout);
             var args = arguments;
             var _this = this;
+
             function delayed() {
-                fn.apply( _this, args );
+                fn.apply(_this, args);
             }
-            timeout = setTimeout( delayed, threshold );
+
+            timeout = setTimeout(delayed, threshold);
         };
     }
-    jQuery(document).ready(function() {
-        window.onpageshow = function() {
-        jQuery("#filters-select-solutions").select2({
-            placeholder: "Solutions",
-            // minimumResultsForSearch: -1,
-        });
-        jQuery("#filters-select-media_type").select2({
-            placeholder: "Media Type",
-            // minimumResultsForSearch: -1,
-        });
-        jQuery("#filters-select-topic").select2({
-            placeholder: "Topic",
-            // minimumResultsForSearch: -1,
-        });
-        jQuery("#filters-select-solutions").val("").trigger("change");
-        jQuery("#filters-select-media_type").val("").trigger("change");
-        jQuery("#filters-select-topic").val("").trigger("change");
-            hideItems(initial_items);
 
-    };
+    jQuery(document).ready(function () {
+
         var qsRegex;
         var filters = {};
         var filterValue;
-        var activeFilters="";
+        var activeFilters = "";
         var initial_items = 15;
         var next_items = 15;
         var $grid = jQuery('.grid').isotope({
             // options
             itemSelector: '.grid-item',
             layoutMode: 'fitRows',
-            transitionDuration: 300,
+            transitionDuration: '0s',
+            hiddenStyle: {
+                opacity: 0
+            },
+            visibleStyle: {
+                opacity: 1
+            },
+            transitionDuration: 100,
             masonry: {
                 columnWidth: '.grid-sizer'
             },
             fitRows: {
                 gutter: 20
             },
-            filter: function() {
+            filter: function () {
                 var $this = jQuery(this);
                 var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
                 var selectResult = filterValue ? $this.is(filterValue) : true;
-                updateActiveFilters();
-                return searchResult  && selectResult;
+                return searchResult && selectResult;
             }
         });
 
+        var $checkboxes = $('#filters input');
 
-// bind filter on select change
-        jQuery('.filters-select').on( 'change', function() {
-            // get filter value from option value
+        $checkboxes.change( function() {
+            // map input values to an array
+            var inclusives = [];
+            // inclusive filters from checkboxes
+            $checkboxes.each( function( i, elem ) {
+                // if checkbox, use value if checked
+                if ( elem.checked ) {
+                    inclusives.push( elem.value );
+                }
+            });
 
-            var $this = jQuery(this);
-            var filterGroup = $this.attr('data-filter-group');
-            console.log(filterGroup);
-            // set filter for group
-            filters[ filterGroup ] = $this.find('option:selected').val();
-
-            updateActiveFilters();
-
-            filterValue = concatValues( filters );
+            // combine inclusive filters
+            filterValue = inclusives.length ? inclusives.join(', ') : '*';
             showAllItems();
-
+            // $grid.isotope({ filter: filterValue })
             $grid.isotope();
-
         });
 
-        var $quicksearch = jQuery('.quicksearch').keyup( debounce( function() {
-            qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        var $quicksearch = jQuery('.quicksearch').keyup(debounce(function () {
+            qsRegex = new RegExp($quicksearch.val(), 'gi');
             jQuery('#showMore').hide();
-            if($quicksearch.val()==""){
+            if ($quicksearch.val() == "") {
                 jQuery('#showMore').show();
             }
+
             showAllItems();
             $grid.isotope();
-        }, 200 ) );
+
+        }, 200));
 
 
         function showNextItems(pagination) {
@@ -252,6 +296,7 @@
             }
             $grid.isotope('layout');
         }
+
 // function that hides items when page is loaded
         function hideItems(pagination) {
             var itemsMax = jQuery('.grid-item').length;
@@ -266,10 +311,9 @@
                 jQuery('#showMore').hide();
             }
             $grid.isotope('layout');
-            console.log("herer");
         }
 
-        function showAllItems(){
+        function showAllItems() {
             jQuery('.grid-item').each(function () {
                 jQuery(this).removeClass('visible_item');
             });
@@ -283,81 +327,25 @@
 
         // hideItems(initial_items);
 
-        function updateActiveFilters(){
-            var filtopic= jQuery("#filters-select-topic").find('option:selected').val();
-            var filmedia_type = jQuery("#filters-select-media_type").find('option:selected').val();
-            var filsolutions = jQuery("#filters-select-solutions").find('option:selected').val();
-            activeFilters = "";
-            if(filsolutions!=""){
-                activeFilters = "<div class='active-filter-item' id='active-filter-solutions'>"+jQuery("#filters-select-solutions").find('option:selected').text()+" <i class='fa fa-times-circle'></i></div>";
-            }
-
-            if(filmedia_type!=""){
-                activeFilters = activeFilters + "<div class='active-filter-item' id='active-filter-media_type'>"+jQuery("#filters-select-media_type").find('option:selected').text()+" <i class='fa fa-times-circle'></i></div>";
-            }
-
-            if(filtopic!=""){
-                activeFilters = activeFilters + "<div class='active-filter-item' id='active-filter-topic'>"+jQuery("#filters-select-topic").find('option:selected').text()+" <i class='fa fa-times-circle'></i></div>";
-            }
-
-            if(activeFilters){
-                jQuery(".activeFilters").html(activeFilters);
-                jQuery(".clearFilters").show();
-            }else{
-                jQuery(".activeFilters").html("");
-                jQuery(".clearFilters").hide();
-            }
-
+        function updateActiveFilters() {
 
         }
 
         document.getElementById('clearFilters').onclick = function changeContent() {
-            jQuery("#filters-select-solutions").val("").trigger("change");
-            jQuery("#filters-select-media_type").val("").trigger("change");
-            jQuery("#filters-select-topic").val("").trigger("change");
-            updateActiveFilters();
+            var $checkboxes = $('#filters input');
+            $checkboxes.each( function( i, elem ) {
+                elem.checked = false;
+            });
+            jQuery('.quicksearch').val("");
             hideItems(initial_items);
             jQuery('#showMore').show();
-            $grid.isotope();
+            $grid.isotope({ filter: "" });
 
         }
 
-        jQuery(document).on("click","#active-filter-solutions",function() {
-            jQuery("#filters-select-solutions").val("").trigger("change");
-            updateActiveFilters();
 
-            if(jQuery("#filters-select-solutions").val()=="" && jQuery("#filters-select-media_type").val()=="" && jQuery("#filters-select-topic").val()==""){
-                hideItems(initial_items);
-                jQuery('#showMore').show();
-                $grid.isotope();
-            };
+        hideItems(initial_items);
 
-
-        });
-
-        jQuery(document).on("click","#active-filter-media_type",function() {
-            jQuery("#filters-select-media_type").val("").trigger("change");
-            updateActiveFilters();
-
-            if(jQuery("#filters-select-solutions").val()=="" && jQuery("#filters-select-media_type").val()=="" && jQuery("#filters-select-topic").val()==""){
-                hideItems(initial_items);
-                jQuery('#showMore').show();
-                $grid.isotope();
-            };
-
-        });
-
-        jQuery(document).on("click","#active-filter-topic",function() {
-            jQuery("#filters-select-topic").val("").trigger("change");
-            updateActiveFilters();
-
-            if(jQuery("#filters-select-solutions").val()=="" && jQuery("#filters-select-media_type").val()=="" && jQuery("#filters-select-topic").val()==""){
-                hideItems(initial_items);
-                jQuery('#showMore').show();
-                $grid.isotope();
-            };
-
-        });
 
 
     });

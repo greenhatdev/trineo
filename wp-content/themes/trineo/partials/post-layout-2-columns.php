@@ -36,20 +36,26 @@ if ($layoutColumns) {
 
 $custom_class = get_sub_field('custom_class');
 $add_wings_background= get_sub_field('add_wings_background');
+$vertically_center_align= get_sub_field('vertically_center_align');
+
+$add_bottom_border= get_sub_field('add_bottom_border');
+
 ?>
 
 <section class="post margin-lg-bottom <?php if ($custom_class) { echo $custom_class; } ?>"
          <?php if ($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor; ?>"<?php } ?>>
-    <div class="container <?php if ($hasTopMargin) { ?>padding-lg-top<?php } ?>">
+    <div class="container <?php if ($hasTopMargin) { ?>padding-lg-top<?php } ?> <?php if ($add_bottom_border) { ?>border-bottom<?php } ?> wow fadeIn new-effect">
         <!--        <div class="row">-->
         <!--            <div class="col-md-12">-->
         <!--        <div class="--><?php //echo $custom_class; ?><!--">-->
-        <div class="row margin-md-top">
-            <div class="<?php echo $layoutColumn1 ?> has-margin-bottom-lg margin-md-bottom"
+        <div class="row margin-md-top <?php if ($vertically_center_align) { ?>vertically-middle<?php } ?>">
+            <div class="<?php echo $layoutColumn1 ?> has-margin-bottom-lg margin-md-bottom "
+                 data-wow-delay="0.1s"
                  style="text-align: <?php echo $textAlignLeftCol ?>">
                 <?php echo get_sub_field('content_left'); ?>
             </div>
-            <div class="<?php echo $layoutColumn2 ?> has-margin-bottom-lg margin-md-bottom"
+            <div class="<?php echo $layoutColumn2 ?> has-margin-bottom-lg margin-md-bottom "
+                 data-wow-delay="0.2s"
                  style="text-align: <?php echo $textAlignRightCol ?>">
                 <?php echo get_sub_field('content_right'); ?>
             </div>

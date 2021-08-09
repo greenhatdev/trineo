@@ -14,7 +14,7 @@
             </div>
             <div class="owl-theme">
                 <div class="owl-controls">
-                    <div class="custom-nav owl-nav"></div>
+                    <div class="custom-nav3 owl-nav"></div>
                 </div>
             </div>
         </div>

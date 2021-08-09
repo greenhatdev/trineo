@@ -1,12 +1,12 @@
 <?php
-$testimonial = get_field('testimonials');
+$testimonials = get_sub_field('testimonials');
 ?>
-<section class="section padding-xl-top  padding-lg-bottom light-purple-background">
+<section class="section padding-xl-top light-purple-background">
     <div class="container">
         <div class="testimonials-carousel wow fadeIn new-effect" data-wow-delay="0.3s">
             <div class="vertically-top testimonials-owl-carousel owl-carousel  owl-theme">
                 <?php
-                $postarg1 = array('post_type' => 'testimonials','posts_per_page' => 3, 'post_status' => 'publish', 'order' => "desc",'p' => $testimonial );
+                $postarg1 = array('post_type' => 'testimonials','posts_per_page' => -1, 'post_status' => 'publish', 'order' => "asc",'post__in' => $testimonials );
                 $team = new WP_Query($postarg1);
 
                 if ($team->have_posts()) :
@@ -16,16 +16,18 @@ $testimonial = get_field('testimonials');
                         $name = get_field("name");
                         $job_title = get_field("job_title");
                         ?>
-                    <div class="row">
-                        <div class="col-md-5">
+                    <div class="row vertically-middle margin-md-bottom">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
                             <img src="<?php echo $image; ?>" class="rounded-edges" />
                         </div>
                     <div class="col-md-1"></div>
-                        <div class="col-md-6 wow fadeInUp testimonial-section ">
+                        <div class="col-md-4 wow fadeInUp testimonial-section ">
                             <div class="quote h3"><?php echo $quote; ?></div>
                             <div class="name"><?php echo $name; ?></div>
                             <div class="job-title"><?php echo $job_title; ?></div>
                         </div>
+                        <div class="col-md-1"></div>
                     </div>
                     <?php
                     endwhile;
@@ -33,9 +35,9 @@ $testimonial = get_field('testimonials');
                 endif;
                 ?>
             </div>
-            <div class="owl-theme">
+            <div class="owl-theme ">
                 <div class="owl-controls">
-                    <div class="custom-nav owl-nav"></div>
+                    <div class="custom-nav2 owl-nav"></div>
                 </div>
             </div>
         </div>

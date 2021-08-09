@@ -11,22 +11,26 @@ $add_wings_background= get_sub_field('add_wings_background');
 ?>
 
 <section class="post margin-lg-bottom <?php echo $custom_class; ?>" <?php if($backgroundColor) { ?>style="background-color:<?php echo $backgroundColor;?>"<?php } ?> id="<?php echo $custom_id; ?>">
-    <div class="container <?php if($hasTopMargin) { ?>padding-lg-top<?php } ?>">
+    <div class="container <?php if($hasTopMargin) { ?>padding-lg-top<?php } ?> wow fadeIn new-effect">
         <div class="row vertically-middle">
             <?php if($image_on_left){ ?>
-                <div class="<?php echo $layoutColumn2 ?> margin-md-bottom " style="">
+                <div class="<?php echo $layoutColumn2 ?> margin-md-bottom "
+                     data-wow-delay="0.1s"  style="">
                     <img src="<?php echo get_sub_field( 'col2_image' ); ?>" class="rounded-edges" />
                 </div>
-                <div class="<?php echo $layoutColumn1 ?> margin-md-bottom padding-left-desktop" style="text-align: <?php echo $textAlignLeftCol ?>">
+                <div class="<?php echo $layoutColumn1 ?> margin-md-bottom padding-left-desktop "
+                     data-wow-delay="0.1s"  style="text-align: <?php echo $textAlignLeftCol ?>">
                     <?php echo get_sub_field( 'content_left' ); ?>
                 </div>
             <?php } ?>
 
             <?php if(!$image_on_left){ ?>
-                <div class="<?php echo $layoutColumn1 ?> margin-md-bottom padding-right-desktop" style="text-align: <?php echo $textAlignLeftCol ?>">
+                <div class="<?php echo $layoutColumn1 ?> margin-md-bottom padding-right-desktop "
+                     data-wow-delay="0.2s"  style="text-align: <?php echo $textAlignLeftCol ?>">
                     <?php echo get_sub_field( 'content_left' ); ?>
                 </div>
-            <div class="<?php echo $layoutColumn2 ?> margin-md-bottom order-first order-md-last" style="">
+            <div class="<?php echo $layoutColumn2 ?> margin-md-bottom order-first order-md-last "
+                 data-wow-delay="0.2s"  style="">
                 <img src="<?php echo get_sub_field( 'col2_image' ); ?>" class="rounded-edges" />
                 </div>
             <?php } ?>

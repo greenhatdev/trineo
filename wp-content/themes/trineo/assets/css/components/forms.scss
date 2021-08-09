@@ -32,6 +32,10 @@ input.quicksearch::placeholder{
   input{
     padding-left: 30px;
   }
+
+  @include media-breakpoint-down(md) {
+   margin: 0px !important;
+  }
 }
 
 select,.select2-container--default .select2-selection--single {
@@ -60,5 +64,103 @@ input[type="search" i]::-webkit-search-cancel-button {
   height: 20px;
 }
 
+.nf-field-label{
+  display:none;
+}
+
+.nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea{
+  word-wrap: normal;
+  width: 100% !important;
+  border-top: 0px solid white !important;
+  border-left: 0px solid white !important;
+  border-right: 0px solid white !important;
+  color: #3F2A56 !important;
+  @include font-size(20px);
+  @include line-height(23px);
+  font-family: 'Poppins-Semibold', sans-serif;
+  border-radius: 0px !important;
+  border-bottom: 2px solid #3F2A56 !important;
+  background: white !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 
 
+.nf-form-cont{
+  ::placeholder{
+    font-size: 16px !important;
+  }
+}
+
+.nf-form-content .list-select-wrap>div div:after{
+ background-image:url('../trineo/assets/images/right-caret-purple.svg');
+  content:"" !important;
+  background-size: 6px;
+  background-position: right center;
+  width: 20px;
+  transform: rotate(90deg);
+  background-repeat: no-repeat;
+
+}
+
+.nf-form-content button, .nf-form-content input[type=button], .nf-form-content input[type=submit]{
+  overflow:hidden;
+  background: $theme-secondary-color !important;
+  color: white !important;
+  padding: 15px 40px !important;
+  height: auto !important;
+  line-height: 2px;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-size: 16px;
+  @include line-height(18px);
+  padding: $button-padding 25px $button-padding 25px;
+  //margin-top: 20px;
+  display: inline-flex;
+  font-family: 'Poppins-Semibold';
+  border: 1px solid $theme-secondary-color !important;
+  transition: 0.2s transform ease-in-out !important;
+  will-change: transform;
+  z-index: 0;
+
+  &:before{
+    background: white !important;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0%, 100%) rotate(0deg);
+    transform-origin: bottom center;
+    transition: 0.2s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+
+  }
+  &:hover {
+    background: white !important;
+    text-decoration: none;
+    color: $theme-secondary-color !important;
+    cursor: pointer;
+
+    &:before{
+      transform: translate(0, 0);
+    }
+  }
+}
+.nf-form-content .list-select-wrap>div select{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.nf-form-content textarea.ninja-forms-field{
+  height: 50px !important;
+}
+
+.nf-form-content button:hover, .nf-form-content input[type=button]:hover, .nf-form-content input[type=submit]:hover{
+  color: white !important;
+}

@@ -11,21 +11,21 @@ $h3_heading = get_sub_field('h3_heading');
 <section class="section  padding-xl-top padding-lg-bottom <?php if ($light_purple_background) {
     echo 'light-purple-background';
 } ?>">
-    <div class="container">
-        <div class="row vertically-middle wow fadeIn new-effect">
-            <div class="col-md-12 no-padding padding-xl-bottom">
-                <div class="<?php if ($light_purple_background) {
+    <div class="container wow fadeIn new-effect">
+        <div class="row vertically-middle ">
+            <div class="col-md-12  padding-xl-bottom">
+                <div class="<?php if ($h3_heading) {
                     echo 'h3';
-                }else{ echo 'section-heading'; } ?> wow fadeIn new-effect"><?php echo $section2_heading; ?></div>
+                }else{ echo 'section-heading'; } ?> " data-wow-delay="0.2s"><?php echo $section2_heading; ?></div>
             </div>
         </div>
-        <div class="row vertically-middle2s wow fadeIn new-effect align-left">
+        <div class="row vertically-middle2s  align-left">
             <?php
-            $index= 0;
+            $index= 2;
             foreach ($repeater as $row) {
                 $index++;
                 ?>
-                <div class="<?php if($limit_to_3_columns) { echo 'col-md-4'; } else { echo 'col-md-3'; } ?> col-icon-text  margin-md-bottom <?php if(!$remove_left_border){ ?>left-border left-border-chevron<?php } ?> wow fadeIn new-effect"
+                <div class="<?php if($limit_to_3_columns) { echo 'col-md-4'; } else { echo 'col-md-3'; } ?> col-icon-text  margin-md-bottom <?php if(!$remove_left_border){ ?>left-border left-border-chevron<?php } ?> "
                      data-wow-delay="0.<?php echo $index; ?>s">
                     <div class="image-background"
                          style="background-image:url('<?php echo $row['icon']; ?>')"></div>

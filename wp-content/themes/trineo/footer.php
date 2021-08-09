@@ -8,7 +8,7 @@ if (!is_front_page() && !is_page_template('insights.php') && !is_single('post') 
         <div class="container">
             <div class="row vertically-middle wow fadeIn new-effect">
                 <div class="col-md-12 align-center">
-                    <div class="h3  margin-sm-bottom primary-color "><?php echo $footer_cta_block['heading']; ?></div>
+                    <div class="h3  margin-sm-bottom primary-color fix-size"><?php echo $footer_cta_block['heading']; ?></div>
                     <?php if ($cta_text) { ?>
                         <div>
                             <a href="<?php echo $cta_link; ?>"
@@ -103,6 +103,18 @@ if (!is_front_page() && !is_page_template('insights.php') && !is_single('post') 
 
 </div>
 <?php wp_footer(); ?>
+<script>
+    $(document).ready(function() {
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 60,
+            mobile: true,
+            live: true
+        });
+        wow.init();
+    });
+</script>
 
 </body>
 </html>

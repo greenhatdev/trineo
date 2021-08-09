@@ -15,21 +15,25 @@ $custom_class = get_sub_field('custom_class');
     <?php if ($use_background_image) {
         echo 'style="background-image:url(' . esc_url($background_image['url']) . ')"';
     } ?>>
-    <div class="container <?php if ($hasTopMargin) { ?>padding-lg-top<?php } ?>">
+    <div class="container <?php if ($hasTopMargin) { ?>padding-lg-top<?php } ?> wow fadeIn new-effect">
         <div class="row margin-md-top">
-            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?>"
+            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?> "
+                 data-wow-delay="0.1s"
                  style="text-align: <?php echo $textAlignLeftCol ?>">
                 <?php echo get_sub_field('content_one'); ?>
             </div>
-            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?>"
+            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?> "
+                 data-wow-delay="0.2s"
                  style="text-align: <?php echo $textAlignRightCol ?>">
                 <?php echo get_sub_field('content_two'); ?>
             </div>
-            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?>"
+            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?> "
+                 data-wow-delay="0.32s"
                  style="text-align: <?php echo $textAlignRightCol ?>">
                 <?php echo get_sub_field('content_three'); ?>
             </div>
-            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?>"
+            <div class="col-md-3 has-margin-bottom-lg margin-md-bottom <?php echo $custom_class; ?> "
+                 data-wow-delay="0.4s"
                  style="text-align: <?php echo $textAlignRightCol ?>">
                 <?php echo get_sub_field('content_four'); ?>
             </div>

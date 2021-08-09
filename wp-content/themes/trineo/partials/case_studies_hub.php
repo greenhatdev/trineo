@@ -26,7 +26,7 @@
                     ));
                     foreach ($services as $category): ?>
                         <button class="button button--tags margin-sm-right"
-                                data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name ?></button>
+                                data-filter=".<?php echo $category->slug; ?>" id="<?php echo $category->slug; ?>"><?php echo $category->name ?></button>
                     <?php
                     endforeach;
                     ?>
@@ -135,6 +135,28 @@
                 $(this).addClass('is-checked');
             });
         });
+
+
+        function getParameterByName( name ) {
+            query = window.location.search.toString();
+            name = name.replace( /[\[]/, "\\\[" ).replace( /[\]]/, "\\\]" );
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp( regexS );
+            results = regex.exec( query );
+            if ( results == null ) return "";
+            else return decodeURIComponent( results[ 1 ].replace( /\+/g, " " ) );
+        }
+
+        function checkforUTMs(){
+            var hasServiceParameter = getParameterByName('tag');
+
+            if(hasServiceParameter){
+                jQuery("#"+hasServiceParameter).trigger("click");
+            }
+
+        }
+
+        checkforUTMs();
 
     });
 
